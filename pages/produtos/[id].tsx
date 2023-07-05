@@ -1,16 +1,35 @@
-import { useRouter } from 'next/router';
+export async function getStaticPaths() {
+  return {
+    paths: [{
+      params: {
+        sku: '1'
+      }
+    }, {
+      params: {
+        sku: '2'
+      }
+    }],
+    fallback: 'blocking'
+  }
+}
 
-export async function getServerSideProps(context) {
-  const id = context.query.id;
+export async function getStaticProps(context) {
+  await delay(5000);
+  const sku = context.params.id;
+
   return {
     props: {
-      id: id
+      sku: sku
     }
   }
 }
 
 const Produtos = (props) => {
-   return <div>Id do produto: {props.id}</div>
+   return <div>SKU do produto: {props.sku}</div>
 }
 
 export default Produtos;
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
