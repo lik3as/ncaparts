@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   await delay(5000);
-  const sku = context.params.id;
+  const sku = context.params.sku;
 
   return {
     props: {
