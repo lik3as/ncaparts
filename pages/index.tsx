@@ -1,13 +1,26 @@
 import Link from 'next/link'
-import Layout from '../components/Layout'
+import { GetStaticProps } from 'next';
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
+const IndexPage = (props) => (
+  <>
     <h1>Hello Next.js 👋</h1>
     <p>
-      <Link href="/about">About</Link>
+      <Link href="/about">About Plus +</Link>
+      <h2>Data: {props.date}</h2>
     </p>
-  </Layout>
+  </>
 )
 
-export default IndexPage
+export async function getStaticProps() {
+  const staticDate = new Date()
+  const staticDateString = staticDate.toDateString();
+
+  return {
+    props: {
+      date: staticDateString
+    }
+  }
+
+}
+
+export default IndexPage;
