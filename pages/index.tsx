@@ -3,7 +3,7 @@ import React, { FC, useState } from 'react'
 const Home: FC = () => {
   return (
     <>
-        <h1>Página Inicial</h1>
+        <h1>Página Inicial com typescript </h1>
     </>
   );
 }
