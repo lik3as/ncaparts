@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-function tempo(request, response) {
+export default function tempo(request, response) {
   const dynamicDate = new Date();
 
   response.json({
