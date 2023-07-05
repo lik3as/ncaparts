@@ -5,6 +5,7 @@ export default function tempo(request, response) {
   const subscribersRes = apiSecret;
 
   response.json({
-    yourVariable: subscribersRes
+    yourVariable: subscribersRes,
+    apiRes: "none"
   });
 }
