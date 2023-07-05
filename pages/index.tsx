@@ -1,27 +1,13 @@
-import React, { FC, useState } from 'react'
+import Link from 'next/link'
+import Layout from '../components/Layout'
 
-const Home: FC = () => {
-  return (
-    <>
-        <h1>Página Inicial com typescript </h1>
-    </>
-  );
-}
+const IndexPage = () => (
+  <Layout title="Home | Next.js + TypeScript Example">
+    <h1>Hello Next.js 👋</h1>
+    <p>
+      <Link href="/about">About</Link>
+    </p>
+  </Layout>
+)
 
-const Contador: FC = () =>  {
-  const [contador, setContador] = useState(1);
-
-
-  function adicionarContador() {
-    setContador(contador + 1);
-  } 
-
-  return (
-    <div>
-      <div>{contador}</div>
-      <button onClick={adicionarContador}>Adicionar</button>
-    </div>
-  )
-}
-
-export default Home;
+export default IndexPage
