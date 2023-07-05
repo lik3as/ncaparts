@@ -1,15 +1,14 @@
-import react from 'react'
-import { useState } from 'react';
+import React, { FC, useState } from 'react'
 
-function Home() {
+const Home: FC = () => {
   return (
     <>
-        <h1>Esta é a página inicial</h1>
+        <h1>Página Inicial</h1>
     </>
   );
 }
 
-function Contador() {
+const Contador: FC = () =>  {
   const [contador, setContador] = useState(1);
 
 
