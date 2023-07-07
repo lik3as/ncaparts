@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { GetStaticProps } from 'next';
 
 const IndexPage = (props) => (
   <>
@@ -10,17 +9,5 @@ const IndexPage = (props) => (
     </p>
   </>
 )
-
-export async function getStaticProps() {
-  const staticDate = new Date()
-  const staticDateString = staticDate.toDateString();
-
-  return {
-    props: {
-      date: staticDateString
-    }
-  }
-
-}
 
 export default IndexPage;

@@ -10,6 +10,8 @@ interface Props {
   textAlign?: string;
 }
 
-const ItemText: FC<Props> = ({children}) => (
-  <div className=''>{children}</div>
-)
+const ItemText: FC<Props> = ({className, children}) => (
+  <div className={className}>{children}</div>
+);
+
+export default ItemText;
