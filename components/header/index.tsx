@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import React, { FC } from 'react'
-import { Form, Image, CloseButton } from "react-bootstrap";
+import { Form, CloseButton } from "react-bootstrap";
 
-import { Wrapper, Button, InputGroup, HeaderWrapper, Logo, Text } from './styles'
+import { Wrapper, Button, InputGroup, HeaderWrapper, Image, Logo, Text } from './styles'
 import logo from '../../public/logo.png'
 import userIcon from '../../public/rounded-user-icon-blue-green.png'
 
@@ -15,7 +15,7 @@ const Searchbar: FC = () => {
           aria-describedby="basic-addon1"
           style={{textAlign: 'left'}}
         />
-        <Button variant="outline-secondary" style={{backgroundColor: '#33393e'}}>Buscar</Button>
+        <Button variant="outline-secondary">Buscar</Button>
       </InputGroup>
   )
 }
@@ -23,7 +23,7 @@ const Searchbar: FC = () => {
 const UserIcon: FC = () => {
   return (
     <>
-      <Image src={userIcon.src} roundedCircle width={65} height={65}></Image>
+      <Image src={userIcon.src} roundedCircle></Image>
       <CloseButton/>
     </>
   )
@@ -31,18 +31,16 @@ const UserIcon: FC = () => {
 
 const Header: FC = () => {
   return (
-    <HeaderWrapper data-bs-theme="dark" className='bg-dark p-2' style={{padding: '0 !important'}}>
-      <Wrapper $margin="0" $flexDirection="row" $display="flex" $justifyContent="space-between" $alignItems="center">
+    <HeaderWrapper data-bs-theme="dark" className='bg-dark p-2'>
         <Wrapper $display="flex" $flexDirection="row" $margin="0">
           <Logo src={logo} alt="Couldn't load the logo :( Please, check you connection."/> 
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="10px auto">
           <Searchbar />
         </Wrapper>
-        <Wrapper $display="flex" $flexDirection="row" $margin="0 15px 0 0">
+        <Wrapper $display="flex" $flexDirection="row" $margin="0 15px">
           <UserIcon />
         </Wrapper>
-      </Wrapper>
     </HeaderWrapper>
   )
 }
