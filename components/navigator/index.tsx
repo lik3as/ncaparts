@@ -29,6 +29,8 @@ const Navigator: FC = () => {
           </DropdownMenu>
         </Dropdown>
       </Wrapper>
+
+      <Wrapper></Wrapper>
     </NavWrapper>
   )
 }
