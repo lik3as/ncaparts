@@ -54,6 +54,7 @@ const InputGroup = styled(ItemInputGroup)`
 
 const Button = styled(ItemButton)`
   width: calc(22vw - 40px);
+  text-align: center;
 `;
 
 export { Wrapper, Text, HeaderWrapper, Logo, InputGroup, Button };
