@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { InputGroup as ItemInputGroup, Form as ItemForm } from "react-bootstrap";
+import { InputGroup as ItemInputGroup, Button as ItemButton } from "react-bootstrap";
 
 import ItemWrapper from '../helpers/ItemWrapper';
 import ItemText from '../helpers/ItemText';
@@ -44,4 +44,16 @@ const Logo = styled(Image)`
   }
 `
 
-export { Wrapper, Text, HeaderWrapper, Logo };
+const InputGroup = styled(ItemInputGroup)`
+  width: calc(50vw - 40px);
+
+  @media screen and (max-width: 720px){
+    padding: .25 .6rem;
+  }
+`;
+
+const Button = styled(ItemButton)`
+  width: calc(22vw - 40px);
+`;
+
+export { Wrapper, Text, HeaderWrapper, Logo, InputGroup, Button };

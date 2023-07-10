@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import React, { FC } from 'react'
-import { InputGroup, Form, Button, Image, CloseButton } from "react-bootstrap";
+import { Form, Image, CloseButton } from "react-bootstrap";
 
-import { Wrapper, HeaderWrapper, Logo, Text } from './styles'
+import { Wrapper, Button, InputGroup, HeaderWrapper, Logo, Text } from './styles'
 import logo from '../../public/logo.png'
 import userIcon from '../../public/rounded-user-icon-blue-green.png'
 
@@ -13,7 +13,7 @@ const Searchbar: FC = () => {
           placeholder="Nome ou SKU do produto"
           aria-label="O que você está buscando?"
           aria-describedby="basic-addon1"
-          style={{paddingRight: '12vw', textAlign: 'left'}}
+          style={{textAlign: 'left'}}
         />
         <Button variant="outline-secondary" style={{backgroundColor: '#33393e'}}>Buscar</Button>
       </InputGroup>
