@@ -82,11 +82,11 @@ const Button = styled(ItemButton)`
   }
 
   @media screen and (max-width: 768px){
-    width: calc(14vw - 20px);
+    width: calc(14vw - 15px);
   }
 
   @media screen and (max-width: 480px){
-    width: calc(14vw - 15px);
+    width: calc(14vw - 5px);
   }
 `;
 
