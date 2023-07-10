@@ -23,4 +23,10 @@ export default createGlobalStyle`
   src: url('/fonts/dic-sans/Dic Sans Bold.otf');
   font-weight: 'bold';
  }
+
+ @media screen and (max-width: 720px){
+  html {
+    font-size: .7rem;
+  }
+ }
 `
