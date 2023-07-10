@@ -1,30 +1,32 @@
 import React, { FC } from 'react';
 
-import { Wrapper, Text, NavWrapper, } from './styles'
-import { DropdownButton, Dropdown } from 'react-bootstrap';
+import { Wrapper, Text, NavWrapper,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle
+} from './styles'
 
 const Navigator: FC = () => {
   return (
     <NavWrapper>
-      <Wrapper $margin='2rem 0 0 3rem' $display='block'>
-        <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
-         $textAlign='left' color='white'>Explore</Text>  
-      </Wrapper>
+      <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
+        $textAlign='left' color='white'>Explore</Text>  
 
-      <Wrapper className='mb-2' $maxWidth='auto' >
+      <Wrapper className='mb-2' $maxWidth='auto' $margin='1.5rem 0'>
         <Dropdown>
-          <Dropdown.Toggle variant='secondary'>
+          <DropdownToggle variant='secondary'>
             Categorias
-          </Dropdown.Toggle>
+          </DropdownToggle>
 
-          <Dropdown.Menu>
-            <Dropdown.Item href='#/eletrica'>
+          <DropdownMenu>
+            <DropdownItem href='#/eletrica'>
               Elétrica
-            </Dropdown.Item>
-            <Dropdown.Item href='#/mecanica'>
+            </DropdownItem>
+            <DropdownItem href='#/mecanica'>
               Mecânica
-            </Dropdown.Item>
-          </Dropdown.Menu>
+            </DropdownItem>
+          </DropdownMenu>
         </Dropdown>
       </Wrapper>
     </NavWrapper>

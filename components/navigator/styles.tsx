@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import ItemWrapper from '../helpers/ItemWrapper';
 import ItemText from '../helpers/ItemText';
+import { Dropdown as ItemDropdown } from "react-bootstrap";
 import Image from 'next/image'
 
 const Wrapper = styled(ItemWrapper)`
@@ -9,7 +10,7 @@ const Wrapper = styled(ItemWrapper)`
   flex-direction: ${(props) => props.$flexDirection ?? 'row'};
   align-items: ${(props) => props.$alignItems ?? 'center'};
   justify-content: ${(props) => props.$justifyContent ?? 'center'};
-  margin: ${(props) => props.$margin ?? '15px 3rem'};
+  margin: ${(props) => props.$margin ?? '15px 0px'};
   max-width: ${(props) => props.$maxWidth ?? '100%'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
 `;
@@ -27,6 +28,7 @@ const NavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 3rem 0 0 3rem; 
   left: 0px;
   bottom: 0px;
   width: var(--nav-width);
@@ -43,4 +45,12 @@ const Logo = styled(Image)`
   margin-left: 15px;
 `
 
-export { Wrapper, Text, NavWrapper, Logo };
+const Dropdown = styled(ItemDropdown)`
+
+`;
+
+const DropdownToggle = ItemDropdown.Toggle;
+const DropdownItem = ItemDropdown.Item;
+const DropdownMenu = ItemDropdown.Menu;
+
+export { Wrapper, Text, NavWrapper, Logo, Dropdown, DropdownToggle, DropdownItem, DropdownMenu };
