@@ -15,14 +15,6 @@ const Wrapper = styled(ItemWrapper)`
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
 `;
 
-const Text = styled(ItemText)`
-  font-family: ${(props) => props.fontFamily ?? 'Arial, Helvetica, sans-serif'};
-  font-weight: ${(props) => props.fontWeight ?? 'normal'};
-  font-size: ${(props) => props.fontSize ?? '1rem'};
-  text-align: ${(props) => props.textAlign ?? 'center'};
-  color: ${(props) => props.color ?? 'black'};
-`;
-
 const HeaderWrapper = styled.nav`
   position: fixed;
   top: 0px;
@@ -99,4 +91,4 @@ const Image = styled(ItemImage)`
   }
 `;
 
-export { Wrapper, Text, HeaderWrapper, Logo, InputGroup, Button, Image };
+export { Wrapper, HeaderWrapper, Logo, InputGroup, Button, Image };

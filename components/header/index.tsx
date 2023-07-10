@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, { FC } from 'react'
 import { Form, CloseButton } from "react-bootstrap";
 
-import { Wrapper, Button, InputGroup, HeaderWrapper, Image, Logo, Text } from './styles'
+import { Wrapper, Button, InputGroup, HeaderWrapper, Image, Logo} from './styles';
 import logo from '../../public/logo.png'
 import userIcon from '../../public/rounded-user-icon-blue-green.png'
 

@@ -18,7 +18,7 @@ const Text = styled(ItemText)`
   font-family: ${(props) => props.fontFamily ?? 'Arial, Helvetica, sans-serif'};
   font-weight: ${(props) => props.fontWeight ?? 'normal'};
   font-size: ${(props) => props.fontSize ?? '1rem'};
-  text-align: ${(props) => props.textAlign ?? 'center'};
+  text-align: ${(props) => props.$textAlign ?? 'center'};
   color: ${(props) => props.color ?? 'black'};
 `;
 
