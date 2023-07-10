@@ -49,8 +49,15 @@ const Dropdown = styled(ItemDropdown)`
 
 `;
 
-const DropdownToggle = ItemDropdown.Toggle;
-const DropdownItem = ItemDropdown.Item;
+const ItemDropdownToggle = ItemDropdown.Toggle;
+const DropdownToggle = styled(ItemDropdownToggle)`
+  padding-right: 3rem;
+  background: -moz-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
+  border: none;
+`;
+
+
 const DropdownMenu = ItemDropdown.Menu;
+const DropdownItem = ItemDropdown.Item;
 
 export { Wrapper, Text, NavWrapper, Logo, Dropdown, DropdownToggle, DropdownItem, DropdownMenu };
