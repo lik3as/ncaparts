@@ -24,7 +24,7 @@ export default createGlobalStyle`
   font-weight: 'bold';
  }
 
- @media screen and (max-width: 720px){
+ @media screen and (max-width: 768px){
   html {
     font-size: .7rem;
   }
