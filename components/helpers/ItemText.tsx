@@ -7,7 +7,7 @@ interface Props {
   fontSize?: string;
   color?: string;
   children?: ReactNode;
-  textAlign?: string;
+  $textAlign?: string;
 };
 
 const ItemText: FC<Props> = ({className, children}) => (

@@ -8,10 +8,10 @@ const Navigator: FC = () => {
     <NavWrapper>
       <Wrapper $margin='2rem 0 0 3rem' $display='block'>
         <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
-         textAlign='left' color='white'>Explore</Text>  
+         $textAlign='left' color='white'>Explore</Text>  
       </Wrapper>
 
-      <Wrapper className='mb-2' $maxWidth='auto'>
+      <Wrapper className='mb-2' $maxWidth='auto' >
         <Dropdown>
           <Dropdown.Toggle variant='secondary'>
             Categorias
