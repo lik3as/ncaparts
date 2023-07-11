@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Header from '../components/header';
-import Navigator from '../components/navigator'
+import Header from '../components/layouts/topbar';
+import Navigator from '../components/layouts/sidebar'
 import Global from '../styles/global';
 
 const Home: FC = () => (
