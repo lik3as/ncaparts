@@ -3,7 +3,7 @@ import { CloseButton } from "react-bootstrap";
 
 import { Wrapper, HeaderWrapper, Image, Logo} from './styles';
 import Searchbar from "./searchbar";
-import logo from '../../../public/images/logo.png'
+import logo from '../../../public/images/logo/logo-h-white.png'
 import userIcon from '../../../public/images/rounded-user-icon-blue-green.png'
 
 

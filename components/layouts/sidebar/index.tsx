@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import { Wrapper, Text, NavWrapper } from './styles'
 import Dropdown from './dropdown/'
+import Menu from './menu'
 
 const Navigator: FC = () => {
   return (
@@ -13,7 +14,9 @@ const Navigator: FC = () => {
         <Dropdown />
       </Wrapper>
 
-      <Wrapper></Wrapper>
+      <Wrapper>
+        <Menu />
+      </Wrapper>
     </NavWrapper>
   )
 }

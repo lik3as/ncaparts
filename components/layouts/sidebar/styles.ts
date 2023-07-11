@@ -8,7 +8,7 @@ const Wrapper = styled(ItemWrapper)`
   flex-direction: ${(props) => props.$flexDirection ?? 'row'};
   align-items: ${(props) => props.$alignItems ?? 'center'};
   justify-content: ${(props) => props.$justifyContent ?? 'center'};
-  margin: ${(props) => props.$margin ?? '15px 0px'};
+  margin: ${(props) => props.$margin ?? '20px 0px'};
   max-width: ${(props) => props.$maxWidth ?? '100%'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
 `;

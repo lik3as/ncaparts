@@ -29,19 +29,15 @@ const HeaderWrapper = styled.nav`
 
 const Logo = styled(NextImage)`
   width: 165px;
-  height: 65px;
-  object-fit: "contain";
+  height: 45px;
+  object-fit: contain;
   margin: 8px;
   margin-left: 15px;
 
-  @media screen and (max-width: 1024px){
-    width: 100px;
-    height: 50px;  
-  }
-
   @media screen and (max-width: 768px){
-    width: 60px;
-    height: 30px;
+    content: url('/images/logo/logo-white.png');
+    width: 65px;
+    height: 35px;
   }
 `
 const Image = styled(ItemImage)`
