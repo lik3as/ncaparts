@@ -15,7 +15,6 @@ export default createGlobalStyle`
   --header-height: 90px;
   --nav-width: 240px;
   --color-green: rgba(37,211,102,255);
-
  }
 
  @font-face {
