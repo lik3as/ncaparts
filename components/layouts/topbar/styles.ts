@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Image as ItemImage } from "react-bootstrap";
 
 import ItemWrapper from '../../helpers/ItemWrapper';
-import ItemText from '../../helpers/ItemText';
 import NextImage from 'next/image'
 
 const Wrapper = styled(ItemWrapper)`
