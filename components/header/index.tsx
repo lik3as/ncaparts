@@ -3,8 +3,8 @@ import React, { FC } from 'react'
 import { Form, CloseButton } from "react-bootstrap";
 
 import { Wrapper, Button, InputGroup, HeaderWrapper, Image, Logo} from './styles';
-import logo from '../../public/logo.png'
-import userIcon from '../../public/rounded-user-icon-blue-green.png'
+import logo from '../../public/images/logo.png'
+import userIcon from '../../public/images/rounded-user-icon-blue-green.png'
 
 const Searchbar: FC = () => {
   return (

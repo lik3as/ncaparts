@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 
-import { Wrapper, Text, NavWrapper,
+import { Wrapper, Text, NavWrapper, Image,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownToggle
 } from './styles'
+import catIcon from '../../public/images/category-tree-white.png'
 
 const Navigator: FC = () => {
   return (
@@ -16,9 +17,10 @@ const Navigator: FC = () => {
       <Wrapper className='mb-2' $maxWidth='auto' $margin='1.5rem 0'>
         <Dropdown>
           <DropdownToggle variant='secondary'>
+            <Image src={catIcon.src}></Image>
             Categorias
           </DropdownToggle>
-
+          
           <DropdownMenu>
             <DropdownItem href='#/eletrica'>
               Elétrica
