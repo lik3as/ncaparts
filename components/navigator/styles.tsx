@@ -53,6 +53,9 @@ const ItemDropdownToggle = ItemDropdown.Toggle;
 const DropdownToggle = styled(ItemDropdownToggle)`
   padding-right: 3rem;
   background: -moz-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
+  background: -webkit-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
+  background: -o-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
+  background: linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
   border: none;
 `;
 
