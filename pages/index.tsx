@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Header from '../components/layouts/topbar';
-import Navigator from '../components/layouts/sidebar'
+import Topbar from '../components/layouts/topbar';
+import Sidebar from '../components/layouts/sidebar'
 import Global from '../styles/global';
 
 const Home: FC = () => (
@@ -10,11 +10,11 @@ const Home: FC = () => (
     <Global />
 
     <header>
-      <Header />
+      <Topbar />
     </header>
 
     <main>
-      <Navigator />
+      <Sidebar />
 
     </main>
 
