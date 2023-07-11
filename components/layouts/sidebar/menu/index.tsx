@@ -1,12 +1,14 @@
 import { FC } from "react";
 
 import { Button } from "./styles";
-import { Wrapper } from "../styles";
+import { Wrapper, Image } from "../styles";
+import sales from "../../../../public/images/sales.png"
 
 const Menu: FC = () => {
   return (
     <Wrapper $display="flex" $flexDirection="column" $alignItems="flex-start" $justifyContent="space-between">
       <Button variant="secondary">
+        <Image src={sales.src}/>
         Melhores Ofertas
       </Button>
       <Button variant="secondary">

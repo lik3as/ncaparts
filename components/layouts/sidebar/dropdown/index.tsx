@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
-import { Dropdown as ItemDropdown, DropdownItem, DropdownMenu, DropdownToggle, Image } from './styles'
+import { Dropdown as ItemDropdown, DropdownItem, DropdownMenu, DropdownToggle } from './styles'
+import { Image } from '../styles'
 import catIcon from '../../../../public/images/category-tree-white.png'
 
 const Dropdown: FC = () => {

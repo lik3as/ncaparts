@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Image as ItemImage } from "react-bootstrap";
 
 import ItemWrapper from '../../helpers/ItemWrapper';
 import ItemText from '../../helpers/ItemText';
@@ -35,5 +36,14 @@ const NavWrapper = styled.nav`
 
 `;
 
+const Image = styled(ItemImage)`
+  width: 25px;
+  object-fit: contain;
+  margin-right: 10px;
 
-export { Wrapper, Text, NavWrapper };
+  @media screen and (max-width: 768px){
+    width: 20px;
+  }
+`;
+
+export { Wrapper, Text, NavWrapper, Image };
