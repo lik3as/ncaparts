@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-import ItemWrapper from '../helpers/ItemWrapper';
-import ItemText from '../helpers/ItemText';
-import { Dropdown as ItemDropdown, Image as ItemImage } from "react-bootstrap";
+import ItemWrapper from '../../helpers/ItemWrapper';
+import ItemText from '../../helpers/ItemText';
 
 const Wrapper = styled(ItemWrapper)`
   display: ${(props) => props.$display ?? 'flex'};
@@ -37,35 +36,4 @@ const NavWrapper = styled.nav`
 `;
 
 
-const Image = styled(ItemImage)`
-  width: 25px;
-  object-fit: contain;
-  margin-right: 10px;
-
-  @media screen and (max-width: 768px){
-    width: 20px;
-  }
-`;
-
-const Dropdown = styled(ItemDropdown)`
-
-`;
-
-const DropdownToggle = styled(ItemDropdown.Toggle)`
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 3rem;
-  background: -o-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
-  background: linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
-  background: -moz-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
-  background: -webkit-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
-  border: none;
-`;
-
-
-const DropdownMenu = styled(ItemDropdown.Menu)`
-`;
-const DropdownItem = styled(ItemDropdown.Item)`
-`;
-
-export { Wrapper, Text, NavWrapper, Dropdown, DropdownToggle, DropdownItem, DropdownMenu, Image };
+export { Wrapper, Text, NavWrapper };
