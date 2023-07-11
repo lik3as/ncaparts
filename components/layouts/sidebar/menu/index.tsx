@@ -6,13 +6,13 @@ import { Wrapper } from "../styles";
 const Menu: FC = () => {
   return (
     <Wrapper $display="flex" $flexDirection="column" $alignItems="flex-start" $justifyContent="space-between">
-      <Button>
+      <Button variant="secondary">
         A
       </Button>
-      <Button>
+      <Button variant="secondary">
         B
       </Button>
-      <Button>
+      <Button variant="secondary">
         C
       </Button>
     </Wrapper>

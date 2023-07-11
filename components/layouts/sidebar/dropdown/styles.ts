@@ -9,10 +9,7 @@ const DropdownToggle = styled(ItemDropdown.Toggle)`
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 3rem;
-  background: -o-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
-  background: linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
-  background: -moz-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
-  background: -webkit-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
+
   border: none;
 `;
 
