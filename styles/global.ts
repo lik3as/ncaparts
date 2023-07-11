@@ -14,7 +14,9 @@ export default createGlobalStyle`
  :root {
   --header-height: 90px;
   --nav-width: 240px;
-  --color-green: rgba(37,211,102,255);
+  --color-green-rgb: 37,211,102;
+  --color-orange-hex: #f37634;
+  --color-orange-rgb: 243, 118, 52;
  }
 
  @font-face {

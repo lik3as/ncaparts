@@ -7,13 +7,16 @@ const Menu: FC = () => {
   return (
     <Wrapper $display="flex" $flexDirection="column" $alignItems="flex-start" $justifyContent="space-between">
       <Button variant="secondary">
-        A
+        Melhores Ofertas
       </Button>
       <Button variant="secondary">
-        B
+        Seja um Revendedor
       </Button>
       <Button variant="secondary">
-        C
+        Acompanhar Pedido
+      </Button>
+      <Button variant="secondary">
+        Blog 
       </Button>
     </Wrapper>
   )
