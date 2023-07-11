@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 import ItemWrapper from '../helpers/ItemWrapper';
 import ItemText from '../helpers/ItemText';
-import { Dropdown as ItemDropdown } from "react-bootstrap";
-import Image from 'next/image'
+import { Dropdown as ItemDropdown, Image as ItemImage } from "react-bootstrap";
 
 const Wrapper = styled(ItemWrapper)`
   display: ${(props) => props.$display ?? 'flex'};
@@ -37,20 +36,24 @@ const NavWrapper = styled.nav`
 
 `;
 
-const Logo = styled(Image)`
-  width: 180px;
-  height: 75px;
-  object-fit: "contain";
-  margin: 8px;
-  margin-left: 15px;
-`
+
+const Image = styled(ItemImage)`
+  width: 25px;
+  object-fit: contain;
+  margin-right: 10px;
+
+  @media screen and (max-width: 768px){
+    width: 20px;
+  }
+`;
 
 const Dropdown = styled(ItemDropdown)`
 
 `;
 
-const ItemDropdownToggle = ItemDropdown.Toggle;
-const DropdownToggle = styled(ItemDropdownToggle)`
+const DropdownToggle = styled(ItemDropdown.Toggle)`
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-right: 3rem;
   background: -o-linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
   background: linear-gradient(left, var(--color-green),  rgba(37,211,102,0));
@@ -60,7 +63,9 @@ const DropdownToggle = styled(ItemDropdownToggle)`
 `;
 
 
-const DropdownMenu = ItemDropdown.Menu;
-const DropdownItem = ItemDropdown.Item;
+const DropdownMenu = styled(ItemDropdown.Menu)`
+`;
+const DropdownItem = styled(ItemDropdown.Item)`
+`;
 
-export { Wrapper, Text, NavWrapper, Logo, Dropdown, DropdownToggle, DropdownItem, DropdownMenu };
+export { Wrapper, Text, NavWrapper, Dropdown, DropdownToggle, DropdownItem, DropdownMenu, Image };
