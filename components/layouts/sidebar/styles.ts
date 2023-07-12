@@ -40,6 +40,9 @@ const NavWrapper = styled.nav`
   background-color: (var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
   overflow-y: scroll;
 
+  @media screen and (max-width: 768px){
+    padding-left: 2rem;
+  }
 `;
 
 const Image = styled(ItemImage)`
