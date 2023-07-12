@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { Image as ItemImage } from "react-bootstrap";
+import { Image as ItemImage, Button as ItemButton } from "react-bootstrap";
+
+const Button = styled(ItemButton)`
+  margin: 10px 0;
+`;
 
 import ItemWrapper from '../../helpers/ItemWrapper';
 import ItemText from '../../helpers/ItemText';
@@ -11,6 +15,7 @@ const Wrapper = styled(ItemWrapper)`
   justify-content: ${(props) => props.$justifyContent ?? 'center'};
   margin: ${(props) => props.$margin ?? '20px 0px'};
   max-width: ${(props) => props.$maxWidth ?? '100%'};
+  min-width: ${(props) => props.$minWidth ?? 'auto'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
 `;
 
@@ -33,6 +38,7 @@ const NavWrapper = styled.nav`
   width: var(--nav-width);
   height: calc(100% - var(--header-height));
   background-color: (var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
+  overflow-y: scroll;
 
 `;
 
@@ -46,4 +52,11 @@ const Image = styled(ItemImage)`
   }
 `;
 
-export { Wrapper, Text, NavWrapper, Image };
+const Divisor = styled.hr`
+  align-self: center;
+  margin-bottom: 20px;
+  color: #AAAAAA;
+  width: 100%;
+`;
+
+export { Wrapper, Text, NavWrapper, Image, Button, Divisor };

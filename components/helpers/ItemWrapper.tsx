@@ -7,6 +7,7 @@ interface Props {
   $alignItems?: string; 
   $justifyContent?: string;
   $maxWidth?: string;
+  $minWidth?: string;
   $margin?: string;
   children?: ReactNode;
   $backgroundColor?: string;

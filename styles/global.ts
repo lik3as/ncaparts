@@ -7,10 +7,15 @@ export default createGlobalStyle`
   margin: 0;
  }
 
- html {
+ main {
+  position: fixed;
+  top: var(--header-height);
+  width: 100%;
+  height: 100%;
   background-color: #141414;
+  overflow-y: scroll;
  }
- 
+
  :root {
   --header-height: 90px;
   --nav-width: auto;

@@ -19,8 +19,6 @@ const Home: FC = () => (
       <Sidebar />
 
     </main>
-
-    <footer>Footer</footer>
   </>
 );
 
