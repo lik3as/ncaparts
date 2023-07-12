@@ -41,11 +41,12 @@ const Logo = styled(NextImage)`
   }
 `
 const Image = styled(ItemImage)`
-  width: 70px;
+  width: 50px;
   object-fit: contain;
+  margin-right: 8px;
 
   @media screen and (max-width: 768px){
-    width: 50px;
+    width: 35px;
   }
 `;
 
