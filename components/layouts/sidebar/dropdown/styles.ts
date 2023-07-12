@@ -2,7 +2,7 @@ import { Dropdown as ItemDropdown } from "react-bootstrap";
 import { styled } from "styled-components";
 
 const Dropdown = styled(ItemDropdown)`
-  :hover {
+  .btn:hover {
     background-color: rgba(var(--color-orange-rgb), 1);
   }
 `;
@@ -24,8 +24,10 @@ const DropdownToggle = styled(ItemDropdown.Toggle)`
 
 
 const DropdownMenu = styled(ItemDropdown.Menu)`
+
 `;
 const DropdownItem = styled(ItemDropdown.Item)`
+
 `;
 
 export { Dropdown, DropdownToggle, DropdownItem, DropdownMenu };

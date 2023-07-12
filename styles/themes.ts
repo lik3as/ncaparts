@@ -18,5 +18,9 @@ export default createGlobalStyle`
     --bs-btn-disabled-border-color: #6c757d;
   }
 
+  .dropdown-menu {
+    --bs-dropdown-bg:  rgba(var(--bs-dark-rgb),1);
+    --bs-dropdown-link-color: #FFFFFF
+  }
 
 `;
