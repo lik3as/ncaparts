@@ -14,6 +14,7 @@ export default createGlobalStyle`
   height: 100%;
   background-color: #141414;
   overflow-y: scroll;
+  flex: 1;
  }
 
  :root {

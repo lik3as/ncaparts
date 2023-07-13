@@ -1,38 +1,18 @@
-import { FC, useState, TouchEvent } from 'react';
+import { FC } from 'react';
 
 import { Wrapper, Text, NavWrapper, Divisor } from './styles';
 import Dropdown from './dropdown/';
 import Menu from './menu';
 import Manage from './manage'
 
+interface Props {
+  $isOpen: boolean
+}
 
-const Sidebar: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [currentX, setCurrentX] = useState(0);
-
-  const handleTouchStart = (event: TouchEvent) =>  {
-    setStartX(event.touches[0].clientX);
-  }
-
-  const handleTouchMove = (event: TouchEvent) => {
-    const deltaX = event.touches[0].clientX - startX
-    setCurrentX(deltaX);
-  }
-
-  const handleTouchEnd = () => {
-    if (currentX > 100) {
-      setIsOpen(true);
-    } else if (currentX < -100) {
-      setIsOpen(false);
-    }
-
-    setCurrentX(0);
-  }
-
+const Sidebar: FC<Props> = ({$isOpen}) => {
+  
   return (
-    <NavWrapper onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}
-      onTouchMove={handleTouchMove} className={`sidebar ${isOpen ? 'open' : ''}`}>
+    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`} style={{ transform: `translateX(${$isOpen ? '0' : '-300px'})` }}>
 
       <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
         $textAlign='left' color='white'>Explore</Text>  

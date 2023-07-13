@@ -43,14 +43,14 @@ const NavWrapper = styled.nav`
 
   @media screen and (max-width: 768px){
     padding-left: 1.5rem;
-    position: fixed;
-    top: 0;
-    left: calc(var(--nav-width) * -1);
+    left: -300px;
     width: var(--nav-width);
     height: calc(100% - var(--header-height));
     background-color: #f0f0f0;
+    transition: transform 0.3s;
 
     .sidebar.open {
+      left: 300px;
       transform: translateX(300px);
     }
   }
