@@ -1,18 +1,19 @@
-import { FC } from 'react';
+import { FC, TouchEventHandler } from 'react';
 
 import { Wrapper, Text, NavWrapper, Divisor } from './styles';
 import Dropdown from './dropdown/';
 import Menu from './menu';
-import Manage from './manage'
+import Manage from './manage';
 
 interface Props {
-  $isOpen: boolean
+  $isOpen: boolean;
 }
 
 const Sidebar: FC<Props> = ({$isOpen}) => {
   
   return (
-    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`}>
+    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`}
+      >
 
       <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
         $textAlign='left' color='white'>Explore</Text>  

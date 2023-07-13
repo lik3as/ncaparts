@@ -17,6 +17,10 @@ export default createGlobalStyle`
   flex: 1;
  }
 
+.sidebar.open {
+  transform: translateX(408px);
+}
+
  :root {
   --header-height: 90px;
   --nav-width: auto;

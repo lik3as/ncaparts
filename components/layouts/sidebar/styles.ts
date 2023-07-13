@@ -43,16 +43,7 @@ const NavWrapper = styled.nav`
 
   @media screen and (max-width: 768px){
     padding-left: 1.5rem;
-    left: -100px;
-    width: var(--nav-width);
-    height: calc(100% - var(--header-height));
-    background-color: #f0f0f0;
-    transition: transform 0.3s;
-
-    .sidebar.open {
-      left: 300px;
-      transform: translateX(300px);
-    }
+    left: -408px;
   }
 `;
 

@@ -23,9 +23,9 @@ const Home: FC = () => {
   }
 
   const handleTouchEnd = (event: TouchEvent) => {
-    if (currentX > 50) {
+    if (currentX > 100) {
       setIsOpen(true);
-    } else if (currentX < -50) {
+    } else if (currentX < -100) {
       setIsOpen(false);
     }
 
@@ -43,7 +43,7 @@ const Home: FC = () => {
       </header>
 
       <main onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove}>
-        <Sidebar $isOpen={isOpen}/>
+        <Sidebar  $isOpen={isOpen}/>
 
       </main>
     </>
