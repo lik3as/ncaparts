@@ -7,16 +7,17 @@ import Manage from './manage';
 
 interface Props {
   $isOpen: boolean;
+  $position: number;
 }
 
-const Sidebar: FC<Props> = ({$isOpen}) => {
+const Sidebar: FC<Props> = ({$isOpen, $position}) => {
   
   return (
     <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`}
       >
 
       <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
-        $textAlign='left' color='white'>Explore</Text>  
+        $textAlign='left' color='white'>{$position}</Text>  
 
       <Wrapper className='mb-2' $maxWidth='auto' $margin='1.5rem 0'>
         <Dropdown />

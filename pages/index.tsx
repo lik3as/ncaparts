@@ -43,7 +43,7 @@ const Home: FC = () => {
       </header>
 
       <main onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove}>
-        <Sidebar  $isOpen={isOpen}/>
+        <Sidebar $isOpen={isOpen} $position={currentX}/>
 
       </main>
     </>
