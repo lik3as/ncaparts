@@ -41,7 +41,7 @@ const NavWrapper = styled.nav`
   overflow-y: scroll;
 
   @media screen and (max-width: 768px){
-    padding-left: 2rem;
+    padding-left: 1.5rem;
   }
 `;
 
