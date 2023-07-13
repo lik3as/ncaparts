@@ -6,20 +6,22 @@ import Sidebar from '../components/layouts/sidebar'
 import Global from '../styles/global';
 import GlobalThemes from '../styles/themes'
 
-const Home: FC = () => (
-  <>
-    <Global />
-    <GlobalThemes />
+const Home: FC = () => {
+  return (
+    <>
+      <Global />
+      <GlobalThemes />
 
-    <header>
-      <Topbar />
-    </header>
+      <header>
+        <Topbar />
+      </header>
 
-    <main>
-      <Sidebar />
+      <main>
+        <Sidebar />
 
-    </main>
-  </>
-);
+      </main>
+    </>
+  )
+};
 
 export default Home;

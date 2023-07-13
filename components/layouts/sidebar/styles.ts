@@ -40,8 +40,19 @@ const NavWrapper = styled.nav`
   background-color: (var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
   overflow-y: scroll;
 
+
   @media screen and (max-width: 768px){
     padding-left: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: calc(var(--nav-width) * -1);
+    width: var(--nav-width);
+    height: calc(100% - var(--header-height));
+    background-color: #f0f0f0;
+
+    .sidebar.open {
+      transform: translateX(300px);
+    }
   }
 `;
 
