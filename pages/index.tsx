@@ -23,9 +23,9 @@ const Home: FC = () => {
   }
 
   const handleTouchEnd = (event: TouchEvent) => {
-    if (currentX > 100) {
+    if (currentX > 50) {
       setIsOpen(true);
-    } else if (currentX < -100) {
+    } else if (currentX < -50) {
       setIsOpen(false);
     }
 
