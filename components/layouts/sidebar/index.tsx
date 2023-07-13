@@ -12,7 +12,7 @@ interface Props {
 const Sidebar: FC<Props> = ({$isOpen}) => {
   
   return (
-    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`} style={{ transform: `translateX(${$isOpen ? '0' : '-300px'})` }}>
+    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`}>
 
       <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
         $textAlign='left' color='white'>Explore</Text>  
