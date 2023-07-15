@@ -39,7 +39,13 @@ const NavWrapper = styled.nav`
   height: calc(100% - var(--header-height));
   background-color: (var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
 
+  @media screen and (max-width: 768px) {
+    padding-left: 1.5rem;
+  }
 
+  @media screen and (max-height: 670px) {
+    overflow-y: scroll;
+  }
 `;
 
 const Image = styled(ItemImage)`
