@@ -11,10 +11,8 @@ export default createGlobalStyle`
   position: fixed;
   top: var(--header-height);
   width: 100%;
-  height: 100%;
+  height: 1000%;
   background-color: #141414;
-  overflow-y: scroll;
-  flex: 1;
  }
 
  :root {
@@ -34,6 +32,12 @@ export default createGlobalStyle`
  @media screen and (max-width: 768px){
   html {
     font-size: .7rem;
+  }
+ }
+
+ @media screen and (max-height: 670px){
+  main {
+    overflow-y: scroll
   }
  }
 `

@@ -38,11 +38,14 @@ const NavWrapper = styled.nav`
   width: var(--nav-width);
   height: calc(100% - var(--header-height));
   background-color: (var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
-  overflow-y: scroll;
 
 
   @media screen and (max-width: 768px){
     padding-left: 2rem;
+  }
+
+  @media screen and (max-height: 670px){
+    overflow-y: scroll;
   }
 `;
 
