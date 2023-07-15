@@ -40,7 +40,7 @@ const NavWrapper = styled.nav`
   background-color: (var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
 
   @media screen and (max-width: 768px) {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
   }
 
   @media screen and (max-height: 670px) {
