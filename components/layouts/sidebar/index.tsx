@@ -5,10 +5,16 @@ import Dropdown from './dropdown/';
 import Menu from './menu';
 import Manage from './manage';
 
-const Sidebar: FC = () => {
+interface Props {
+  $isOpen: boolean;
+  $currentX: number;
+}
+
+const Sidebar: FC<Props> = ({$isOpen, $currentX}) => {
   
   return (
-    <NavWrapper>
+    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`}
+    style={{transform: `translateX(${$currentX})px`}}>
 
       <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
         $textAlign='left' color='white'>Explore</Text>  
