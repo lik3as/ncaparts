@@ -7,12 +7,25 @@ export default createGlobalStyle`
   margin: 0;
  }
 
- main {
+ #content {
   position: fixed;
   top: var(--header-height);
   width: 100%;
-  height: 1000%;
-  background-color: #141414;
+  height: 100%;
+  z-index: 1;
+  background: rgba(var(--color-dark-rgb), .95);
+  transition: all .15s linear;
+ }
+
+ #content.hidden {
+  background: rgba(var(--color-dark-rgb), 1);
+ }
+
+ main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
  }
 
  :root {
@@ -21,6 +34,7 @@ export default createGlobalStyle`
   --color-green-rgb: 37,211,102;
   --color-orange-hex: #f37634;
   --color-orange-rgb: 243, 118, 52;
+  --color-dark-rgb: 20,20,20;
  }
 
  @font-face {

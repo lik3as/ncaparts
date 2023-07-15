@@ -1,4 +1,4 @@
-import { FC, useState, TouchEvent } from 'react'
+import { FC, useState, TouchEvent, StrictMode } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Topbar from '../components/layouts/topbar';
@@ -17,13 +17,19 @@ const Home: FC = () => {
 
   function handleTouchMove (ev: TouchEvent) {
     const deltaX = ev.touches[0].clientX - startX;
-    setCurrentX(deltaX);
+    if (isOpen && deltaX > 0) {
+      return;
+    } else if (!isOpen && deltaX > 160) {
+      return setCurrentX(160);
+    } else {
+      setCurrentX(deltaX);
+    }
   }
 
   function handleTouchEnd () {
-    if (currentX > 60) {
+    if (currentX >= 80) {
       setIsOpen(true);
-    } else if (currentX < -60) {
+    } else if (currentX <= -80) {
       setIsOpen(false);
     }
 
@@ -31,7 +37,7 @@ const Home: FC = () => {
   }
 
   return (
-    <>
+    <StrictMode>
       <Global />
       <GlobalThemes />
 
@@ -39,11 +45,16 @@ const Home: FC = () => {
         <Topbar />
       </header>
 
-      <Sidebar $isOpen={isOpen} $currentX={currentX}/>
-      <main onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart}>
-        
-      </main>
-    </>
+      <div id="content" onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} 
+       className={`main-content ${isOpen ? 'hidden' : ''}`}>
+
+        <Sidebar $isOpen={isOpen} $currentX={currentX}/>
+
+        <main>
+        </main>
+
+      </div>
+    </StrictMode>
   )
 };
 

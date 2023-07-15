@@ -23,4 +23,8 @@ export default createGlobalStyle`
     --bs-dropdown-link-color: #FFFFFF
   }
 
+  :root {
+    --bs-bg-opacity: 1;
+  }
+
 `;

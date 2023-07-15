@@ -36,15 +36,21 @@ const NavWrapper = styled.nav`
   left: 0px;
   bottom: 0px;
   width: var(--nav-width);
+  z-index: 1;
   height: calc(100% - var(--header-height));
-  background-color: (var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
+  background-color: #141414 !important;
 
   @media screen and (max-width: 768px) {
     padding-left: 1rem;
+    left: -160px;
   }
 
   @media screen and (max-height: 670px) {
     overflow-y: scroll;
+  }
+
+  &.open {
+    left: 0px;
   }
 `;
 
