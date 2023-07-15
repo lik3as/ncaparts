@@ -13,12 +13,12 @@ export default createGlobalStyle`
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: rgba(var(--color-dark-rgb), .95);
+  background: rgba(var(--color-dark-rgb), 1);
   transition: all .15s linear;
  }
 
  #content.hidden {
-  background: rgba(var(--color-dark-rgb), 1);
+  background: rgba(var(--color-darker-rgb), 1);
  }
 
  main {
@@ -35,6 +35,7 @@ export default createGlobalStyle`
   --color-orange-hex: #f37634;
   --color-orange-rgb: 243, 118, 52;
   --color-dark-rgb: 20,20,20;
+  --color-darker-rgb: 10,10,10;
  }
 
  @font-face {
