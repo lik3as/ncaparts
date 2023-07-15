@@ -13,8 +13,7 @@ interface Props {
 const Sidebar: FC<Props> = ({$isOpen, $position}) => {
   
   return (
-    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`}
-      >
+    <NavWrapper className={`sidebar ${$isOpen ? 'open' : ''}`}>
 
       <Text fontFamily='Dic Sans' fontWeight='bold' fontSize='2rem'
         $textAlign='left' color='white'>{$position}</Text>  
