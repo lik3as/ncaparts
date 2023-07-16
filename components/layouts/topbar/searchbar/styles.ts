@@ -18,7 +18,7 @@ const InputGroup = styled(ItemInputGroup)`
   }
 
   @media screen and (max-width: 480px){
-    width: calc(64vw - 40px);
+    width: calc(60vw - 45px);
   }
 `;
 

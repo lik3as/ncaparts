@@ -36,13 +36,21 @@ const Home: FC = () => {
     setCurrentX(0);
   }
 
+  function changeBar() {
+    if (isOpen) {
+      setIsOpen(false);
+      return;
+    }
+    setIsOpen(true);
+  }
+
   return (
     <StrictMode>
       <Global />
       <GlobalThemes />
 
       <header>
-        <Topbar />
+        <Topbar changeBar={changeBar}/>
       </header>
 
       <div id="content" onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} 

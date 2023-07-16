@@ -31,8 +31,6 @@ const Logo = styled(NextImage)`
   width: 165px;
   height: 45px;
   object-fit: contain;
-  margin: 8px;
-  margin-left: 15px;
 
   @media screen and (max-width: 768px){
     content: url('/images/logo/logo-white.png');
@@ -41,9 +39,8 @@ const Logo = styled(NextImage)`
   }
 `
 const Image = styled(ItemImage)`
-  width: 50px;
+  width: 40px;
   object-fit: contain;
-  margin-right: 8px;
 
   @media screen and (max-width: 768px){
     width: 35px;
