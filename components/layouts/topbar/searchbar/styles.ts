@@ -14,11 +14,11 @@ const InputGroup = styled(ItemInputGroup)`
   }
 
   @media screen and (max-width: 768px){
-    width: calc(58vw - 40px);
+    width: calc(56vw - 40px);
   }
 
   @media screen and (max-width: 480px){
-    width: calc(60vw - 45px);
+    width: calc(58vw - 40px);
   }
 `;
 
