@@ -52,7 +52,7 @@ export default createGlobalStyle`
 
  @media screen and (max-height: 670px){
   main {
-    overflow-y: scroll
+    overflow-y: scroll;
   }
  }
 `
