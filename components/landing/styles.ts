@@ -26,8 +26,7 @@ const Text = styled(ItemText)`
 const LandingWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 4rem;
-  height: 50%;
+  height: 40%;
   width: 100%;
 `
 

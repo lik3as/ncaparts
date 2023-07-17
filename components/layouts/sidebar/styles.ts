@@ -3,6 +3,7 @@ import { Image as ItemImage, Button as ItemButton } from "react-bootstrap";
 
 const Button = styled(ItemButton)`
   margin: 10px 0;
+  white-space: nowrap;
 `;
 
 import ItemWrapper from '../../helpers/ItemWrapper';
@@ -32,12 +33,18 @@ const NavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1rem 1rem 0 3rem; 
+  padding: 1rem 2.5rem 0 2rem; 
   left: 0px;
   z-index: 1;
   height: calc(100% - var(--header-height));
   background-color: #141414 !important;
-  min-width: 18vw;
+  min-width: 19vw;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 1080px){
+    padding-right: 4rem;
+    min-width: 24vw;
+  }
 
   @media screen and (max-width: 768px) {
     padding-left: 1.5rem;
@@ -69,7 +76,6 @@ const Image = styled(ItemImage)`
 `;
 
 const Divisor = styled.hr`
-  align-self: center;
   margin-bottom: 20px;
   color: #AAAAAA;
   width: 100%;

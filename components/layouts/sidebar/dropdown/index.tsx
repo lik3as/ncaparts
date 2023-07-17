@@ -1,12 +1,13 @@
 import { FC } from 'react'
 
-import { Dropdown as ItemDropdown, DropdownItem, DropdownMenu, DropdownToggle } from './styles'
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from './styles'
 import { Image } from '../styles'
 import catIcon from '../../../../public/images/category-tree-white.png'
 
-const Dropdown: FC = () => {
+const ItemDropdown: FC = () => {
+
   return (
-    <ItemDropdown>
+    <Dropdown>
       <DropdownToggle variant='secondary'>
         <Image src={catIcon.src}/>
         Categorias
@@ -23,8 +24,8 @@ const Dropdown: FC = () => {
           Hidráulica
         </DropdownItem>
       </DropdownMenu>
-    </ItemDropdown>
+    </Dropdown>
   )
 }
 
-export default Dropdown;
+export default ItemDropdown;

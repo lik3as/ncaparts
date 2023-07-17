@@ -31,11 +31,13 @@ const Logo = styled(NextImage)`
   width: 165px;
   height: 45px;
   object-fit: contain;
+  margin-left: 15px;
 
   @media screen and (max-width: 768px){
     content: url('/images/logo/logo-white.png');
     width: 65px;
     height: 35px;
+    margin: 0;
   }
 `
 const Image = styled(ItemImage)`
