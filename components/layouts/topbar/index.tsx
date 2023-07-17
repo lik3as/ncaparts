@@ -30,7 +30,7 @@ const Topbar: FC<Props> = ({changeBar}) => {
 
   return (
     <HeaderWrapper data-bs-theme="dark" className='bg-dark p-2'>
-        <Wrapper $display={isMobile ? 'flex' : 'none'} $margin='0 0 0 3px'>
+        <Wrapper $display={isMobile ? 'flex' : 'none'} $margin='0'>
           <Image src={menuBar.src} width='15px' height='15px' onClick={changeBar}/>
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px">
