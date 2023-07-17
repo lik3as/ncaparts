@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Topbar from '../components/layouts/topbar';
 import Sidebar from '../components/layouts/sidebar'
+import Sales from '../components/sales';
 import Global from '../styles/global';
 import GlobalThemes from '../styles/themes'
 
@@ -59,6 +60,7 @@ const Home: FC = () => {
         <Sidebar $isOpen={isOpen} $currentX={currentX}/>
 
         <main>
+          <Sales />
         </main>
 
       </div>

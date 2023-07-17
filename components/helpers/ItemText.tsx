@@ -3,8 +3,9 @@ import React, { FC, ReactNode } from 'react'
 interface Props {
   className?: string;
   fontFamily?: string;
-  fontWeight?: string;
+  fontWeight?: number | string;
   fontSize?: string;
+  fontStyle?: string;
   color?: string;
   children?: ReactNode;
   $textAlign?: string;

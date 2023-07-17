@@ -16,6 +16,7 @@ export default createGlobalStyle`
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
+
   }
 
   .dropdown-menu {

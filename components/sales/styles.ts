@@ -15,11 +15,12 @@ const Wrapper = styled(ItemWrapper)`
 `;
 
 const Text = styled(ItemText)`
-  font-family: ${(props) => props.fontFamily ?? 'Arial, Helvetica, sans-serif'};
+  font-family: ${(props) => props.fontFamily ?? 'Labrador B'};
   font-weight: ${(props) => props.fontWeight ?? 'normal'};
   font-size: ${(props) => props.fontSize ?? '1rem'};
+  font-style: ${(props) => props.fontStyle ?? 'normal'};
   text-align: ${(props) => props.$textAlign ?? 'center'};
-  color: ${(props) => props.color ?? 'black'};
+  color: ${(props) => props.color ?? 'white'};
 `;
 
 export { Wrapper, Text }
