@@ -6,6 +6,8 @@ import Sidebar from '../components/layouts/sidebar'
 import Sales from '../components/sales';
 import Global from '../styles/global';
 import GlobalThemes from '../styles/themes'
+import Landing from '../components/landing';
+import Content from '../components/layouts/content';
 
 const Home: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -59,9 +61,10 @@ const Home: FC = () => {
 
         <Sidebar $isOpen={isOpen} $currentX={currentX}/>
 
-        <main>
+        <Content>
+          <Landing />
           <Sales />
-        </main>
+        </Content>
 
       </div>
     </StrictMode>

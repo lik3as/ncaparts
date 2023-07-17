@@ -28,15 +28,13 @@ const Text = styled(ItemText)`
 `;
 
 const NavWrapper = styled.nav`
-  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 3rem 0 0 3rem; 
+  padding: 2rem .5rem 0 3rem; 
   left: 0px;
-  bottom: 0px;
-  width: var(--nav-width);
   z-index: 1;
+  max-width: var(--nav-max-width);
   height: calc(100% - var(--header-height));
   background-color: #141414 !important;
 

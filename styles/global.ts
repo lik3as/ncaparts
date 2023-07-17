@@ -8,6 +8,8 @@ export default createGlobalStyle`
 
  #content {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   top: var(--header-height);
   width: 100%;
   height: 100%;
@@ -20,16 +22,9 @@ export default createGlobalStyle`
   background: rgba(var(--color-darker-rgb), 1);
  }
 
- main {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
- }
-
  :root {
   --header-height: 90px;
-  --nav-width: auto;
+  --nav-max-width: calc(50vw - 2rem);
   --color-green-rgb: 37,211,102;
   --color-orange-hex: #f37634;
   --color-orange-rgb: 243, 118, 52;
@@ -44,11 +39,11 @@ export default createGlobalStyle`
   }
  }
 
- @media screen and (max-height: 670px){
-  main {
-    overflow-y: scroll;
+  @media screen and (max-height: 670px){
+    #content{
+      overflow-y: scroll;
+    }
   }
- }
 
  @font-face {
   font-family: 'Dic Sans';

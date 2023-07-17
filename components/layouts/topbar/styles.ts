@@ -15,7 +15,6 @@ const Wrapper = styled(ItemWrapper)`
 `;
 
 const HeaderWrapper = styled.nav`
-  position: fixed;
   top: 0px;
   width: 100%;
   height: var(--header-height);

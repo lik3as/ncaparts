@@ -7,7 +7,7 @@ const Sales: FC = () => {
       <Text fontWeight={200} fontSize='2.5rem' fontStyle='normal'>
         Melhores <strong>Produtos</strong>
       </Text>
-
+      
     </Wrapper>
   )
 }
