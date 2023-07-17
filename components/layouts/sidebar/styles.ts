@@ -28,20 +28,25 @@ const Text = styled(ItemText)`
 `;
 
 const NavWrapper = styled.nav`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2rem .5rem 0 3rem; 
+  padding: 1rem 1rem 0 3rem; 
   left: 0px;
   z-index: 1;
-  max-width: var(--nav-max-width);
   height: calc(100% - var(--header-height));
   background-color: #141414 !important;
+  min-width: 18vw;
 
   @media screen and (max-width: 768px) {
     padding-left: 1.5rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
     left: -180px;
+  }
+
+  @media screen and (max-width: 480px){
+    min-width: 40vw; 
   }
 
   @media screen and (max-height: 670px) {

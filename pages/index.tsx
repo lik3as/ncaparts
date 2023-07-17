@@ -7,6 +7,7 @@ import Sales from '../components/sales';
 import Global from '../styles/global';
 import GlobalThemes from '../styles/themes'
 import Landing from '../components/landing';
+import Main from '../components/layouts/main';
 import Content from '../components/layouts/content';
 
 const Home: FC = () => {
@@ -56,17 +57,17 @@ const Home: FC = () => {
         <Topbar changeBar={changeBar}/>
       </header>
 
-      <div id="content" onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} 
+      <Content onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} 
        className={`main-content ${isOpen ? 'hidden' : ''}`}>
 
         <Sidebar $isOpen={isOpen} $currentX={currentX}/>
 
-        <Content>
+        <Main>
           <Landing />
           <Sales />
-        </Content>
+        </Main>
+      </Content>
 
-      </div>
     </StrictMode>
   )
 };

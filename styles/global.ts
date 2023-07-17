@@ -6,25 +6,8 @@ export default createGlobalStyle`
   margin: 0;
  }
 
- #content {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  top: var(--header-height);
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: rgba(var(--color-dark-rgb), 1);
-  transition: all .15s linear;
- }
-
- #content.hidden {
-  background: rgba(var(--color-darker-rgb), 1);
- }
-
  :root {
   --header-height: 90px;
-  --nav-max-width: calc(50vw - 2rem);
   --color-green-rgb: 37,211,102;
   --color-orange-hex: #f37634;
   --color-orange-rgb: 243, 118, 52;
@@ -38,12 +21,6 @@ export default createGlobalStyle`
     font-size: .7rem;
   }
  }
-
-  @media screen and (max-height: 670px){
-    #content{
-      overflow-y: scroll;
-    }
-  }
 
  @font-face {
   font-family: 'Dic Sans';

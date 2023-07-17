@@ -9,8 +9,9 @@ interface Props {
   $maxWidth?: string;
   $minWidth?: string;
   $margin?: string;
-  children?: ReactNode;
   $backgroundColor?: string;
+  padding?: string
+  children?: ReactNode;
 };
 
 const ItemWrapper: FC<Props> = ({className, children}) => (

@@ -1,11 +1,10 @@
 import { FC } from 'react'
 
-import { LandingWrapper } from './styles'
+import { LandingWrapper, Text } from './styles'
 
 const Landing: FC = () => {
   return (
     <LandingWrapper>
-
     </LandingWrapper>
   )
 }

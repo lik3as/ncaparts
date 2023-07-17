@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
-const Content = styled.main`
+const Content = styled.div`
+  position: fixed;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: -1; 
+  top: var(--header-height);
+  width: 100%;
   height: 100%;
+  z-index: 1;
+  background: rgba(var(--color-dark-rgb), 1);
+  transition: all .15s linear;
 
-  @media screen and (max-width: 1024px){
-    min-width: calc(80vw - 6rem);
-    
+  &.hidden {
+    background: rgba(var(--color-darker-rgb), 1);
   }
 
-  @media screen and (max-width: 768px){
-    width: 100%;
-    height: 100%;
+  @media screen and (max-height: 670px){
+    overflow-y: scroll;
   }
 `
 
