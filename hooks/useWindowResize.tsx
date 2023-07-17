@@ -7,7 +7,7 @@ export default function useWindowResize() {
     initialWSize = window.innerWidth;
   }
 
-  const [width, setWidth] = useState(768);
+  const [width, setWidth] = useState(initialWSize);
 
   useEffect(() => {
     function handleWindowResize() {
