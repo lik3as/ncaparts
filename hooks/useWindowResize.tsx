@@ -1,19 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function useWindowResize() {
-  'use client'
-  let initialWSize: number = 768;
-  /**? -> It's like an 'use client' for accessing the browser variables. */
-  if (typeof window !== "undefined") {
-    initialWSize = window.innerWidth;
-  }
-
-  const [width, setWidth] = useState(initialWSize);
+  const [width, setWidth] = useState(768);
 
   useEffect(() => {
     function handleWindowResize() {
         setWidth(window.innerWidth);
     }
+
+    handleWindowResize();
 
     window.addEventListener('resize', handleWindowResize);
     return () => {
