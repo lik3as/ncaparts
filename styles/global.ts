@@ -22,6 +22,7 @@ export default createGlobalStyle`
   }
  }
 
+
  @font-face {
   font-family: 'Dic Sans';
   src: url('/fonts/dic-sans/Dic Sans Bold.otf');

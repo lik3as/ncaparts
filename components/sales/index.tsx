@@ -23,7 +23,7 @@ const styles = {
 
 const Sales: FC = () => {
   return (
-    <Wrapper>
+    <Wrapper $justifyContent='center'>
       <Wrapper $flexDirection='row' $alignItems='center'>
         <Text fontWeight={200} fontSize='2.5rem' fontStyle='normal' color='#AAAAAA'>
           Melhores <strong>Produtos</strong>
@@ -36,7 +36,7 @@ const Sales: FC = () => {
       <ul>
         {items.map((item) => (
           <li key={item.sku}>
-            <Item cat={item.cat} name={item.name} price={item.name} sku={item.sku} url={item.url} />
+            <Item cat={item.cat} name={item.name} price={item.price} sku={item.sku} url={item.url} />
           </li>
           )
         )}

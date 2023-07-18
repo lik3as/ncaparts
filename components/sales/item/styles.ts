@@ -27,7 +27,7 @@ const Wrapper = styled(ItemWrapper)`
 
   &.item-container {
     transition: all .3s ease;
-    padding: 5px;
+    padding: 0 5px;
   }
 
   &.item-container:hover {
@@ -36,6 +36,7 @@ const Wrapper = styled(ItemWrapper)`
   }
 
   ul {
+    display: flex;
     margin: 0;
     padding: 0;
   }
@@ -47,10 +48,19 @@ const Wrapper = styled(ItemWrapper)`
 
   @media screen and (max-width: 768px){
     &.item-container {
-      transition: all .3s ease;
-      padding: 3px;
+      width: 100%;
     }
-    
+  }
+
+  @media screen and (max-width: 480px){
+    &.foreground {
+      max-width: 9rem;
+    }
+
+    &.item-container {
+      width: 100%;
+      height: 20rem;
+    }
   }
 `;
 
@@ -72,7 +82,7 @@ const Text = styled(ItemText)`
 const Image = styled(ItemImage)`
   object-fit: contain;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 100%; 
 `;
 
 const Circle = styled.span`

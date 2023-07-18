@@ -18,14 +18,30 @@ const Wrapper = styled(ItemWrapper)`
     padding: 0;
   }
 
-  ul li {
+  & > ul > li {
     display: inline-block;
     margin-right: 15px;
   }
 
   @media screen and (max-width: 768px){
-    ul li {
-      margin: 15px 15px 0 0;
+    & > ul {
+      width: 100%;
+      max-height: 100%;
+    }
+
+    & > ul > li {
+      margin-bottom: 15px;
+      width: 48%;
+    }
+
+    & > ul > li:nth-of-type(even) {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px){
+    & > ul > li {
+      width: 100%;
     }
   }
 `;
