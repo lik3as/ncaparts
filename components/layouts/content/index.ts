@@ -13,10 +13,6 @@ const Content = styled.div`
   &.hidden {
     background: rgba(var(--color-darker-rgb), 1);
   }
-
-  @media screen and (max-height: 670px){
-    overflow-y: scroll;
-  }
 `
 
 export default Content;

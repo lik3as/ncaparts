@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import { Wrapper, Text } from './styles';
-import SwipeableViews from 'react-swipeable-views';
+import Item from './item';
 
+import items from './items.json';
+const item = items[0];
 const styles = {
   slide: {
     padding: 15,
@@ -31,17 +33,14 @@ const Sales: FC = () => {
         </Wrapper>
       </Wrapper>
       
-      <SwipeableViews enableMouseEvents={true} autoPlay={true}>
-        <div style={Object.assign({}, styles.slide, styles.slide1)}>
-          T40
-        </div>
-        <div style={Object.assign({}, styles.slide, styles.slide2)}>
-          T30
-        </div>
-        <div style={Object.assign({}, styles.slide, styles.slide3)}>
-          T25
-        </div>
-      </SwipeableViews>
+      <ul>
+        {items.map((item) => (
+          <li key={item.sku}>
+            <Item cat={item.cat} name={item.name} price={item.name} sku={item.sku} url={item.url} />
+          </li>
+          )
+        )}
+      </ul>
     </Wrapper>
   )
 }
