@@ -36,7 +36,7 @@ const Sales: FC = () => {
       <ul>
         {items.map((item) => (
           <li key={item.sku}>
-            <Item cat={item.cat} name={item.name} price={item.name} sku={item.sku} url={item.url} />
+            <Item cat={item.cat} name={item.name} price={item.price} sku={item.sku} url={item.url} />
           </li>
           )
         )}
