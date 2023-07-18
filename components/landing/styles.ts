@@ -28,6 +28,10 @@ const LandingWrapper = styled.div`
   justify-content: center;
   height: 40%;
   width: 100%;
+
+  @media screen and (max-width: 768px){
+    height: 20%;
+  }
 `
 
 export { Wrapper, Text, LandingWrapper }

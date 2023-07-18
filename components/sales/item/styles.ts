@@ -42,9 +42,16 @@ const Wrapper = styled(ItemWrapper)`
 
   ul li {
     display: inline-block;
-    margin-right: 3px;
+    margin: 0 3px 0 0;
   }
 
+  @media screen and (max-width: 768px){
+    &.item-container {
+      transition: all .3s ease;
+      padding: 3px;
+    }
+    
+  }
 `;
 
 const Text = styled(ItemText)`
@@ -73,6 +80,7 @@ const Circle = styled.span`
   width: 15px;
   border-radius: 50%;
   display: inline-block;
+  margin: 0;
 
   &.grey {
     background-color: #444444;
