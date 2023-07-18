@@ -25,7 +25,7 @@ const Wrapper = styled(ItemWrapper)`
 
   @media screen and (max-width: 768px){
     ul li {
-      margin: 15px 15px 15px 0;
+      margin: 15px 15px 0 0;
     }
   }
 `;
