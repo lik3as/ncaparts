@@ -13,7 +13,7 @@ interface Props {
 const Item: FC<Props> = ({price, name, sku, cat, url}) => {
   return (
     <Wrapper className='item-container rounded-outline' $backgroundColor='#222222'>
-      <Wrapper className='foreground rounded-outline' $maxWidth='10rem' $backgroundColor='#464646'>
+      <Wrapper className='foreground rounded-outline' $maxWidth='100%' $backgroundColor='#464646'>
         <Image src={url}/>
       </Wrapper>
 

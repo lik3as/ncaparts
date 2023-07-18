@@ -23,7 +23,7 @@ const styles = {
 
 const Sales: FC = () => {
   return (
-    <Wrapper $justifyContent='center'>
+    <Wrapper $justifyContent='flex-start' $maxWidth='100%' className='sales-container'>
       <Wrapper $flexDirection='row' $alignItems='center'>
         <Text fontWeight={200} fontSize='2.5rem' fontStyle='normal' color='#AAAAAA'>
           Melhores <strong>Produtos</strong>

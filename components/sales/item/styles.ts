@@ -21,8 +21,10 @@ const Wrapper = styled(ItemWrapper)`
   }
 
   &.foreground {
+    align-self: center;
+    max-height: 75%;
     margin-bottom: 10px;
-    padding: 2rem;
+    padding: 1rem;
   }
 
   &.item-container {
@@ -45,6 +47,7 @@ const Wrapper = styled(ItemWrapper)`
     display: inline-block;
     margin: 0 3px 0 0;
   }
+
 
   @media screen and (max-width: 768px){
     &.item-container {

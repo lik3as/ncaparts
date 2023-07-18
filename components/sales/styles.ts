@@ -23,6 +23,28 @@ const Wrapper = styled(ItemWrapper)`
     margin-right: 15px;
   }
 
+  @media screen and (min-width: 768px){
+    
+    &.sales-container {
+      margin-top: auto;
+    }
+
+    & > ul {
+      display: flex;
+      padding: 1rem;
+      padding-left: 4px;
+      align-items: center;
+      max-width: 100%;
+      height: 100%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+
+    & > ul > li {
+      display: flex;
+    } 
+
+  }
   @media screen and (max-width: 768px){
     & > ul {
       width: 100%;
