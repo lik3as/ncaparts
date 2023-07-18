@@ -22,6 +22,12 @@ const Wrapper = styled(ItemWrapper)`
     display: inline-block;
     margin-right: 15px;
   }
+
+  @media screen and (max-width: 768px){
+    ul li {
+      margin: 15px 15px 15px 0;
+    }
+  }
 `;
 
 const Text = styled(ItemText)`
