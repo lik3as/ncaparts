@@ -11,7 +11,7 @@ const Main = styled.main`
   height: calc(100% - var(--header-height));
 
   @media screen and (max-width: 1080px) {
-    width: 75%;
+    width: 93%;
   }
 
   @media screen and (max-width: 768px){

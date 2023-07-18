@@ -34,7 +34,7 @@ const Wrapper = styled(ItemWrapper)`
       padding: 1rem;
       padding-left: 4px;
       align-items: center;
-      max-width: 100%;
+      max-width: 81.5%;
       height: 100%;
       overflow-x: scroll;
       overflow-y: hidden;
@@ -49,15 +49,12 @@ const Wrapper = styled(ItemWrapper)`
     & > ul {
       width: 100%;
       max-height: 100%;
+      margin: 0 auto;
     }
 
     & > ul > li {
       margin-bottom: 15px;
-      width: 48%;
-    }
-
-    & > ul > li:nth-of-type(even) {
-      margin-right: 0;
+      width: 29%;
     }
   }
 

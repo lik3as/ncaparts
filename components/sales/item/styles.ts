@@ -28,6 +28,7 @@ const Wrapper = styled(ItemWrapper)`
   }
 
   &.item-container {
+    width: 12rem;
     transition: all .3s ease;
     padding: 0 5px;
   }
