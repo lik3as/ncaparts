@@ -47,6 +47,7 @@ const NavWrapper = styled.nav`
   }
 
   @media screen and (max-width: 768px) {
+    position: fixed;
     padding-left: 1.5rem;
     padding-right: 2rem;
     left: -180px;
