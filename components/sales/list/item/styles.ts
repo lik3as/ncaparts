@@ -19,8 +19,9 @@ const ListItem = styled.li`
   }
 
   @media screen and (max-width: 768px){
+    display: list-item;
     margin-bottom: 15px;
-    width: 29%;
+    width: 100%;
   }
 
   @media screen and (max-width: 480px){
