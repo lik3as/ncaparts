@@ -15,6 +15,18 @@ export default createGlobalStyle`
   --color-darker-rgb: 10,10,10;
  }
 
+ ::-webkit-scrollbar {
+  height: 9px;
+  width: 9px;
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
 
  @media screen and (max-width: 768px){
   html {

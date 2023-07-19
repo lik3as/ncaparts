@@ -1,29 +1,12 @@
 import { FC } from 'react';
-import { Wrapper, Text } from './styles';
-import Item from './item';
 
-import items from './items.json';
-const item = items[0];
-const styles = {
-  slide: {
-    padding: 15,
-    minHeight: 100,
-    color: '#fff',
-  },
-  slide1: {
-    background: '#FEA900',
-  },
-  slide2: {
-    background: '#B3DC4A',
-  },
-  slide3: {
-    background: '#6AC0FF',
-  },
-};
+import { Wrapper, Text } from './styles';
+import List from './list';
+import items from './items.json'
 
 const Sales: FC = () => {
   return (
-    <Wrapper $justifyContent='flex-start' $maxWidth='100%' className='sales-container'>
+    <Wrapper $justifyContent='flex-start' className='sales-container' $margin='auto 0 0 0'>
       <Wrapper $flexDirection='row' $alignItems='center'>
         <Text fontWeight={200} fontSize='2.5rem' fontStyle='normal' color='#AAAAAA'>
           Melhores <strong>Produtos</strong>
@@ -33,14 +16,7 @@ const Sales: FC = () => {
         </Wrapper>
       </Wrapper>
       
-      <ul>
-        {items.map((item) => (
-          <li key={item.sku}>
-            <Item cat={item.cat} name={item.name} price={item.price} sku={item.sku} url={item.url} />
-          </li>
-          )
-        )}
-      </ul>
+      <List items={items}/>
     </Wrapper>
   )
 }

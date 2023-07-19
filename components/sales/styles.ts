@@ -13,56 +13,6 @@ const Wrapper = styled(ItemWrapper)`
   min-width: ${(props) => props.$minWidth ?? 'auto'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
 
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  & > ul > li {
-    display: inline-block;
-    margin-right: 15px;
-  }
-
-  @media screen and (min-width: 768px){
-    
-    &.sales-container {
-      margin-top: auto;
-    }
-
-    & > ul {
-      display: flex;
-      padding: 1rem;
-      padding-left: 4px;
-      align-items: center;
-      max-width: 81.5%;
-      height: 100%;
-      overflow-x: scroll;
-      overflow-y: hidden;
-    }
-
-    & > ul > li {
-      display: flex;
-    } 
-
-  }
-  @media screen and (max-width: 768px){
-    & > ul {
-      width: 100%;
-      max-height: 100%;
-      margin: 0 auto;
-    }
-
-    & > ul > li {
-      margin-bottom: 15px;
-      width: 29%;
-    }
-  }
-
-  @media screen and (max-width: 480px){
-    & > ul > li {
-      width: 100%;
-    }
-  }
 `;
 
 const Text = styled(ItemText)`

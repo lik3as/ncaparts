@@ -33,18 +33,13 @@ const NavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1rem 2.5rem 0 2rem; 
+  padding: 1rem 2.5rem .5rem 2rem; 
   left: 0px;
   z-index: 1;
-  height: calc(100% - var(--header-height));
+  height: 100%;
   background-color: #141414 !important;
   min-width: 19vw;
   overflow-x: hidden;
-
-  @media screen and (max-width: 1080px){
-    padding-right: 4rem;
-    min-width: 24vw;
-  }
 
   @media screen and (max-width: 768px) {
     position: fixed;
@@ -79,7 +74,7 @@ const Image = styled(ItemImage)`
 const Divisor = styled.hr`
   margin-bottom: 20px;
   color: #AAAAAA;
-  width: 100%;
+  width: 90%;
 `;
 
 export { Wrapper, Text, NavWrapper, Image, Button, Divisor };

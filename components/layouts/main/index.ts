@@ -4,15 +4,9 @@ const Main = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 2.5rem;
-  padding-bottom: .5rem;
-  padding-right: 1rem;
+  padding: 1.5rem;
   width: 100%;
-  height: calc(100% - var(--header-height));
-
-  @media screen and (max-width: 1080px) {
-    width: 93%;
-  }
+  height: 100%;
 
   @media screen and (max-width: 768px){
     position: fixed;
