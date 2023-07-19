@@ -41,24 +41,24 @@
     "name": "Caixa vazia",
     "cat": "Caixa",
     "url": "/images/mpt-box.png",
-    "sku": "BC.AAAAA05.YC"
-  }, {
-    "price": "R$10,00",
-    "name": "Caixa vazia",
-    "cat": "Caixa",
-    "url": "/images/mpt-box.png",
-    "sku": "BC.AAAAA06.YC"
-  }, {
-    "price": "R$10,00",
-    "name": "Caixa vazia",
-    "cat": "Caixa",
-    "url": "/images/mpt-box.png",
-    "sku": "BC.AAAAA07.YC"
+    "sku": "BC.AAAAA07YC"
   }, {
     "price": "R$10,00",
     "name": "Caixa vazia",
     "cat": "Caixa",
     "url": "/images/mpt-box.png",
     "sku": "BC.AAAAA08.YC"
+  }, {
+    "price": "R$10,00",
+    "name": "Caixa vazia",
+    "cat": "Caixa",
+    "url": "/images/mpt-box.png",
+    "sku": "BC.AAAAA09.YC"
+  }, {
+    "price": "R$10,00",
+    "name": "Caixa vazia",
+    "cat": "Caixa",
+    "url": "/images/mpt-box.png",
+    "sku": "BC.AAAAA010.YC"
   }
 ]

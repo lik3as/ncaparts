@@ -6,6 +6,10 @@ export default createGlobalStyle`
   margin: 0;
  }
 
+ html {
+  background-color: #141414;
+ }
+
  :root {
   --header-height: 90px;
   --color-green-rgb: 37,211,102;

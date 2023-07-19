@@ -11,7 +11,7 @@ const Wrapper = styled(ItemWrapper)`
     align-self: center;
     margin-bottom: 10px;
     padding: .5rem;
-    width: 9rem;
+    width: 10rem;
   }
 
   @media screen and (max-width: 768px){
