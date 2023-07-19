@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Image as ItemImage } from "react-bootstrap";
 
 import ItemWrapper from '../helpers/ItemWrapper'
 import ItemText from '../helpers/ItemText'
@@ -34,4 +35,11 @@ const LandingWrapper = styled.div`
   }
 `
 
-export { Wrapper, Text, LandingWrapper }
+const Image = styled(ItemImage)`
+  width: 30%;
+  max-width: 30rem;
+  min-width: 15rem;
+  object-fit: contain;
+`;
+
+export { Wrapper, Text, LandingWrapper, Image }

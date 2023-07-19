@@ -1,11 +1,11 @@
 import { FC } from 'react'
 
-import { LandingWrapper } from './styles'
+import { LandingWrapper, Image } from './styles'
 
 const Landing: FC = () => {
   return (
     <LandingWrapper>
-      Landing
+      <Image src='/images/logo/logo-white.png'/>
     </LandingWrapper>
   )
 }
