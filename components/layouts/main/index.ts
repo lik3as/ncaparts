@@ -11,7 +11,7 @@ const Main = styled.main`
   @media screen and (max-width: 768px){
     position: fixed;
     width: 100%;
-    height: 90%;
+    height: calc(100% - var(--header-height));
     overflow-y: scroll;
   }
 `

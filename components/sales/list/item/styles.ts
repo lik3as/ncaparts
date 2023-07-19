@@ -20,13 +20,14 @@ const ListItem = styled.li`
 
   @media screen and (max-width: 768px){
     display: list-item;
-    margin-bottom: 15px;
     width: 100%;
   }
 
   @media screen and (max-width: 480px){
+    display: flex;
     height: 20rem;
     width: 100%;
+    max-height: 90%;
   }
 `;
 

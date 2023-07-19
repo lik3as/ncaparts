@@ -18,7 +18,13 @@ const Wrapper = styled(ItemWrapper)`
     &.foreground {
       max-width: 9rem;
     }
-    
+  }
+
+  @media screen and (max-width: 480px){
+    &.foreground {
+      max-width: 7rem;
+      padding: .3rem;
+    }
   }
 `;
 

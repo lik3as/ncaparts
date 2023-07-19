@@ -1,6 +1,7 @@
 import { FC } from "react"
 
-import { Ul } from "./styles";
+import { UL } from "./styles";
+import { ListItem } from "./item/styles";
 
 import Item from "./item"
 import IItem from '../../../types/item'
@@ -11,12 +12,14 @@ interface Props {
 const List: FC<Props> = ({items}) => {
 
   return (
-    <Ul>
+    <UL>
       {items.map((item) => (
-        <Item cat={item.cat} name={item.name} price={item.price} sku={item.sku} url={item.url} />
+        <ListItem key={item.sku} className="rounded-outline">
+          <Item cat={item.cat} name={item.name} price={item.price} sku={item.sku} url={item.url} />
+        </ListItem>
         )
       )}
-    </Ul>
+    </UL>
   )
 }
 

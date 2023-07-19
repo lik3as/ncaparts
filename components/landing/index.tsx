@@ -5,7 +5,7 @@ import { LandingWrapper } from './styles'
 const Landing: FC = () => {
   return (
     <LandingWrapper>
-      I will
+      Landing
     </LandingWrapper>
   )
 }

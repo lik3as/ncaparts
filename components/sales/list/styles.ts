@@ -8,8 +8,10 @@ const UnorderedList = styled.ul`
   overflow-y: hidden;
 
   @media screen and (max-width: 768px){
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-gap: 15px;
+    justify-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
     width: 100%;
@@ -18,7 +20,10 @@ const UnorderedList = styled.ul`
     overflow-x: hidden;
 
   }
+
+  @media screen and (max-width: 480px){
+    grid-template-columns: 30% 30% 30%;
+  }
 `;
 
-export { UnorderedList as Ul };
-
+export { UnorderedList as UL };
