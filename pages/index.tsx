@@ -9,8 +9,14 @@ import GlobalThemes from '../styles/themes'
 import Landing from '../components/landing';
 import Main from '../components/layouts/main';
 import Content from '../components/layouts/content';
+import IItem from '../types/item'
+import axios from 'axios';
 
-const Home: FC = () => {
+interface Props {
+  items: IItem[]
+}
+
+const Home: FC<Props> = ({items}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentX, setCurrentX] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -57,19 +63,29 @@ const Home: FC = () => {
         <Topbar changeBar={changeBar}/>
       </header>
 
-      <Content onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart} 
+      <Content onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart}
        className={`main-content ${isOpen ? 'hidden' : ''}`}>
 
         <Sidebar $isOpen={isOpen} $currentX={currentX}/>
 
-        <Main>
+        <Main $width={null} $overflowY={null}>
           <Landing />
-          <Sales />
+          <Sales items={items} innerTitle={null}/>
         </Main>
       </Content>
 
     </StrictMode>
   )
 };
+
+export async function getStaticProps() {
+  const items = (await axios("http://localhost:8080/Mercadorias")).data;
+
+  return {
+    props: {
+      items,
+    },
+  }
+}
 
 export default Home;

@@ -29,22 +29,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<{mercadoria: Mercadoria, sugested: Mercadoria[]}> = async ({params}) => {
   const { sku } = params!;
   const mercadoria = (await axios.get('http://localhost:8080/Mercadorias?s=' + sku)).data[0];
-  const sugested = (await axios.get('http://localhost:8080/Mercadorias')).data;
+  const sugested = (await axios.get('http://localhost:8080/Mercadorias?rel=&s=' + sku)).data;
 
   return {
     props: {
       mercadoria,
       sugested
     },
-    revalidate: 1800
+    revalidate: 1800,
   }
 }
 
 const Page: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({mercadoria, sugested}) => {
   const produto = mercadoria.produto;
-
+  const title = `${mercadoria.produto.nome} | NCA Parts🔩`;
   return (
     <StrictMode>
+      <title>{title}</title>
       <Global />
       <GlobalThemes />
 
