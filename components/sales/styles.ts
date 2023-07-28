@@ -12,7 +12,7 @@ const Wrapper = styled(ItemWrapper)`
   max-width: ${(props) => props.$maxWidth ?? '100%'};
   min-width: ${(props) => props.$minWidth ?? 'auto'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
-
+  
 `;
 
 const Text = styled(ItemText)`

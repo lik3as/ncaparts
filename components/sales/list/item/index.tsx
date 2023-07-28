@@ -9,12 +9,13 @@ interface Props {
   cat: string;
   sku: string;
   url: string;
+  desc: string;
 }
 
-const Item: FC<Props> = ({price, name, sku, cat, url}) => {
+const Item: FC<Props> = ({price, name, sku, cat, url, desc}) => {
   return (
     <>
-      <Foreground url={url}/>
+      <Foreground url={url} alt={desc + ' | ' + sku}/>
       <Desc cat={cat} name={name} price={price} sku={sku} />
     </>
   )
