@@ -25,7 +25,7 @@ const InputGroup = styled(ItemInputGroup)`
 const Button = styled(ItemButton)`
   width: calc(14vw - 30px);
   text-align: center;
-  padding: .1rem !important;
+  padding: .3rem !important;
   background-color: #33393e;
 
 

@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
-const Main = styled.main`
+interface Props {
+  $width: string | null;
+  $overflowY: string | null
+}
+
+const Main = styled.main<Props>`
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  width: 100%;
+  width: ${(props) => props.$width ?? '100%'};
+  overflow-y: ${(props) => props.$overflowY ?? 'hidden'};
+  overflow-x: hidden;
   height: 100%;
 
   @media screen and (max-width: 768px){
     position: fixed;
-    width: 100%;
     height: calc(100% - var(--header-height));
     overflow-y: scroll;
   }

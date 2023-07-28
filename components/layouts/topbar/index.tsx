@@ -10,6 +10,8 @@ import Searchbar from "./searchbar";
 import logo from '../../../public/images/logo/logo-h-white.png'
 import userIcon from '../../../public/images/rounded-user-icon-orange.png'
 import menuBar from '../../../public/images/menu-burger-white.png'
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 interface Props {
   changeBar: () => void
@@ -34,7 +36,9 @@ const Topbar: FC<Props> = ({changeBar}) => {
           <Image src={menuBar.src} width='15px' height='15px' onClick={changeBar}/>
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px 0 10px">
-          <Logo src={logo} alt="Couldn't load the logo :( Please, check you connection."/> 
+          <Link href="/">
+            <Logo src={logo} alt="Couldn't load the logo :( Please, check you connection." /> 
+          </Link>
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="10px auto">
           <Searchbar />
