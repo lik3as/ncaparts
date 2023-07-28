@@ -6,9 +6,20 @@ export default createGlobalStyle`
   margin: 0;
  }
 
- html {
-  background-color: #141414;
- }
+  a {
+    color: #0060B6;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+  }
+
+  html {
+    background-color: #141414;
+  }
 
  :root {
   --header-height: 90px;

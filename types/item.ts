@@ -1,7 +1,13 @@
+import IKit from "./kit";
+import IProduct from "./product";
+
 export default interface IItem {
-  price: string;
-  name: string;
-  cat: string;
-  sku: string;
-  url: string;
+  id: number,
+  valor_real: string,
+  valor_real_revenda: string,
+  skus_relacionados: string[],
+  importada: boolean,
+  disponivel: boolean,
+  produto: IProduct,
+  kit: IKit | null
 }
