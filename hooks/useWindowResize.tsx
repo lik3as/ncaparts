@@ -5,14 +5,14 @@ export default function useWindowResize() {
 
   useEffect(() => {
     function handleWindowResize() {
-        setWidth(window.innerWidth);
+      setWidth(window.innerWidth);
     }
 
     handleWindowResize();
 
     window.addEventListener('resize', handleWindowResize);
     return () => {
-        window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('resize', handleWindowResize);
     }
   }, [])
 
