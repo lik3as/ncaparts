@@ -12,7 +12,7 @@ import Sales from '../../components/sales';
 import Selling from '../../components/selling';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const mercadorias: Mercadoria[] = (await axios.get('http://localhost:8080/Mercadorias')).data
+  const mercadorias: Mercadoria[] = (await axios.get(process.env.API_URL + 'Mercadorias')).data
   
   const paths = mercadorias.map((mercadoria) => ({
     params: {
@@ -28,8 +28,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<{mercadoria: Mercadoria, sugested: Mercadoria[]}> = async ({params}) => {
   const { sku } = params!;
-  const mercadoria = (await axios.get('http://localhost:8080/Mercadorias?s=' + sku)).data[0];
-  const sugested = (await axios.get('http://localhost:8080/Mercadorias?rel=&s=' + sku)).data;
+  const mercadoria = (await axios.get(process.env.API_URL + 'Mercadorias?s=' + sku)).data[0];
+  const sugested = (await axios.get(process.env.API_URL + 'Mercadorias?rel=&s=' + sku)).data;
 
   return {
     props: {

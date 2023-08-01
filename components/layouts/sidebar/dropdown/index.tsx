@@ -3,8 +3,14 @@ import { FC } from 'react'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from './styles'
 import { Image } from '../styles'
 import catIcon from '../../../../public/images/category-tree-white.png'
+import ICategoria from '../../../../types/categoria'
+import Link from 'next/link'
 
-const ItemDropdown: FC = () => {
+interface Props {
+  cats: ICategoria[]
+}
+
+const ItemDropdown: FC<Props> = ({cats}) => {
 
   return (
     <Dropdown>
@@ -14,18 +20,15 @@ const ItemDropdown: FC = () => {
       </DropdownToggle>
 
       <DropdownMenu>
-        <DropdownItem>
-          Elétrica
-        </DropdownItem>
-        <DropdownItem>
-          Mecânica
-        </DropdownItem>
-        <DropdownItem>
-          Hidráulica
-        </DropdownItem>
+        {cats.map((cat, i) => (
+            <DropdownItem as={Link} className="dropdown-item" href={`/tipos/${cat.nome}`} key={i}>
+              {cat.nome}
+            </DropdownItem>
+        ))}
       </DropdownMenu>
     </Dropdown>
   )
 }
+
 
 export default ItemDropdown;

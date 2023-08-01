@@ -1,24 +1,20 @@
 import { FC, useState, TouchEvent, StrictMode } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Topbar from '../components/layouts/topbar';
-import Sidebar from '../components/layouts/sidebar'
-import Sales from '../components/sales';
-import Global from '../styles/global';
-import GlobalThemes from '../styles/themes'
-import Landing from '../components/landing';
-import Main from '../components/layouts/main';
-import Content from '../components/layouts/content';
-import IItem from '../types/item'
+import Topbar from '../../components/layouts/topbar';
+import Sidebar from '../../components/layouts/sidebar'
+import Sales from '../../components/sales';
+import Global from '../../styles/global';
+import GlobalThemes from '../../styles/themes'
+import Landing from '../../components/landing';
+import Main from '../../components/layouts/main';
+import Content from '../../components/layouts/content';
+import IItem from '../../types/item'
 import axios from 'axios';
-import ICategoria from '../types/categoria';
+import ICategoria from '../../types/categoria';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
-interface Props {
-  items: IItem[]
-  tipos: ICategoria[];
-}
-
-const Home: FC<Props> = ({items, tipos}) => {
+const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, categorias, tipo}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentX, setCurrentX] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -56,12 +52,13 @@ const Home: FC<Props> = ({items, tipos}) => {
     setIsOpen(true);
   }
 
+  const title = "NCA Parts🔩 - " + tipo;
   return (
     <StrictMode>
       <Global />
       <GlobalThemes />
-      
-      <title>NCA Parts🔩</title>
+
+      <title>{title}</title>
 
       <header>
         <Topbar changeBar={changeBar}/>
@@ -70,7 +67,7 @@ const Home: FC<Props> = ({items, tipos}) => {
       <Content onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart}
        className={`main-content ${isOpen ? 'hidden' : ''}`}>
 
-        <Sidebar $isOpen={isOpen} $currentX={currentX} cats={tipos}/>
+        <Sidebar $isOpen={isOpen} $currentX={currentX} cats={categorias}/>
 
         <Main $width={null} $overflowY={null}>
           <Landing />
@@ -82,15 +79,32 @@ const Home: FC<Props> = ({items, tipos}) => {
   )
 };
 
-export async function getStaticProps() {
-  const items = (await axios(process.env.API_URL + "Mercadorias")).data;
-  const tipos = (await axios(process.env.API_URL + "Tipos")).data;
+export const getStaticPaths: GetStaticPaths = async () => {
+  const tipos: ICategoria[] = (await axios(process.env.API_URL + "Tipos")).data;
+  const paths = tipos.map(tipo => ({
+    params: {
+      cat: tipo.nome
+    } 
+  }));
+
+  return {
+    paths: paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: IItem[], tipo: string}> = async ({params}) => {
+  const tipo = (params!.cat as string);
+  const items = (await axios(process.env.API_URL + "Mercadorias?type=" + tipo)).data;
+  const categorias = (await axios(process.env.API_URL + "Tipos")).data;
 
   return {
     props: {
       items,
-      tipos,
+      categorias,
+      tipo
     },
+    revalidate: 1800
   }
 }
 
