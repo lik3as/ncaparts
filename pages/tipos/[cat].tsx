@@ -104,7 +104,6 @@ export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: II
       categorias,
       tipo
     },
-    revalidate: 900
   }
 }
 
