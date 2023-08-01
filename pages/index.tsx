@@ -91,6 +91,7 @@ export async function getStaticProps() {
       items,
       tipos,
     },
+    revalidate: 6000
   }
 }
 

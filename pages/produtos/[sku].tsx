@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<{mercadoria: Mercadoria, sugested: M
       mercadoria,
       sugested
     },
-    revalidate: 1800,
+    revalidate: 900,
   }
 }
 
