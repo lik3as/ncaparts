@@ -13,7 +13,7 @@ const Selling: FC<Props> = ({item}) => {
 
   return (
     <Wrapper className="selling-container" $minWidth='100vw' $flexDirection='row'>
-      <Wrapper $maxWidth='450px'>
+      <Wrapper $maxWidth='20rem'>
         <Image src={item.produto.imagens[0]} alt={item.produto.desc + ' | ' + item.produto.sku}/>
       </Wrapper>
       <Wrapper $margin='0 20px' $flexDirection='column'>
