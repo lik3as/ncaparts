@@ -13,6 +13,7 @@ import IItem from '../../types/item'
 import axios from 'axios';
 import ICategoria from '../../types/categoria';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 
 const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, categorias, tipo}) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -55,10 +56,13 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
   const title = "NCA Parts🔩 - " + tipo;
   return (
     <StrictMode>
+
+      <Head>
+        <title>{title}</title>
+      </Head>
+
       <Global />
       <GlobalThemes />
-
-      <title>{title}</title>
 
       <header>
         <Topbar changeBar={changeBar}/>

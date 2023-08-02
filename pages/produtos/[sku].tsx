@@ -10,6 +10,7 @@ import Topbar from '../../components/layouts/topbar';
 import Content from '../../components/layouts/content';
 import Sales from '../../components/sales';
 import Selling from '../../components/selling';
+import Head from 'next/head';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const mercadorias: Mercadoria[] = (await axios.get(process.env.API_URL + 'Mercadorias')).data
@@ -45,7 +46,9 @@ const Page: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({mercadoria, s
   const title = `${mercadoria.produto.nome} | NCA Parts🔩`;
   return (
     <StrictMode>
-      <title>{title}</title>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <Global />
       <GlobalThemes />
 

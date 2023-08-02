@@ -12,6 +12,7 @@ import Content from '../components/layouts/content';
 import IItem from '../types/item'
 import axios from 'axios';
 import ICategoria from '../types/categoria';
+import Head from 'next/head';
 
 interface Props {
   items: IItem[]
@@ -58,10 +59,15 @@ const Home: FC<Props> = ({items, tipos}) => {
 
   return (
     <StrictMode>
+    
+      <Head>
+        <link rel="shortcut icon" href="/public/favicon.ico" />
+        <title>NCA Parts🔩</title>
+      </Head>
+
       <Global />
       <GlobalThemes />
       
-      <title>NCA Parts🔩</title>
 
       <header>
         <Topbar changeBar={changeBar}/>
