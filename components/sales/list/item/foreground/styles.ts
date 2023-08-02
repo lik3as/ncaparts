@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Image as ItemImage } from "react-bootstrap";
+  import { Image as ItemImage } from "react-bootstrap";
 
 import { Wrapper as ItemWrapper } from "../../../styles";
 
@@ -11,12 +11,15 @@ const Wrapper = styled(ItemWrapper)`
     align-self: center;
     margin-bottom: 10px;
     padding: .5rem;
-    width: 10rem;
+    max-height: 10rem;
+    max-width: 10rem;
   }
 
   @media screen and (max-width: 768px){
     &.foreground {
-      max-width: 9rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 10rem;
     }
   }
 

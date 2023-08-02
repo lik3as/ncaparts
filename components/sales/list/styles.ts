@@ -5,12 +5,13 @@ const UnorderedList = styled.ul`
   margin: 0;
   padding: .5rem;
   width: 100%;
+  padding-bottom: .8rem;
   overflow-y: hidden;
 
   @media screen and (max-width: 768px){
     display: grid;
     grid-template-columns: 45% 45%;
-    grid-gap: 15px;
+    grid-gap: 10px;
     justify-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
