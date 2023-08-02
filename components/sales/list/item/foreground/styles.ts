@@ -1,38 +1,42 @@
 import styled from "styled-components";
-  import { Image as ItemImage } from "react-bootstrap";
+import { Image as ItemImage } from "react-bootstrap";
 
 import { Wrapper as ItemWrapper } from "../../../styles";
 
 const Wrapper = styled(ItemWrapper)`
+  align-items: center;
   border: 6px solid transparent;
   border-radius: 6px;
 
   &.foreground {
+    margin-left: auto;
+    margin-right: auto;
     align-self: center;
     margin-bottom: 10px;
     padding: .5rem;
-    max-height: 10rem;
-    max-width: 10rem;
+    width: 9rem;
+    height: 9rem;
   }
 
   @media screen and (max-width: 768px){
     &.foreground {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 10rem;
+      max-width: 9rem;
     }
   }
 
   @media screen and (max-width: 480px){
     &.foreground {
       max-width: 7rem;
-      padding: .3rem;
+      padding: 0;
+      width: 5.5rem;
+      height: 5.5rem;
     }
   }
 `;
 
 const Image = styled(ItemImage)`
   object-fit: contain;
+  object-position: center;
   max-width: 100%;
   max-height: 100%; 
 `;

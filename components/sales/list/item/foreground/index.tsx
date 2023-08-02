@@ -9,7 +9,7 @@ interface Props {
 
 const Foreground: FC<Props> = ({url, alt}) => {
   return (
-    <Wrapper className='foreground' $maxWidth='100%' $backgroundColor='#464646'>
+    <Wrapper className='foreground' $backgroundColor='#464646'>
       <Image src={url} alt={alt}/>
     </Wrapper>
   )

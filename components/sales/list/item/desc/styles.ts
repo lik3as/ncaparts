@@ -24,10 +24,20 @@ const Text = styled(ItemText)`
   text-align: ${(props) => props.$textAlign ?? 'center'};
   color: ${(props) => props.color ?? 'white'};
   margin-bottom: -6px;
+  word-break: break-word;
+  align-self: center;
 
   &:hover {
     color: white;
     cursor: pointer;
+  }
+
+  &.small-line {
+    line-height: 100%;
+  }
+
+  &.big-line {
+    line-height: 200%;
   }
 `;
 
