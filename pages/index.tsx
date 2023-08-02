@@ -61,7 +61,7 @@ const Home: FC<Props> = ({items, tipos}) => {
     <StrictMode>
     
       <Head>
-        <link rel="shortcut icon" href="/public/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <title>NCA Parts🔩</title>
       </Head>
 

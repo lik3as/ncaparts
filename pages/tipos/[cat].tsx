@@ -58,6 +58,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
     <StrictMode>
 
       <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <title>{title}</title>
       </Head>
 

@@ -47,6 +47,7 @@ const Page: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({mercadoria, s
   return (
     <StrictMode>
       <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <title>{title}</title>
       </Head>
       <Global />
