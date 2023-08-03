@@ -64,7 +64,7 @@ const Home: FC<Props> = ({items, tipos}) => {
       <title>NCA Parts🔩</title>
 
       <header>
-        <Topbar changeBar={changeBar}/>
+        <Topbar changeBar={changeBar} searchOptions={items}/>
       </header>
 
       <Content onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart}

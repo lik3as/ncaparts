@@ -7,7 +7,7 @@ const Content = styled.div`
   top: var(--header-height);
   width: 100%;
   height: calc(100vh - var(--header-height));
-  z-index: 1;
+  z-index: -1;
   background: rgba(var(--color-dark-rgb), 1);
   transition: all .15s linear;
 

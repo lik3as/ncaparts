@@ -50,7 +50,7 @@ const Page: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({mercadoria, s
       <GlobalThemes />
 
       <header>
-        <Topbar changeBar={() => void(0)}/>
+        <Topbar changeBar={() => void(0)} searchOptions={sugested}/>
       </header>
       
       <Content>

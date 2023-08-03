@@ -3,8 +3,8 @@ import { styled } from 'styled-components';
 import {
   InputGroup as ItemInputGroup,
   Button as ItemButton,
-  FormControl as ItemFormControl
 } from 'react-bootstrap'
+import { ReactSearchAutocomplete as ItemAutoCompleteSearch } from 'react-search-autocomplete';
 
 const InputGroup = styled(ItemInputGroup)`
   width: calc(50vw - 40px);
@@ -42,8 +42,14 @@ const Button = styled(ItemButton)`
   }
 `;
 
-const FormControl = styled(ItemFormControl)`
+const AutocompleteSearch = styled(ItemAutoCompleteSearch)`
   text-align: left;
+  width: 400px;
+  position: fixed;
+
+  & > div {
+  }
+
 `;
 
-export { Button, InputGroup, FormControl }
+export { Button, InputGroup, AutocompleteSearch }
