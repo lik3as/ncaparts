@@ -15,7 +15,7 @@ export default function NotFound() {
       <GlobalThemes />
 
       <header>
-        <Topbar changeBar={() => void(0)}/>
+        <Topbar changeBar={() => void(0)} searchOptions={null}/>
       </header>
       
       <Content>

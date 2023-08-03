@@ -1,36 +1,49 @@
 import React, { FC, useState } from 'react'
 
-import { InputGroup as ItemInputGroup, Button, FormControl } from './styles'
+import {
+  AutocompleteSearch
+} from './styles'
+import IItem from '../../../../types/item';
+import { useRouter } from 'next/router';
 
-const InputGroup: FC = () => {
-  const [searchText, setSearchText] = useState('');
 
-  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchText(e.target.value);
+interface Props {
+  options: IItem[] | null
+}
+
+const Searchbar: FC<Props> = ({options}) => {
+  const router = useRouter();
+ if (!options) {
+    options = []
+  }
+  
+  const items = options!.map((opt) => ({
+    id: opt.id,
+    name: opt.produto.nome,
+    sku: opt.produto.sku
+  }))
+
+  const handleSelect = (item: unknown) => {
+    router.replace("/produtos/" + (item as any).sku);
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      const button = document.querySelector('#search') as HTMLButtonElement;
-      if (button) {
-        button.click();
-      }
-
-    }
-  };
-
   return (
-    <ItemInputGroup>
-      <FormControl value={searchText} onChange={handleChangeInput} onKeyDown={handleKeyPress}
-        placeholder="Nome ou SKU do produto"
-        aria-label="O que você está buscando?"
-        aria-describedby="basic-addon1"
-
-      />
-      <Button id='search' variant='outline-secondary' href={`/produtos/${searchText}`}>Buscar</Button>
-    </ItemInputGroup>
+    <AutocompleteSearch
+      items={items}
+      onSelect={handleSelect}
+      fuseOptions={ {keys: ["sku", "name"]} }
+      resultStringKeyName='sku'
+      formatResult={formatResult}
+    />
   )
 }
 
-export default InputGroup;
+const formatResult: FC<{name: string, sku: string}> = ({name, sku}) => {
+  return (
+    <>
+      <span style={{ display: 'block', textAlign: 'left' }}>{sku + ` (${name})`}</span>
+    </>
+  )
+}
+
+export default Searchbar;

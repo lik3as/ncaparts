@@ -66,7 +66,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
       <GlobalThemes />
 
       <header>
-        <Topbar changeBar={changeBar}/>
+        <Topbar changeBar={changeBar} searchOptions={items}/>
       </header>
 
       <Content onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart}

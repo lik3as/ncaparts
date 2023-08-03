@@ -10,11 +10,12 @@ import Searchbar from "./searchbar";
 import logo from '../../../public/images/logo/logo-h-white.png'
 import userIcon from '../../../public/images/rounded-user-icon-orange.png'
 import menuBar from '../../../public/images/menu-burger-white.png'
-import { useRouter } from 'next/router';
 import Link from 'next/link';
+import IItem from '../../../types/item';
 
 interface Props {
   changeBar: () => void
+  searchOptions: IItem[] | null;
 }
 const UserIcon: FC = () => {
   return (
@@ -27,7 +28,7 @@ const UserIcon: FC = () => {
   )
 }
 
-const Topbar: FC<Props> = ({changeBar}) => {
+const Topbar: FC<Props> = ({changeBar, searchOptions}) => {
   const isMobile = useWindowResize() < 768;
 
   return (
@@ -41,7 +42,7 @@ const Topbar: FC<Props> = ({changeBar}) => {
           </Link>
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="10px auto">
-          <Searchbar />
+          <Searchbar options={searchOptions}/>
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px">
           <UserIcon />
