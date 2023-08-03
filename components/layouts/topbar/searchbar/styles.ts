@@ -44,11 +44,20 @@ const Button = styled(ItemButton)`
 
 const AutocompleteSearch = styled(ItemAutoCompleteSearch)`
   text-align: left;
-  width: 400px;
+  width: 45rem;
   position: fixed;
 
-  & > div {
-  }
+  @media screen and (max-width: 1024px){
+    width: calc(50vw - 40px);
+  };
+
+  @media screen and (max-width: 768px){
+    width: calc(48vw - 40px);
+  };
+
+  @media screen and (max-width: 480px){
+    width: calc(46vw - 40px);
+  };
 
 `;
 

@@ -34,6 +34,7 @@ const Searchbar: FC<Props> = ({options}) => {
       fuseOptions={ {keys: ["sku", "name"]} }
       resultStringKeyName='sku'
       formatResult={formatResult}
+      styling={{height: '35px', fontSize: '1rem'}}
     />
   )
 }
