@@ -66,8 +66,7 @@ const Home: FC<Props> = ({items, tipos}) => {
       </Head>
 
       <Global />
-      <GlobalThemes />
-      
+      <GlobalThemes /> 
 
       <header>
         <Topbar changeBar={changeBar}/>

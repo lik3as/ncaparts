@@ -21,7 +21,7 @@ const ItemDropdown: FC<Props> = ({cats}) => {
 
       <DropdownMenu>
         {cats.map((cat, i) => (
-            <DropdownItem as={Link} className="dropdown-item" href={`/tipos/${cat.nome}`} key={i}>
+            <DropdownItem as={Link} className="dropdown-item" href={`/tipos/${cat.nome}/0`} key={i}>
               {cat.nome}
             </DropdownItem>
         ))}

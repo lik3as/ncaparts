@@ -1,5 +1,5 @@
-import { FC, useState, TouchEvent, StrictMode } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { FC, useState, TouchEvent, StrictMode } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Topbar from '../../components/layouts/topbar';
 import Sidebar from '../../components/layouts/sidebar'
@@ -9,20 +9,20 @@ import GlobalThemes from '../../styles/themes'
 import Landing from '../../components/landing';
 import Main from '../../components/layouts/main';
 import Content from '../../components/layouts/content';
-import IItem from '../../types/item'
+import IItem from '../../types/item';
 import axios from 'axios';
 import ICategoria from '../../types/categoria';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 
 const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, categorias, tipo}) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const [currentX, setCurrentX] = useState(0);
   const [startX, setStartX] = useState(0);
 
   function handleTouchStart (ev: TouchEvent) {
     setStartX(ev.touches[0].clientX);
-  }
+  };
 
   function handleTouchMove (ev: TouchEvent) {
     const deltaX = ev.touches[0].clientX - startX;
@@ -33,7 +33,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
     } else {
       setCurrentX(deltaX);
     }
-  }
+  };
 
   function handleTouchEnd () {
     if (currentX >= 80) {
@@ -43,7 +43,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
     }
 
     setCurrentX(0);
-  }
+  };
 
   function changeBar() {
     if (isOpen) {
@@ -51,7 +51,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
       return;
     }
     setIsOpen(true);
-  }
+  };
 
   const title = "NCA Parts🔩 - " + tipo;
   return (
@@ -76,7 +76,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
 
         <Main $width={null} $overflowY={null}>
           <Landing />
-          <Sales items={items} innerTitle={null}/>
+          <Sales items={items} innerTitle={<>Categoria: <strong>{tipo}</strong></>}/>
         </Main>
       </Content>
 
@@ -85,21 +85,28 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const tipos: ICategoria[] = (await axios(process.env.API_URL + "Tipos")).data;
-  const paths = tipos.map(tipo => ({
-    params: {
-      cat: tipo.nome
-    } 
-  }));
+  const mercadorias: IItem[] = (await axios(process.env.API_URL + "Mercadorias")).data; 
+
+  const paths = await Promise.all(mercadorias.map( async (merc, i) => {{
+    const type = merc.produto.tipo? merc.produto.tipo.nome : "?";
+
+    return {
+      params: {
+        cat: [type, i.toString()], 
+      }
+    }
+  }}));
 
   return {
     paths: paths,
     fallback: false, 
   }
-}
+};
 
 export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: IItem[], tipo: string}> = async ({params}) => {
-  const tipo = (params!.cat as string);
+  const tipo = (params!.cat[0] as string);
+  const page = parseInt((params!.cat[1] as string));
+
   const items = (await axios(process.env.API_URL + "Mercadorias?type=" + tipo)).data;
   const categorias = (await axios(process.env.API_URL + "Tipos")).data;
 
@@ -111,6 +118,6 @@ export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: II
     },
     revalidate: 900
   }
-}
+};
 
 export default Home;
