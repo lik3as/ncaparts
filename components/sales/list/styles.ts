@@ -23,6 +23,8 @@ const UnorderedList = styled.ul`
   }
 
   @media screen and (max-width: 480px){
+    justify-content: center;
+    align-items: center;
     grid-template-columns: 30% 30% 30%;
   }
 `;

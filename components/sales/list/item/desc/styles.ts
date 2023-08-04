@@ -39,6 +39,10 @@ const Text = styled(ItemText)`
   &.big-line {
     line-height: 200%;
   }
+
+  @media screen and (max-width: 480px){
+    word-break: break-all;
+  }
 `;
 
 const Circle = styled.span`
