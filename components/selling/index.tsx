@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Selling: FC<Props> = ({item}) => {
-  const price = (item.valor_real == "0.00" ? "Negocie o preço" : "R$ " + item.valor_real);
+  const price = (item.valor_real == "0.00" || !item.valor_real ? "Negocie o preço" : "R$ " + item.valor_real);
 
   return (
     <Wrapper className="selling-container" $minWidth='100vw' $flexDirection='row'>

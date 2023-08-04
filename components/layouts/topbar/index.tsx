@@ -41,7 +41,7 @@ const Topbar: FC<Props> = ({changeBar, searchOptions}) => {
             <Logo src={logo} alt="Couldn't load the logo :( Please, check you connection." /> 
           </Link>
         </Wrapper>
-        <Wrapper $display="flex" $flexDirection="row" $margin="10px auto">
+        <Wrapper $display="flex" $flexDirection="row" $margin="10px auto" $alignItems='center'>
           <Searchbar options={searchOptions}/>
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px">
