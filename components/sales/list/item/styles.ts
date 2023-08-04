@@ -28,7 +28,7 @@ const ListItem = styled.li`
     height: 16rem;
     width: 95%;
     max-height: 90%;
-    text-align: left;
+
   }
 `;
 
