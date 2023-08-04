@@ -34,7 +34,7 @@ const Searchbar: FC<Props> = ({options}) => {
     <AutocompleteSearch
       items={items}
       onSelect={handleSelect}
-      fuseOptions={ { keys: ["sku", "name"] } }
+      fuseOptions={ { keys: ["sku", "name"], threshold: 0.2 } }
       resultStringKeyName='sku'
       formatResult={ (isMobile) ? FormatResultSku : FormatResult}
       styling={ (isMobile) ? {
@@ -43,6 +43,7 @@ const Searchbar: FC<Props> = ({options}) => {
         searchIconMargin: '2px 0px 2px 6px',
         clearIconMargin: '2px 6px 0px 0px'
       } : {height: '35px', fontSize: '1rem'} }
+      maxResults={6}
     />
   )
 }
