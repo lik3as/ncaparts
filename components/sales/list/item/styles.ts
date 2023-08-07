@@ -29,8 +29,8 @@ const ListItem = styled.li`
 
   @media screen and (max-width: 480px){
     display: flex;
-    height: 16rem;
-    width: 95%;
+    height: 18rem;
+    width: 100%;
     max-height: 90%;
 
   }

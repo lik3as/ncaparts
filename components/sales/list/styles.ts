@@ -13,8 +13,8 @@ const UnorderedList = styled.ul`
     grid-template-columns: 45% 45%;
     grid-gap: 10px;
     justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
     width: 100%;
     max-height: 100%;
     margin: 0 auto;
@@ -25,7 +25,6 @@ const UnorderedList = styled.ul`
   @media screen and (max-width: 480px){
     justify-content: center;
     align-items: center;
-    grid-template-columns: 30% 30% 30%;
   }
 `;
 

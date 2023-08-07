@@ -14,13 +14,13 @@ const Wrapper = styled(ItemWrapper)`
     align-self: center;
     margin-bottom: 10px;
     padding: .5rem;
-    width: 9rem;
-    height: 9rem;
+    width: 10rem;
+    height: 10rem;
   }
 
   @media screen and (max-width: 768px){
     &.foreground-container {
-      max-width: 9rem;
+      max-width: 10rem;
     }
   }
 
