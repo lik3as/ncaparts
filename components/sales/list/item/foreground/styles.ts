@@ -8,7 +8,7 @@ const Wrapper = styled(ItemWrapper)`
   border: 6px solid transparent;
   border-radius: 6px;
 
-  &.foreground {
+  &.foreground-container {
     margin-left: auto;
     margin-right: auto;
     align-self: center;
@@ -19,13 +19,13 @@ const Wrapper = styled(ItemWrapper)`
   }
 
   @media screen and (max-width: 768px){
-    &.foreground {
+    &.foreground-container {
       max-width: 9rem;
     }
   }
 
   @media screen and (max-width: 480px){
-    &.foreground {
+    &.foreground-container {
       max-width: 7rem;
       padding: 0;
       width: 5.5rem;

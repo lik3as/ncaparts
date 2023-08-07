@@ -14,6 +14,42 @@ const Wrapper = styled(ItemWrapper)`
     display: inline-block;
     margin: 0 3px 0 0;
   }
+
+  &.colors-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 0px;
+  }
+
+  &.desc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
+    justify-content: space-between;
+
+  }
+
+  &.text-container {
+    justify-content: center;
+    margin-top: 0px;
+    margin-top: auto;
+  }
+
+  @media screen and (max-width: 768px){ 
+    &.desc-container {
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 480px){ 
+    &.desc-container {
+      height: 55%;
+    }
+  }
 `;
 
 const Text = styled(ItemText)`
@@ -24,7 +60,7 @@ const Text = styled(ItemText)`
   text-align: ${(props) => props.$textAlign ?? 'center'};
   color: ${(props) => props.color ?? 'white'};
   margin-bottom: -6px;
-  word-break: break-word;
+  word-break: break-all;
   align-self: center;
 
   &:hover {

@@ -18,6 +18,10 @@ const ListItem = styled.li`
     outline-color: #666666;
   }
 
+  & a {
+    height: 100%;
+  }
+
   @media screen and (max-width: 768px){
     display: list-item;
     width: 100%;

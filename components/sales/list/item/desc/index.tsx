@@ -11,11 +11,13 @@ interface Props {
 
 const Desc: FC<Props> = ({price, name, cat, sku}) => {
   return (
-    <Wrapper>
-      <Text className='small-line'>{name}</Text>
-      <Text className='big-line' >{cat}</Text>
-      <Text className='small-line'>{sku}</Text>
-      <Wrapper $display='flex' $flexDirection='row' $justifyContent='space-between' $margin='10px 0 0 0' $minWidth='100%'>
+    <Wrapper className='desc-container'>
+      <Wrapper>
+        <Text className='small-line'>{name}</Text>
+        <Text className='big-line' >{cat}</Text>
+        <Text className='small-line'>{sku}</Text>
+      </Wrapper>
+      <Wrapper $display='flex' $flexDirection='row' $justifyContent='space-between' $minWidth='100%' className='colors-container'>
         <Wrapper $margin='0 auto 0 0'>
           <ul>
             <li>
