@@ -20,16 +20,16 @@ const Wrapper = styled(ItemWrapper)`
 
   @media screen and (max-width: 768px){
     &.foreground-container {
-      max-width: 10rem;
+      width: 12rem;
+      height: 12rem;
     }
   }
 
   @media screen and (max-width: 480px){
     &.foreground-container {
-      max-width: 7rem;
       padding: 0;
-      width: 5.5rem;
-      height: 5.5rem;
+      width: 8.5rem;
+      height: 8.5rem;
     }
   }
 `;

@@ -47,7 +47,7 @@ const Wrapper = styled(ItemWrapper)`
 
   @media screen and (max-width: 480px){ 
     &.desc-container {
-      height: 60%;
+      height: 40%;
     }
   }
 `;
