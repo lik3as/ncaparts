@@ -9,7 +9,7 @@ import Main from "../../components/layouts/main";
 import Image from "next/image";
 import { Text, Wrapper } from "../../components/layouts/styles";
 import Utils from "../../styles/utils";
-import FormContainer from "../../components/forms";
+import FormContainer from "../../components/sign";
 
 const Page: FC = () => {
   return (

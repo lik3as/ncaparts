@@ -1,7 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 
 interface Props {
-  h1?: boolean;
   className?: string;
   fontFamily?: string;
   fontWeight?: number | string;
@@ -9,17 +8,20 @@ interface Props {
   fontStyle?: string;
   color?: string;
   children?: ReactNode;
+  h1?: boolean;
+  role?: string;
+  onClick?: () => void;
   $textAlign?: string;
 };
 
-const ItemText: FC<Props> = ({className, children, h1}) => {
+const ItemText: FC<Props> = ({className, children, h1, role = '', onClick}) => {
   if (h1) {
     return (
-      <h1 className={className}>{children}</h1>
+      <h1 className={className} onClick={onClick} role={role}>{children}</h1>
     )
   }
   return (
-    <div className={className}>{children}</div>
+    <div className={className} onClick={onClick} role={role}>{children}</div>
   )
 }
 
