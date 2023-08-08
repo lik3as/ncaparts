@@ -22,7 +22,7 @@ const RegisterForm: FC = () => {
           <InputGroup>
 
             <InputGroup.Text>
-              <MdEmail />
+              <FaUser />
             </InputGroup.Text>
 
             <FormControl type="text" placeholder="Digite o seu nome de Usuário"/>
@@ -39,7 +39,7 @@ const RegisterForm: FC = () => {
           <InputGroup>
 
             <InputGroup.Text>
-              <FaUser />
+              <MdEmail />
             </InputGroup.Text>
 
             <FormControl type="email" placeholder="Digite o seu e-mail"/>
