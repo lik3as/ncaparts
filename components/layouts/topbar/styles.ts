@@ -23,7 +23,7 @@ const Logo = styled(NextImage)`
   margin-left: 15px;
 
   @media screen and (max-width: 768px){
-    content: url('/images/logo/logo-white.png');
+    content: url('/images/logos/logo-white.png');
     width: 65px;
     height: 35px;
     margin: 0;

@@ -6,16 +6,6 @@ const Button = styled(ItemButton)`
   white-space: nowrap;
 `;
 
-import ItemText from '../../helpers/ItemText';
-
-const Text = styled(ItemText)`
-  font-family: ${(props) => props.fontFamily ?? 'Arial, Helvetica, sans-serif'};
-  font-weight: ${(props) => props.fontWeight ?? 'normal'};
-  font-size: ${(props) => props.fontSize ?? '1rem'};
-  text-align: ${(props) => props.$textAlign ?? 'center'};
-  color: ${(props) => props.color ?? 'black'};
-`;
-
 const NavWrapper = styled.nav`
   position: relative;
   display: flex;
@@ -65,4 +55,4 @@ const Divisor = styled.hr`
   width: 90%;
 `;
 
-export { Text, NavWrapper, Image, Button, Divisor };
+export { NavWrapper, Image, Button, Divisor };

@@ -13,4 +13,14 @@ export default createGlobalStyle`
       transform:  rotate(360deg);
     }
   }
+
+  .fullscreen {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .center-items {
+    justify-content: center;
+    align-items: center;
+  }
 `;

@@ -21,7 +21,7 @@ const Main = styled.main<Props>`
     overflow-y: scroll;
   }
 
-  &.fullscreen {
+  .fullscreen {
     height: 100vh;
     width: 100vw;
   }

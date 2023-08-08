@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Col as ItemCol, FormControl as ItemFormControl } from 'react-bootstrap';
 
 import ItemWrapper from '../helpers/ItemWrapper';
 import ItemText from '../helpers/ItemText';
@@ -13,26 +14,45 @@ const Wrapper = styled(ItemWrapper)`
   min-width: ${(props) => props.$minWidth ?? 'auto'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
 
-  &.canvas-container {
-    background-color: white;
-    width: 50vw;
-    height: 100vh;
-  }
 
-  &.form-container {
-    width: 50vw;
-    height: 100vh;
-    color: white;
-  }
 `;
-
 
 const Text = styled(ItemText)`
   font-family: ${(props) => props.fontFamily ?? 'Arial, Helvetica, sans-serif'};
   font-weight: ${(props) => props.fontWeight ?? 'normal'};
   font-size: ${(props) => props.fontSize ?? '1rem'};
   text-align: ${(props) => props.$textAlign ?? 'center'};
-  color: ${(props) => props.color ?? 'black'};
+  color: ${(props) => props.color ?? 'white'};
+  margin: 0;
+  transition: all .3s ease;
+
+  &.clickable {
+    margin-bottom: 15px;
+  }
+
+  &.clickable:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  &.orange {
+    color: var(--color-orange-hex);
+  }
 `;
 
-export { Wrapper, Text };
+const Col = styled(ItemCol)`
+  width: 20rem;
+
+  @media screen and (max-width: 480px){
+    width: 40vw;
+  }
+`;
+
+const FormControl = styled(ItemFormControl)`
+  &:focus {
+    box-shadow: 0 0 1rem .28rem rgba(var(--color-orange-rgb), .6);
+    border-color: rgba(var(--color-orange-rgb), .50);
+  }
+`;
+
+export { Wrapper, Text, Col, FormControl };

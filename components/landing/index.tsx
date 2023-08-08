@@ -5,7 +5,7 @@ import { LandingWrapper, Image } from './styles'
 const Landing: FC = () => {
   return (
     <LandingWrapper>
-      <Image src='/images/logo/logo-white.png'/>
+      <Image src='/images/logos/logo-white.png'/>
     </LandingWrapper>
   )
 }

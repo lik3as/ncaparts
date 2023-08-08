@@ -1,11 +1,12 @@
 import { FC } from "react";
 
 import { Button } from "../styles";
-import { Wrapper, Image } from "../styles";
-import sales from "../../../../public/images/sales.png"
-import market from "../../../../public/images/market.png"
-import truck from "../../../../public/images/truck.png"
-import blog from "../../../../public/images/book.png"
+import { Image } from "../styles";
+import { Wrapper } from "../../styles";
+import sales from "../../../../public/images/sales.png";
+import market from "../../../../public/images/market.png";
+import truck from "../../../../public/images/truck.png";
+import blog from "../../../../public/images/book.png";
 
 const Menu: FC = () => {
   return (

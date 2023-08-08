@@ -23,11 +23,6 @@ export default createGlobalStyle`
 
  :root {
   --header-height: 90px;
-  --color-green-rgb: 37,211,102;
-  --color-orange-hex: #f37634;
-  --color-orange-rgb: 243, 118, 52;
-  --color-dark-rgb: 20,20,20;
-  --color-darker-rgb: 10,10,10;
  }
 
  ::-webkit-scrollbar {
