@@ -20,7 +20,9 @@ interface Props {
 const UserIcon: FC = () => {
   return (
     <>
-      <Image src={userIcon.src} roundedCircle/>
+      <Link href="/auth/sign">
+        <Image src={userIcon.src} roundedCircle/>
+      </Link>
       <Wrapper $margin='0 8px'>
         <CloseButton/>
       </Wrapper>
@@ -45,7 +47,7 @@ const Topbar: FC<Props> = ({changeBar, searchOptions}) => {
           <Searchbar options={searchOptions}/>
         </Wrapper>
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px">
-          <UserIcon />
+            <UserIcon />
         </Wrapper>
     </HeaderWrapper>
   )

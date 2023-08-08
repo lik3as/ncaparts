@@ -28,4 +28,8 @@ export default createGlobalStyle`
     --bs-bg-opacity: 1;
   }
 
+  .dark-background {
+    background-color: #141414;
+  }
+
 `;

@@ -20,6 +20,11 @@ const Main = styled.main<Props>`
     height: calc(100% - var(--header-height));
     overflow-y: scroll;
   }
+
+  &.fullscreen {
+    height: 100vh;
+    width: 100vw;
+  }
 `
 
 export default Main;
