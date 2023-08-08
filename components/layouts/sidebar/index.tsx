@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import { Wrapper, Text, NavWrapper, Divisor } from './styles';
+import { Text, NavWrapper, Divisor } from './styles';
+import { Wrapper } from '../styles'
 import Dropdown from './dropdown/';
 import Menu from './menu';
 import Manage from './manage';

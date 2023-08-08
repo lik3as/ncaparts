@@ -26,10 +26,10 @@ const Page: FC = () => {
         <Wrapper $justifyContent="center" $alignItems="center" $flexDirection="row">
           <Image src='/images/gear-white.png' alt='gear' width={200} height={200} className="ani-rotate"/>
           <Image src='/images/gear-small-white.png' alt='gear' width={150} height={150} className="ani-rotate" style={{
-              animationDirection: "reverse",
-              marginLeft: '-15px',
-              marginTop: '-20px'
-            }}/>
+            animationDirection: "reverse",
+            marginLeft: '-15px',
+            marginTop: '-20px'
+          }}/>
             
         </Wrapper>
       </Main>
