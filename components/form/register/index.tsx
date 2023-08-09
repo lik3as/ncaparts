@@ -11,7 +11,15 @@ import {
 } from "../styles";
 import FormItem from "../group";
 
-const RegisterForm: FC = () => {
+interface Props {
+  handleCheckTerms: () => void;
+}
+
+const RegisterForm: FC<Props> = ({handleCheckTerms}) => {
+  const userTerms =
+  <>&nbsp;&nbsp;{"Li e aceito os"}<strong role="button" onClick={handleCheckTerms}>{"\b termos de uso"}</strong></>;
+
+
   return (
     <Form className="px-2 px-sm-0 w-100">
 
@@ -33,10 +41,11 @@ const RegisterForm: FC = () => {
       labelText="Senha"
       />
 
-      <Button className='mb-1 w-100 me-5 mx-sm-0'>
-        Entrar
-      </Button>
+      <Form.Check label={userTerms} className="mb-1 d-flex justify-content-center"/>
 
+      <Button className='mb-1 w-100 me-5 mx-sm-0'>
+        Registrar
+      </Button>
     </Form>
   )
 }
