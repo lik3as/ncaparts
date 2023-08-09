@@ -4,9 +4,6 @@ import { Text, Wrapper } from "./styles";
 import LoginForm from "./login";
 import RegisterForm from "./register";
 
-/*
- * MISSING MODULARIZATION
-*/
 const FormContainer: FC = () => {
   const [isRegister, setIsResgister] = useState(false);
   const [registerText, setRegisterText] = useState<"Fazer Login" | "Primeira vez por aqui?">("Primeira vez por aqui?");
