@@ -25,7 +25,8 @@ const FormContainer: FC = () => {
         Bem vindo de novo!
       </Text>
 
-      <Text className="orange mb-4" role="button" fontFamily="Labrador B" color="#CCC" fontSize="1.2rem" onClick={handleRegisterClick}>
+      <Text className="orange mb-1 mb-md-4" role="button" fontFamily="Labrador B" color="#CCC" fontSize="1.2rem"
+      onClick={handleRegisterClick}>
         {registerText}
       </Text>
 

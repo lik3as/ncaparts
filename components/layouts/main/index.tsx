@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface Props {
   $width: string | null;
-  $overflowY: string | null
+  $overflowY: string | null;
 }
 
 const Main = styled.main<Props>`
@@ -19,11 +19,6 @@ const Main = styled.main<Props>`
     position: fixed;
     height: calc(100% - var(--header-height));
     overflow-y: scroll;
-  }
-
-  .fullscreen {
-    height: 100vh;
-    width: 100vw;
   }
 `
 
