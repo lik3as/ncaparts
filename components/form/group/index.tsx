@@ -16,8 +16,8 @@ interface Props {
 
 const FormItem: FC<Props> = ({labelText, InputIcon, inputPHolder, inputType, className = "mb-2", controlId}) => {
   return (
-    <FormGroup as={Row} className={className} controlId={controlId}>
-      <FormLabel column sm="2">
+    <FormGroup as={Row} className={`justify-content-center ${className}`} controlId={controlId}>
+      <FormLabel column xs="2">
         {labelText}
       </FormLabel>
       <Col sm="10">
