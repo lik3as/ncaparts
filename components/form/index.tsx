@@ -16,7 +16,7 @@ const FormContainer: FC<Props> = ({handleUserTerms}) => {
   }
 
   return (
-    <Wrapper className="center-items z-1" $flexDirection="column" $justifyContent='center' $alignItems='center'>
+    <Wrapper className="z-1" $flexDirection="column" $justifyContent='center' $alignItems='center'>
       <Text h1 fontSize="2.8rem" fontFamily="Dic Sans">
         { (isRegister) ? "Seja bem vindo!" : "Bem vindo de novo!"}
       </Text>

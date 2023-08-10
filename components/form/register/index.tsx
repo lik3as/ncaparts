@@ -15,8 +15,7 @@ const RegisterForm: FC<Props> = ({handleCheckTerms}) => {
 
 
   return (
-    <Form className="w-100">
-
+    <Form style={{width: "105%"}}> {/** 105 because the form title isn't long enought*/}
       <FormItem InputIcon={FaUser} controlId="registerFormUser" className="mb-2"
       inputPHolder="Digite o seu nome de usuário"
       inputType="text"
