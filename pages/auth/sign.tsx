@@ -2,7 +2,6 @@ import Head from "next/head";
 import { FC, StrictMode, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-
 import Global from "../../styles/global";
 import GlobalThemes from "../../styles/themes";
 import Main from "../../components/layouts/main";
