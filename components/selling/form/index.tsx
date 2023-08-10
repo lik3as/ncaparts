@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-import { Wrapper, Form, Button } from "./styles";
+import { Form, Button } from "./styles";
 import Input from "./input";
 import ICategoria from "../../../types/categoria";
 

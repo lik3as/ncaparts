@@ -1,4 +1,4 @@
-import { useState, type FC } from "react"
+import { type FC } from "react"
 
 import { Wrapper, Text } from "./styles";
 import Gears from "./gears";

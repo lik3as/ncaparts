@@ -8,6 +8,7 @@ const ListItem = styled.li`
   margin: 0 15px 0 0;
   transition: all .3s ease;
   padding: .5rem;
+  padding-bottom: 1rem;
 
   border: 6px solid transparent;
   border-radius: 6px;
