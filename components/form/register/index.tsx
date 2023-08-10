@@ -1,14 +1,8 @@
 import { type FC } from "react";
 import { FaUser, FaLock } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
-import { Button, Form, InputGroup, Row } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
-import {
-  Col,
-  FormControl,
-  Text,
-  Wrapper
-} from "../styles";
 import FormItem from "../group";
 
 interface Props {
@@ -21,7 +15,7 @@ const RegisterForm: FC<Props> = ({handleCheckTerms}) => {
 
 
   return (
-    <Form className="px-2 px-sm-0 w-100">
+    <Form className="w-100">
 
       <FormItem InputIcon={FaUser} controlId="registerFormUser" className="mb-2"
       inputPHolder="Digite o seu nome de usuário"
