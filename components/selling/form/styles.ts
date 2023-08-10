@@ -6,6 +6,7 @@ import { Wrapper as ItemWrapper } from "../styles";
 const Wrapper = styled(ItemWrapper)` 
   &.input-container {
     outline: #AAAAAA solid 1px;
+    margin-top: 2px;
   }
 `;
 

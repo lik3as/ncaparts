@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface Props {
   $width: string | null;
-  $overflowY: string | null
+  $overflowY: string | null;
 }
 
 const Main = styled.main<Props>`

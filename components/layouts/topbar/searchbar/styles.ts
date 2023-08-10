@@ -5,7 +5,6 @@ import {
   Button as ItemButton,
 } from 'react-bootstrap'
 import { ReactSearchAutocomplete as ItemAutoCompleteSearch } from 'react-search-autocomplete';
-import type { DefaultTheme } from 'styled-components';
 
 const InputGroup = styled(ItemInputGroup)`
   width: calc(50vw - 40px);

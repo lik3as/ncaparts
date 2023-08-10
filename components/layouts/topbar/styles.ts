@@ -1,18 +1,7 @@
 import styled from "styled-components";
 import { Image as ItemImage } from "react-bootstrap";
 
-import ItemWrapper from '../../helpers/ItemWrapper';
 import NextImage from 'next/image'
-
-const Wrapper = styled(ItemWrapper)`
-  display: ${(props) => props.$display ?? 'flex'};
-  flex-direction: ${(props) => props.$flexDirection ?? 'row'};
-  align-items: ${(props) => props.$alignItems ?? 'center'};
-  justify-content: ${(props) => props.$justifyContent ?? 'center'};
-  margin: ${(props) => props.$margin ?? '10px'};
-  max-width: ${(props) => props.$maxWidth ?? '100%'};
-  background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
-`;
 
 const HeaderWrapper = styled.nav`
   position: fixed;
@@ -34,7 +23,7 @@ const Logo = styled(NextImage)`
   margin-left: 15px;
 
   @media screen and (max-width: 768px){
-    content: url('/images/logo/logo-white.png');
+    content: url('/images/logos/logo-white.png');
     width: 65px;
     height: 35px;
     margin: 0;
@@ -49,4 +38,4 @@ const Image = styled(ItemImage)`
   }
 `;
 
-export { Wrapper, HeaderWrapper, Logo, Image };
+export { HeaderWrapper, Logo, Image };
