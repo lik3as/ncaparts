@@ -19,6 +19,8 @@ export default createGlobalStyle`
 
   html {
     background-color: #141414;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
  :root {
