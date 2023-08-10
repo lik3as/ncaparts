@@ -14,7 +14,6 @@ const Wrapper = styled(ItemWrapper)`
   min-width: ${(props) => props.$minWidth ?? 'auto'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
 
-
 `;
 
 const Text = styled(ItemText)`
@@ -37,11 +36,8 @@ const Text = styled(ItemText)`
 `;
 
 const Col = styled(ItemCol)`
-  width: 20rem;
-
-  @media screen and (max-width: 480px){
-    width: 40vw;
-  }
+  width: 83.3%; //because InputLabel is with xs="2"
+  
 `;
 
 const FormControl = styled(ItemFormControl)`
