@@ -17,12 +17,25 @@ const Wrapper = styled(ItemWrapper)`
     background-color: white;
     width: 50vw;
     height: 100vh;
+
+    @media screen and (max-width: 768px){
+      position: fixed;
+      z-index: 0;
+      background-color: #141414;
+      width: 100vh;
+      pointer-events: none;
+    }
   }
 
   &.form-container {
     width: 50vw;
     height: 100vh;
     color: white;
+    overflow-x: hidden;
+
+    @media screen and (max-width: 768px){
+      width: 100vw;
+    }
   }
 `;
 

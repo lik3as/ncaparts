@@ -3,8 +3,8 @@ import { Text, Wrapper } from "../styles";
 
 const Terms: FC<{visible?: boolean}> = ({visible = false}) => {
   return (
-    <Wrapper className={`p-3 term ${(visible) ? "visible" : void(0)}`} $maxWidth="48vw" $flexDirection="column">
-      <Text className="term">
+    <Wrapper className={`p-3 term ${(visible) ? "visible" : ""}`} $maxWidth="48vw" $flexDirection="column">
+      <Text className={'term'}>
         <h1>NCA Parts - Termos</h1>
         <p>
           Bem vindo ao website NCA Parts, onde todos os serviços são ofertados pela empresa NCA Tech,
