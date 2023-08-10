@@ -20,6 +20,7 @@ const Page: FC = () => {
 
   return (
     <StrictMode>
+      {/**  MISSING RESPONSIVITY */}
 
       <Head>
         <title>Autenticação | NCA Parts</title>
