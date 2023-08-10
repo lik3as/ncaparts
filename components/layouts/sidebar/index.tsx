@@ -30,8 +30,8 @@ const Sidebar: FC<Props> = ({$isOpen, $currentX, cats}) => {
         <Menu />
       </Wrapper>
 
-
-      <Wrapper $flexDirection='column' $alignItems='flex-start' $justifyContent='space-between' $margin='auto 0 25px 0' $maxWidth='100%' $minWidth='100%'>
+      <Wrapper className="dashboard" $flexDirection='column' $alignItems='flex-start' $justifyContent='space-between'
+      $minWidth='100%'>
         <Divisor/>
         <Manage />
       </Wrapper>

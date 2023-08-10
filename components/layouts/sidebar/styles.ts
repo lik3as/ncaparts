@@ -26,14 +26,6 @@ const NavWrapper = styled.nav`
     left: -200px;
   }
 
-  @media screen and (max-width: 480px){
-    min-width: 40vw; 
-  }
-
-  @media screen and (max-height: 670px) {
-    overflow-y: scroll;
-  }
-
   &.open {
     left: 0px;
   }

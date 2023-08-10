@@ -46,6 +46,12 @@ export default createGlobalStyle`
   }
  }
 
+ @media screen and (max-height: 690px){
+  html {
+    font-size: .7rem;
+  }
+ }
+
 
  @font-face {
   font-family: 'Dic Sans';
