@@ -1,7 +1,6 @@
-"use client"
+'use client';
 
 import React, { FC } from "react"
-import { CloseButton } from "react-bootstrap";
 
 import { HeaderWrapper, Image, Logo} from "./styles";
 import { Wrapper } from "../styles";
@@ -13,6 +12,7 @@ import userIcon from "../../../public/images/rounded-user-icon-orange.png"
 import menuBar from "../../../public/images/menu-burger-white.png"
 import Link from "next/link";
 import IItem from "../../../types/item";
+import useCookie from "../../../hooks/useCookie";
 
 interface Props {
   changeBar: () => void
@@ -24,16 +24,15 @@ const UserIcon: FC = () => {
       <Link href="/auth/sign">
         <Image src={userIcon.src} roundedCircle/>
       </Link>
-      <Wrapper $margin="0 8px">
-        <CloseButton/>
-      </Wrapper>
     </>
   )
 }
 
 const Topbar: FC<Props> = ({changeBar, searchOptions}) => {
   const isMobile = useWindowResize() < 768;
+  const token = useCookie("token");
 
+  console.log(token);
   return (
     <HeaderWrapper data-bs-theme="dark" className="bg-dark p-2">
         <Wrapper $display={isMobile ? "flex" : 'none'} $margin='0 0 0 6px'>

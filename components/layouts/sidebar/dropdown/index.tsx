@@ -11,7 +11,6 @@ interface Props {
 }
 
 const ItemDropdown: FC<Props> = ({cats}) => {
-
   return (
     <Dropdown>
       <DropdownToggle variant='secondary'>
