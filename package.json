@@ -7,6 +7,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@boiseitguru/cookie-cutter": "^0.2.1",
     "@next/codemod": "^13.4.9",
     "axios": "^1.4.0",
     "next": "latest",
