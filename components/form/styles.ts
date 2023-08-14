@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Col as ItemCol, FormControl as ItemFormControl } from 'react-bootstrap';
+import { Col as ItemCol, FormControl as ItemFormControl, FormGroup as ItemFormGroup } from 'react-bootstrap';
 
 import ItemWrapper from '../helpers/ItemWrapper';
 import ItemText from '../helpers/ItemText';
@@ -47,4 +47,7 @@ const FormControl = styled(ItemFormControl)`
   }
 `;
 
-export { Wrapper, Text, Col, FormControl };
+const FormGroup = styled(ItemFormGroup)`
+`;
+
+export { Wrapper, Text, Col, FormControl, FormGroup };
