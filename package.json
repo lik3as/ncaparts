@@ -7,15 +7,17 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@boiseitguru/cookie-cutter": "^0.2.1",
     "@next/codemod": "^13.4.9",
+    "@types/jsonwebtoken": "^9.0.2",
     "axios": "^1.4.0",
-    "next": "latest",
+    "jsonwebtoken": "^9.0.1",
+    "next": "^13.4.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-search-autocomplete": "^8.5.2",
-    "styled-components": "^6.0.2"
+    "styled-components": "^6.0.2",
+    "universal-cookie": "^5.0.0"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.6",
@@ -25,6 +27,7 @@
     "@types/react-dom": "^18.2.6",
     "@types/react-icons": "^3.0.0",
     "@types/styled-components": "^5.1.26",
+    "@types/universal-cookie": "^3.0.0",
     "bootstrap": "^5.3.0",
     "react-bootstrap": "^2.8.0",
     "typescript": "^5.1.6"

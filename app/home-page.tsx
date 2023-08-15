@@ -1,5 +1,9 @@
-import { FC, useState, TouchEvent, StrictMode } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
+"use client";
+
+import { FC, useState, TouchEvent, StrictMode, useEffect } from 'react';
+import jwt from 'jsonwebtoken';
+import Cookies from 'universal-cookie';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Topbar from '../components/layouts/topbar';
 import Sidebar from '../components/layouts/sidebar'
@@ -12,19 +16,29 @@ import Content from '../components/layouts/content';
 import IItem from '../types/item'
 import axios from 'axios';
 import ICategoria from '../types/categoria';
-import Head from 'next/head';
+import type { metaJWT, payloadUser } from '../types/auth';
 
 interface Props {
   items: IItem[]
   tipos: ICategoria[];
 }
 
-const Home: FC<Props> = ({items, tipos}) => {
+const HomePage: FC<Props> = ({items, tipos}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentX, setCurrentX] = useState(0);
   const [startX, setStartX] = useState(0);
+  const [decodedToken, setDecodedToken] = useState<(metaJWT & payloadUser) | null>(null);
 
-  function handleTouchStart (ev: TouchEvent) {
+  const cookies = new Cookies();
+  
+  useEffect(() => {
+    const token = cookies.get("token");
+    const decoded = jwt.decode(token || "", { json: true }) as unknown;
+    setDecodedToken(decoded as (metaJWT & payloadUser) | null);
+
+  }, []);
+
+ function handleTouchStart (ev: TouchEvent) {
     setStartX(ev.touches[0].clientX);
   }
 
@@ -59,27 +73,22 @@ const Home: FC<Props> = ({items, tipos}) => {
 
   return (
     <StrictMode>
-    
-      <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <title>NCA Parts🔩</title>
-      </Head>
 
       <Global />
       <GlobalThemes /> 
 
       <header>
-        <Topbar changeBar={changeBar} searchOptions={items}/>
+        <Topbar changeBar={changeBar} searchOptions={items} userProps={ decodedToken }/>
       </header>
 
       <Content onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} onTouchStart={handleTouchStart}
-       className={`main-content ${isOpen ? 'hidden' : ''}`}>
+      className={`main-content ${isOpen ? 'hidden' : ''}`}>
 
         <Sidebar $isOpen={isOpen} $currentX={currentX} cats={tipos}/>
 
-        <Main $width={null} $overflowY={null}>
+        <Main>
           <Landing />
-          <Sales items={items} innerTitle={null}/>
+          <Sales items={items}/>
         </Main>
       </Content>
 
@@ -87,17 +96,4 @@ const Home: FC<Props> = ({items, tipos}) => {
   )
 };
 
-export async function getStaticProps() {
-  const items = (await axios(process.env.API_URL + "Mercadorias")).data;
-  const tipos = (await axios(process.env.API_URL + "Tipos")).data;
-
-  return {
-    props: {
-      items,
-      tipos,
-    },
-    revalidate: 900
-  }
-}
-
-export default Home;
+export default HomePage;

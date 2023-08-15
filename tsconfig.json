@@ -18,13 +18,21 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "components/helpers/ItemWrapper", "styles/global.txs"  ],
+    "**/*.tsx",
+    "components/helpers/ItemWrapper",
+    "styles/global.txs",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

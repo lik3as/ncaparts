@@ -3,7 +3,7 @@
 import React, { FC } from "react"
 
 import { HeaderWrapper, Image, Logo} from "./styles";
-import { Wrapper } from "../styles";
+import { Text, Wrapper } from "../styles";
 import useWindowResize from "../../../hooks/useWindowResize";
 import Searchbar from "./searchbar";
 
@@ -12,42 +12,41 @@ import userIcon from "../../../public/images/rounded-user-icon-orange.png"
 import menuBar from "../../../public/images/menu-burger-white.png"
 import Link from "next/link";
 import IItem from "../../../types/item";
-import useCookie from "../../../hooks/useCookie";
+import { payloadUser } from "../../../types/auth";
 
 interface Props {
   changeBar: () => void
   searchOptions: IItem[] | null;
-}
-const UserIcon: FC = () => {
-  return (
-    <>
-      <Link href="/auth/sign">
-        <Image src={userIcon.src} roundedCircle/>
-      </Link>
-    </>
-  )
+  userProps?: payloadUser | null;
 }
 
-const Topbar: FC<Props> = ({changeBar, searchOptions}) => {
+const Topbar: FC<Props> = ({changeBar, searchOptions, userProps}) => {
   const isMobile = useWindowResize() < 768;
-  const token = useCookie("token");
 
-  console.log(token);
   return (
     <HeaderWrapper data-bs-theme="dark" className="bg-dark p-2">
+        {/** MENUBAR ONLY APPEARS WHEN THE SCREEN IS < 768px*/}
         <Wrapper $display={isMobile ? "flex" : 'none'} $margin='0 0 0 6px'>
           <Image src={menuBar.src} width="15px" height='15px' onClick={changeBar}/>
         </Wrapper>
+
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px 0 10px">
           <Link href="/">
             <Logo src={logo} alt="Couldn't load the logo :( Please, check you connection." /> 
           </Link>
         </Wrapper>
+
         <Wrapper $display="flex" $flexDirection="row" $margin="10px auto" $alignItems="center">
-          <Searchbar options={searchOptions}/>
+          <Searchbar searchOptions={searchOptions}/>
         </Wrapper>
+
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px">
-            <UserIcon />
+          {(userProps) ? 
+            <Text color="white" className="me-3">{userProps.username}</Text> : void(0)
+          }
+          <Link href="/auth/sign">
+            <Image src={userIcon.src} roundedCircle/>
+          </Link>
         </Wrapper>
     </HeaderWrapper>
   )

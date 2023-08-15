@@ -8,23 +8,23 @@ import IItem from '../../types/item'
 
 interface Props {
   items: IItem[],
-  innerTitle: JSX.Element | null
+  innerTitle?: JSX.Element | null
 }
 
 const Sales: FC<Props> = ({items, innerTitle}) => {
   let defaultTitle = <>Melhores <strong>Produtos</strong></>
-  let newTitle: null | JSX.Element = defaultTitle;
-  if (innerTitle) {
-    newTitle = innerTitle;
+
+  if (!innerTitle) {
+    innerTitle = defaultTitle;
   }
 
   return (
     <Wrapper $justifyContent='flex-start' className='sales-container' $margin='auto 0 0 0'>
       <Wrapper $flexDirection='row' $justifyContent='space-between' $alignItems='center' $minWidth='98%'>
         <Text fontWeight={200} fontSize='2.5rem' fontStyle='normal' color='#AAAAAA'>
-          {newTitle}
+          {innerTitle}
         </Text>
-        <Wrapper $margin='auto 0 13px 15px' $alignItems='flex-end' $display={(newTitle == defaultTitle) ? "flex" : "none"}>
+        <Wrapper $margin='auto 0 13px 15px' $alignItems='flex-end' $display={(innerTitle == defaultTitle) ? "flex" : "none"}>
           <Text color='#AAAAAA'><a><strong>Ver todos</strong></a></Text>
         </Wrapper>
 

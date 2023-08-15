@@ -1,26 +1,26 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 
 import {
   AutocompleteSearch
 } from './styles'
 import IItem from '../../../../types/item';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import useWindowResize from '../../../../hooks/useWindowResize';
 
 
 interface Props {
-  options: IItem[] | null
+  searchOptions: IItem[] | null
 }
 
-const Searchbar: FC<Props> = ({options}) => {
+const Searchbar: FC<Props> = ({searchOptions}) => {
   const router = useRouter();
   const isMobile = useWindowResize() < 768;
 
-  if (!options) {
-    options = []
+  if (!searchOptions) {
+    searchOptions = []
   }
   
-  const items = options!.map((opt) => ({
+  const items = searchOptions!.map((opt) => ({
     id: opt.id,
     name: opt.produto.nome,
     sku: opt.produto.sku

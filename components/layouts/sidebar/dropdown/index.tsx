@@ -7,7 +7,7 @@ import ICategoria from '../../../../types/categoria'
 import Link from 'next/link'
 
 interface Props {
-  cats: ICategoria[]
+  cats?: ICategoria[]
 }
 
 const ItemDropdown: FC<Props> = ({cats}) => {
@@ -19,10 +19,10 @@ const ItemDropdown: FC<Props> = ({cats}) => {
       </DropdownToggle>
 
       <DropdownMenu>
-        {cats.map((cat, i) => (
-            <DropdownItem as={Link} className="dropdown-item" href={`/tipos/${cat.nome}/0`} key={i}>
-              {cat.nome}
-            </DropdownItem>
+        {cats?.map((cat, i) => (
+          <DropdownItem as={Link} className="dropdown-item" href={`/tipos/${cat.nome}`} key={i}>
+            {cat.nome}
+          </DropdownItem>
         ))}
       </DropdownMenu>
     </Dropdown>

@@ -1,3 +1,5 @@
+"use client"
+
 import { StrictMode } from "react";
 import Global from "../styles/global";
 import GlobalThemes from "../styles/themes";
