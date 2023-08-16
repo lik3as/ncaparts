@@ -45,7 +45,7 @@ type fetchTuple = [IItem[], IItem[] | null, ICategoria[]];
 const getItemsAndCats: (cat: string) => Promise<fetchTuple> = async (cat: string) => {
   cat = decodeURIComponent(cat);
 
-  const items: IItem[] =  await (await fetch(API_URL + "Mercadorias")
+  const items: IItem[] =  await (await fetch(API_URL + "Mercadorias", { cache: "no-store" })
   .catch(hfe))?.json().catch(hfe) || [];
 
   const cats: ICategoria[] = await (await fetch(API_URL + "Tipos")
