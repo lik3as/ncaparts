@@ -60,8 +60,8 @@ const CatPage: FC<Props> = ({filteredItems, cats, itemsCat, items}) => {
     setIsOpen(true);
   };
 
-  if (!filteredItems || !!!filteredItems.length) {
-    filteredItems = items;
+  if (!filteredItems) {
+    filteredItems = [];
   }
 
   const title = "NCA Parts🔩 - " + itemsCat;

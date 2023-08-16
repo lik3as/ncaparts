@@ -43,11 +43,17 @@ export const generateStaticParams: () => Promise<PageParams[]> = async () => {
 type fetchTuple = [IItem[], IItem[] | null, ICategoria[]];
 
 const getItemsAndCats: (cat: string) => Promise<fetchTuple> = async (cat: string) => {
-  const items: IItem[] =  await (await fetch(API_URL + "Mercadorias?type=" + cat).catch(hfe))?.json().catch(hfe) || [];
-  const cats: ICategoria[] = await (await fetch(API_URL + "Tipos").catch(hfe))?.json().catch(hfe) || [];
+  cat = decodeURIComponent(cat);
+
+  const items: IItem[] =  await (await fetch(API_URL + "Mercadorias")
+  .catch(hfe))?.json().catch(hfe) || [];
+
+  const cats: ICategoria[] = await (await fetch(API_URL + "Tipos")
+  .catch(hfe))?.json().catch(hfe) || [];
 
   const filteredItems: IItem[] | undefined = items.filter((item) => {
-    return item.produto.tipo?.nome === cat;
+    if (item.produto.tipo?.nome === cat)
+    return item;
   })
 
   return [items, filteredItems || null, cats] as fetchTuple;
