@@ -35,7 +35,11 @@ const Sales: FC<Props> = ({items, innerTitle}) => {
 
       </Wrapper>
       
-      <List items={items}/>
+      {
+        (!!items.length) ?
+        <List items={items}/> :
+        <Text fontSize='2.5rem' className='my-5' color='#CCC'>Não achamos nenhum item nesta categoria :(</Text>
+      }
     </Wrapper>
   )
 }
