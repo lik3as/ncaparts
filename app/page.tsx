@@ -7,7 +7,7 @@ export default async function Page() {
    *  @see https://nextjs.org/docs/pages/building-your-application/upgrading/app-router-migration#step-6-migrating-data-fetching-methods
   */
 
-  const items = await (await fetch(API_URL + "Mercadorias")).json(); 
+  const items = await (await fetch(API_URL + "Mercadorias", { cache: "no-store" })).json(); 
   const tipos = await (await fetch(API_URL + "Tipos")).json();
   
   return <HomePage items={items} tipos={tipos}/>

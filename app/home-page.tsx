@@ -14,7 +14,6 @@ import Landing from '../components/landing';
 import Main from '../components/layouts/main';
 import Content from '../components/layouts/content';
 import IItem from '../types/item'
-import axios from 'axios';
 import ICategoria from '../types/categoria';
 import type { metaJWT, payloadUser } from '../types/auth';
 
