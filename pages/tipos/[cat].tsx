@@ -15,7 +15,7 @@ import ICategoria from '../../types/categoria';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 
-const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, categorias, tipo}) => {
+const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, categorias, cat}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentX, setCurrentX] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -53,7 +53,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
     setIsOpen(true);
   };
 
-  const title = "NCA Parts🔩 - " + tipo;
+  const title = "NCA Parts🔩 - " + cat;
   return (
     <StrictMode>
 
@@ -76,7 +76,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
 
         <Main $width={null} $overflowY={null}>
           <Landing />
-          <Sales items={items} innerTitle={<>Categoria: <strong>{tipo}</strong></>}/>
+          <Sales items={items} innerTitle={<>Categoria: <strong>{cat}</strong></>}/>
         </Main>
       </Content>
 
@@ -104,18 +104,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 };
 
-export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: IItem[], tipo: string}> = async ({params}) => {
-  const tipo = (params!.cat as string);
+export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: IItem[], cat: string}> = async ({params}) => {
+  const  cat = params!.cat as string;
   const page = parseInt((params!.cat[1] as string));
 
-  const items = (await axios(process.env.API_URL + "Mercadorias?type=" + tipo)).data;
+  const items = (await axios(process.env.API_URL + "Mercadorias?type=" + cat)).data;
   const categorias = (await axios(process.env.API_URL + "Tipos")).data;
 
   return {
     props: {
       items,
       categorias,
-      tipo
+      cat
     },
     revalidate: 900
   }
