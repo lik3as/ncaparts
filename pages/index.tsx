@@ -88,7 +88,7 @@ const Home: FC<Props> = ({items, tipos}) => {
 };
 
 export async function getStaticProps() {
-  const items = (await axios(process.env.API_URL + "Mercadorias")).data;
+  const items = (await axios(process.env.API_URL + "Mercadorias?lim=20")).data;
   const tipos = (await axios(process.env.API_URL + "Tipos")).data;
 
   return {
