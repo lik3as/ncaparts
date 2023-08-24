@@ -105,7 +105,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: IItem[], tipo: string}> = async ({params}) => {
-  const tipo = (params!.cat[0] as string);
+  const tipo = (params!.cat as string);
   const page = parseInt((params!.cat[1] as string));
 
   const items = (await axios(process.env.API_URL + "Mercadorias?type=" + tipo)).data;
