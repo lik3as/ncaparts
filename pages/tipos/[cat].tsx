@@ -85,7 +85,6 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({items, catego
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const mercadorias: IItem[] = (await axios(process.env.API_URL + "Mercadorias")).data; 
   const tipos: ICategoria[] = (await axios(process.env.API_URL + "Tipos")).data;
 
   const paths = await Promise.all(tipos.map( async (tipo, i) => {{
@@ -106,7 +105,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<{categorias: ICategoria[], items: IItem[], cat: string}> = async ({params}) => {
   const  cat = params!.cat as string;
-  const page = parseInt((params!.cat[1] as string));
 
   const items = (await axios(process.env.API_URL + "Mercadorias?type=" + cat)).data;
   const categorias = (await axios(process.env.API_URL + "Tipos")).data;

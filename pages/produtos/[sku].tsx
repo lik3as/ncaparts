@@ -29,10 +29,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<{mercadoria: Mercadoria, sugested: Mercadoria[]}> = async ({params}) => {
   const { sku } = params!;
-  const mercadoria = (await axios.get(process.env.API_URL + 'Mercadorias?s=' + sku)).data[0];
+  const mercadoria = (await axios.get(process.env.API_URL + 'Mercadorias?s=' + sku)).data;
   const sugested = (await axios.get(process.env.API_URL + 'Mercadorias?rel=&s=' + sku)).data;
 
-  return {
+  return { 
     props: {
       mercadoria,
       sugested
