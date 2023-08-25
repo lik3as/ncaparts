@@ -16,7 +16,6 @@ const Image: FC<Props> = ({ product }) => {
   .then((response) => {
     if (response) imgSrc = imgSrc; /**Do nothing .*/
     else{
-      console.log("URL Without image: " + imgSrc)
       imgSrc = logo;
     }
   });
