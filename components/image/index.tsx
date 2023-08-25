@@ -13,7 +13,7 @@ const Image: FC<Props> = ({ product }) => {
 
   try {
     axios.get(imgSrc).then((response) => {
-      if (response) imgSrc = response.data;
+      if (response) imgSrc = imgSrc; /**Do nothing .*/
       else throw new Error("Response is undefined");
     })
 
