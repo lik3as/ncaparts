@@ -1,8 +1,10 @@
 import { FC } from 'react'
 
-import { Text, Wrapper, Image } from './styles'
+import { Text, Wrapper } from './styles'
 import IItem from '../../types/item'
 import Form from './form';
+import axios from 'axios';
+import Image from '../image';
 
 interface Props {
   item: IItem;
@@ -14,7 +16,7 @@ const Selling: FC<Props> = ({item}) => {
   return (
     <Wrapper className="selling-container" $minWidth='100vw' $flexDirection='row'>
       <Wrapper $maxWidth='20rem'>
-        <Image src={(item.produto.imagens[0]) ?? '/images/logos/logo-white.png'} alt={item.produto.desc || item.produto.nome + ' | ' + item.produto.sku}/>
+        <Image product={item.produto}/>
       </Wrapper>
       <Wrapper $margin='0 20px' $flexDirection='column'>
         <Text h1>{item.produto.nome}</Text>
