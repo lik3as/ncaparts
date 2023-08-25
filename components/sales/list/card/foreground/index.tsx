@@ -1,16 +1,16 @@
 import { FC } from 'react'
 
 import { Image, Wrapper } from './styles';
+import IProduct from '../../../../../types/product';
 
 interface Props {
-  url?: string;
-  alt: string;
+  product: IProduct
 }
 
-const Foreground: FC<Props> = ({url, alt}) => { 
+const Foreground: FC<Props> = ({ product }) => { 
   return (
     <Wrapper className='foreground-container' $backgroundColor='#464646'>
-      <Image src={(url) ?? '/images/logos/logo-black.png'} alt={alt} width={800} height={800}/>
+      <Image product={product}/>
     </Wrapper>
   )
 }

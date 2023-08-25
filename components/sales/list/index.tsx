@@ -1,10 +1,9 @@
 import { FC } from "react"
-import { useRouter } from "next/router";
 
 import { UL } from "./styles";
-import { ListItem } from "./item/styles";
+import { ListItem } from "./card/styles";
 
-import Item from "./item"
+import Product from "./card"
 import IItem from '../../../types/item'
 import Link from "next/link";
 
@@ -19,8 +18,7 @@ const List: FC<Props> = ({items}) => {
       {items?.map((item, index) => (
           <ListItem key={index} className="rounded-outline" >
             <Link href={"/produtos/" + item.produto.sku}>
-              <Item cat={item.produto.tipo?.nome as string} name={item.produto?.nome} price={item.valor_real}
-                sku={item.produto.sku} url={item.produto.imagens[0]} desc={item.produto.desc}/>
+              <Product product={item.produto} visiblePrice={item.valor_real}/>
             </Link>
           </ListItem>
         )
