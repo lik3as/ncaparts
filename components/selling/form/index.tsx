@@ -1,16 +1,17 @@
+"use client"
 import { FC, useState } from "react";
 
 import { Form, Button } from "./styles";
 import Input from "./input";
-import ICategoria from "../../../types/categoria";
+import IFabricante from "../../../types/fabricante";
 
 interface Props {
-  marcaProduto: ICategoria | null;
+  fabProduto: IFabricante;
   skuProduto: string;
   nomeProduto: string;
 }
 
-const ItemForm: FC<Props> = ({marcaProduto, nomeProduto, skuProduto}) => {
+const ItemForm: FC<Props> = ({fabProduto, nomeProduto, skuProduto}) => {
   const [buyCount, setBuyCount] = useState(1);
 
   const clickHandler: (action: 'increase' | 'decrease') => () => void = (action: 'increase' | 'decrease') => {
@@ -21,7 +22,7 @@ const ItemForm: FC<Props> = ({marcaProduto, nomeProduto, skuProduto}) => {
     }
   }
 
-  let marca = (marcaProduto) ? marcaProduto.nome : "CHASING";
+  let marca = (fabProduto) ? fabProduto.nome : "CHASING";
   let num = '+554789021538'
   let text = `Gostaria de adquirir ${buyCount} unidades do produto ${nomeProduto} (${skuProduto})`;
 
