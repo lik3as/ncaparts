@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface Props {
+export interface Props {
   $width?: string | null;
   $overflowY?: string | null;
 }
