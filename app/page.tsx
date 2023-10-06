@@ -10,7 +10,7 @@ import { API_URL } from '../constants';
 import IItem from '../types/item';
 
 const HomePage = async () => {
-  const items: IItem[] = (await (await fetch(API_URL + "Mercadorias?limit=10&offset=0", { cache: "no-store" })).json()) ?? []; 
+  const items: IItem[] = (await (await fetch(API_URL + "Mercadorias?limit=10&offset=0")).json()) ?? []; 
   const tipos = await (await fetch(API_URL + "Categorias/Tipos")).json();
 
   return (
