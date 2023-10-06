@@ -1,6 +1,8 @@
 import { FC } from 'react'
 
 import { Image, Wrapper } from './styles';
+import { logoVerticalBlack } from '../../../../../constants';
+import useImageUrl from '../../../../../hooks/useImageUrl';
 
 interface Props {
   url?: string;
@@ -8,9 +10,11 @@ interface Props {
 }
 
 const Foreground: FC<Props> = ({url, alt}) => { 
+  const imageUrl = useImageUrl(url, logoVerticalBlack);
+
   return (
     <Wrapper className='foreground-container' $backgroundColor='#464646'>
-      <Image src={(url) ?? '/images/logos/logo-black.png'} alt={alt} width={800} height={800}/>
+      <Image src={imageUrl} alt={alt} width={800} height={800}/>
     </Wrapper>
   )
 }
