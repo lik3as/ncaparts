@@ -1,14 +1,31 @@
-import HomePage from "./home-page";
+import { FC, StrictMode, } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { API_URL } from "../constants";
+import Sales from '../components/sales';
+import Global from '../styles/global';
+import GlobalThemes from '../styles/themes'
+import Landing from '../components/landing';
+import Content from '../components/layouts/content';
+import { API_URL } from '../constants';
+import IItem from '../types/item';
 
-export default async function Page() {
-  /** Similar to getStaticProps, according to
-   *  @see https://nextjs.org/docs/pages/building-your-application/upgrading/app-router-migration#step-6-migrating-data-fetching-methods
-  */
+const HomePage = async () => {
+  const items: IItem[] = (await (await fetch(API_URL + "Mercadorias?limit=10&offset=0", { cache: "no-store" })).json()) ?? []; 
+  const tipos = await (await fetch(API_URL + "Categorias/Tipos")).json();
 
-  const items = await (await fetch(API_URL + "Mercadorias", { cache: "no-store" })).json(); 
-  const tipos = await (await fetch(API_URL + "Tipos")).json();
-  
-  return <HomePage items={items} tipos={tipos}/>
-}
+  return (
+    <StrictMode>
+
+      <Global />
+      <GlobalThemes /> 
+
+      <Content tipos={tipos} withSidebar={true}>
+        <Landing />
+        <Sales items={items} page={0}/>
+      </Content>
+
+    </StrictMode>
+  )
+};
+
+export default HomePage;
