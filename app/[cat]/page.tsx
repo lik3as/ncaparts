@@ -1,12 +1,18 @@
-import axios from "axios";
-import { FC } from "react";
+"use server"
 
-import { handleExceptions } from "../utils";
-import { API_URL } from "../../constants";
+import { StrictMode } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import CatPage from "./cat-page";
-import IItem from "../../types/item";
-import ICategoria from "../../types/categoria";
+import Sales from '../../components/sales';
+import Global from '../../styles/global';
+import GlobalThemes from '../../styles/themes'
+import Landing from '../../components/landing';
+import Content from '../../components/layouts/content';
+import IItem from '../../types/item';
+import ICategoria from '../../types/categoria';
+import Head from 'next/head';
+import axios from 'axios';
+import { API_URL } from '../../constants';
 
 interface PageParams {
   cat: string;
@@ -14,19 +20,35 @@ interface PageParams {
 
 interface PageProps {
   params: PageParams
+  searchParams?: { [key: string]: string | string }
 }
 
-const { hfe } = handleExceptions;
-
-const Page: FC<PageProps> = async ({ params }) => {
+const Page = async ({ params, searchParams }: PageProps) => {
   const { cat } = params;
+  const page = +(searchParams?.page ?? 0);
 
-  const [items, filteredItems, cats] = await getItemsAndCats(cat);
+  const [items, cats] = await getItemsAndCats(cat, page);
 
-  /** For some reason, category is URI encoded. */
-  return <CatPage items={items} itemsCat={ decodeURIComponent(cat) } cats={cats} filteredItems={filteredItems}/>
-}
+  const title = "NCA Parts🔩 - " + cat;
+  return (
+    <StrictMode>
 
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>{title}</title>
+      </Head>
+
+      <Global />
+      <GlobalThemes />
+
+      <Content withSidebar={true} tipos={cats}>
+          <Landing />
+          <Sales items={items} innerTitle={<>Categoria: <strong>{decodeURIComponent(cat)}</strong></>} page={page}/>
+      </Content>
+
+    </StrictMode>
+  )
+};
 export const generateStaticParams: () => Promise<PageParams[]> = async () => {
   const cats: ICategoria[] | null = (await axios(process.env.API_URL + "Tipos")).data; 
 
@@ -40,23 +62,26 @@ export const generateStaticParams: () => Promise<PageParams[]> = async () => {
 
 };
 
-type fetchTuple = [IItem[], IItem[] | null, ICategoria[]];
+type fetchTuple = [IItem[], ICategoria[]];
 
-const getItemsAndCats: (cat: string) => Promise<fetchTuple> = async (cat: string) => {
+const getItemsAndCats: (cat: string, page: number) => Promise<fetchTuple> = async (cat: string, page: number) => {
   cat = decodeURIComponent(cat);
+  const limit = 10,
+  offset = page * limit;
 
-  const items: IItem[] =  await (await fetch(API_URL + "Mercadorias", { cache: "no-store" })
-  .catch(hfe))?.json().catch(hfe) || [];
+  try{
+    const items: IItem[]  =  await (await fetch(API_URL + `Mercadorias?limit=${limit}&offset=${offset}&type=${cat}`, { cache: "no-store" })
+    )?.json() ?? [];
 
-  const cats: ICategoria[] = await (await fetch(API_URL + "Tipos")
-  .catch(hfe))?.json().catch(hfe) || [];
+    const cats: ICategoria[] = await (await fetch(API_URL + "Categorias/Tipos")
+    )?.json() ?? [];
 
-  const filteredItems: IItem[] | undefined = items.filter((item) => {
-    if (item.produto.tipo?.nome === cat)
-    return item;
-  })
+    return [items, cats] as fetchTuple;
+  }
+  catch(e) {
+    return [[], []]
+  }
 
-  return [items, filteredItems || null, cats] as fetchTuple;
 }
 
 export default Page;
