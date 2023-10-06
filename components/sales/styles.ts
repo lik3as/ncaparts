@@ -12,7 +12,7 @@ const Wrapper = styled(ItemWrapper)`
   max-width: ${(props) => props.$maxWidth ?? '100%'};
   min-width: ${(props) => props.$minWidth ?? 'auto'};
   background-color: ${(props) => props.$backgroundColor ?? 'transparent'};
-  
+
 `;
 
 const Text = styled(ItemText)`
@@ -26,6 +26,13 @@ const Text = styled(ItemText)`
   :hover {
     color: white;
     cursor: pointer;
+  }
+
+  &.page-box {
+    border: 2px solid white;
+    padding: .2rem .8rem;
+    background-color: var(--color-dark-rgb);
+    margin-right: 10px;
   }
 `;
 
