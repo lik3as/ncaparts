@@ -33,12 +33,6 @@ const Wrapper = styled(ItemWrapper)`
 
   }
 
-  &.text-container {
-    justify-content: center;
-    margin-top: 0px;
-    margin-top: auto;
-  }
-
   @media screen and (max-width: 768px){ 
     &.desc-container {
       height: auto;
@@ -59,7 +53,6 @@ const Text = styled(ItemText)`
   font-style: ${(props) => props.fontStyle ?? 'normal'};
   text-align: ${(props) => props.$textAlign ?? 'center'};
   color: ${(props) => props.color ?? 'white'};
-  margin-bottom: -6px;
   word-break: break-all;
   align-self: center;
 
