@@ -3,24 +3,24 @@ import { FC } from "react"
 import { UL } from "./styles";
 import { ListItem } from "./card/styles";
 
-import Product from "./card"
+import Item from './item'
 import IItem from '../../../types/item'
 import Link from "next/link";
 
 interface Props {
-  items: IItem[] | null;
+  items: IItem[];
 }
 
-const List: FC<Props> = ({items}) => {
-
+const List: FC<Props> = ({items}) => { 
   return (
     <UL>
-      {items?.map((item, index) => (
+      {items.map((item, index) => (
+        <Link href={`/produtos/${item.produto.sku}`} key={index}>
           <ListItem key={index} className="rounded-outline" >
-            <Link href={"/produtos/" + item.produto.sku}>
-              <Product product={item.produto} visiblePrice={item.valor_real}/>
-            </Link>
+              <Item cat={item.produto.tipos[0].nome} name={item.produto?.nome} price={item.valor_real}
+              sku={item.produto.sku} url={item.produto.imagens[0]} desc={item.produto.desc}/>
           </ListItem>
+        </Link>
         )
       )}
     </UL>

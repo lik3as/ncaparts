@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-interface Props {
-  $width: string | null;
-  $overflowY: string | null;
+export interface Props {
+  $width?: string | null;
+  $overflowY?: string | null;
 }
 
 const Main = styled.main<Props>`

@@ -1,3 +1,5 @@
+"use client"
+
 import styled from "styled-components";
 import { Image as ItemImage } from "react-bootstrap";
 
@@ -30,9 +32,6 @@ const LandingWrapper = styled.div`
   height: 40%;
   width: 100%;
 
-  @media screen and (max-width: 768px){
-    height: 20%;
-  }
 `
 
 const Image = styled(ItemImage)`

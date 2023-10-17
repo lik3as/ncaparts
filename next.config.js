@@ -1,6 +1,8 @@
 module.exports = {
   compiler: {
     styledComponents: true,
-    staticPageGenerationTimeout: 120,
+  },
+  experimental: {
+    serverActions: true
   }
 }

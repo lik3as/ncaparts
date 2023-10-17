@@ -7,6 +7,7 @@ const UnorderedList = styled.ul`
   width: 100%;
   padding-bottom: .8rem;
   overflow-y: hidden;
+  height: auto;
 
   @media screen and (max-width: 768px){
     display: grid;

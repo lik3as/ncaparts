@@ -1,3 +1,5 @@
+'use client';
+
 import Head from "next/head";
 import { FC, StrictMode, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'

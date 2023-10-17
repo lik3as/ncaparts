@@ -22,7 +22,7 @@ const Selling: FC<Props> = ({item}) => {
         <Text h1>{item.produto.nome}</Text>
         <Text fontSize='1.5rem' fontWeight='200'>{item.produto.desc}</Text>
         <Text fontSize='1.5rem' fontWeight='200'>{price}</Text>
-        <Form marcaProduto={item.produto.marca} nomeProduto={item.produto.nome} skuProduto={item.produto.sku}/>
+        <Form fabProduto={item.produto.fabricante} nomeProduto={item.produto.nome} skuProduto={item.produto.sku}/>
       </Wrapper>
     </Wrapper>
   )

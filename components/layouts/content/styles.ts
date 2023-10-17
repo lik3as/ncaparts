@@ -16,8 +16,7 @@ const Content = styled.div`
   }
 
   @media screen and (max-width: 1100px){
-    grid-template-columns: 28% 72%;
-    
+    grid-template-columns: 28% 72%;    
   }
 `
 

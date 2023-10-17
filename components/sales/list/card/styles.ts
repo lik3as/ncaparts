@@ -8,27 +8,26 @@ const ListItem = styled.li`
   margin: 0 15px 0 0;
   transition: all .3s ease;
   padding: .5rem;
-  padding-bottom: 1rem;
 
   border: 6px solid transparent;
   border-radius: 6px;
   outline: #444444 solid 1px;
+
+  height: 100%;
+  max-width: 12rem;
 
   &:hover {
     transform: perspective(200px) translateZ(5px);
     outline-color: #666666;
   }
 
-  & a {
-    height: 100%;
-  }
-
-  @media screen and (max-width: 768px){
+  @media (width <= 768px ){
     display: list-item;
+    max-width: none;
     width: 100%;
   }
 
-  @media screen and (max-width: 480px){
+  @media (width <= 480px){
     display: flex;
     height: 18rem;
     width: 100%;
