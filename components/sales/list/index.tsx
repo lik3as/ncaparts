@@ -1,7 +1,7 @@
 import { FC } from "react"
 
 import { UL } from "./styles";
-import { ListItem } from "./card/styles";
+import { ListItem } from './item/styles'
 
 import Item from './item'
 import IItem from '../../../types/item'
@@ -17,7 +17,7 @@ const List: FC<Props> = ({items}) => {
       {items.map((item, index) => (
         <Link href={`/produtos/${item.produto.sku}`} key={index}>
           <ListItem key={index} className="rounded-outline" >
-              <Item cat={item.produto.tipos[0].nome} name={item.produto?.nome} price={item.valor_real}
+            <Item cat={item.produto.tipos[0].nome} name={item.produto?.nome} price={item.valor_real}
               sku={item.produto.sku} url={item.produto.imagens[0]} desc={item.produto.desc}/>
           </ListItem>
         </Link>

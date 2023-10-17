@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ItemImage from "../../../../image";
+import { Image as ItemImage } from "react-bootstrap";
 
 import { Wrapper as ItemWrapper } from "../../../styles";
 
