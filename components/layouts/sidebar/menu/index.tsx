@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Button } from "../styles";
+import Button from "../../../button";
 import { Image } from "../styles";
 import { Wrapper } from "../../styles";
 import sales from "../../../../public/images/sales.png";
