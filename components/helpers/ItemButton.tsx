@@ -5,12 +5,14 @@ interface Props {
   className?: string;
   href?: string;
   children?: ReactNode;
+  type?: "submit" | "button" | "reset";
 }
 
 interface ButtonProps {
   variant?: "secondary" | "primary";
   className?: string;
   children?: ReactNode;
+  type?: "submit" | "button" | "reset";
 }
 
 interface AnchorProps {
@@ -18,24 +20,25 @@ interface AnchorProps {
   className?: string;
   href?: string;
   children?: ReactNode;
+  type?: string;
 }
 
-const ButtonElement: FC<ButtonProps> = ({variant, className, children}) => {
-  return <button className={`${className} btn btn-${variant}`}>{children}</button>
+const ButtonElement: FC<ButtonProps> = ({variant, className, children, type}) => {
+  return <button className={`${className} btn btn-${variant}`} type={type}>{children}</button>
 }
 
-const AnchorElement: FC<AnchorProps> = ({variant, className, href, children}) => {
-  return <a className={`${className} btn btn-${variant}`} role="button" href={href}>{children}</a>
+const AnchorElement: FC<AnchorProps> = ({variant, className, href, children, type}) => {
+  return <a className={`${className} btn btn-${variant}`} role="button" href={href} type={type}>{children}</a>
 }
 
-const Button: FC<Props> = ({variant, href, children, className}) => {
+const Button: FC<Props> = ({variant, href, children, className, type}) => {
   if (href) {
     return (
-      <AnchorElement className={className} variant={variant} href={href}>{children}</AnchorElement>
+      <AnchorElement className={className} variant={variant} href={href} type={type}>{children}</AnchorElement>
     )
   }
   return (
-    <ButtonElement className={className} variant={variant}>{children}</ButtonElement>
+    <ButtonElement className={className} variant={variant} type={type}>{children}</ButtonElement>
   )
 }
 
