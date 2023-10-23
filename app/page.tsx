@@ -1,4 +1,4 @@
-import { FC, StrictMode, } from 'react';
+import { StrictMode, } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Sales from '../components/sales';

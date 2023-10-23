@@ -73,7 +73,7 @@ const getItemsAndCats: (cat: string, page: number) => Promise<fetchTuple> = asyn
     const items: IItem[]  =  await (await fetch(API_URL + `Mercadorias?limit=${limit}&offset=${offset}&type=${cat}`, { cache: "no-store" })
     )?.json() ?? [];
 
-    const cats: ICategoria[] = await (await fetch(API_URL + "Categorias/Tipos")
+    const cats: ICategoria[] = await (await fetch(API_URL + "Categorias/Tipos", { cache: "no-store" })
     )?.json() ?? [];
 
     return [items, cats] as fetchTuple;

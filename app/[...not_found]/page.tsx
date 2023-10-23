@@ -8,7 +8,6 @@ import { Image, Wrapper } from "../../components/landing/styles";
 import { API_URL } from "../../constants";
 
 export default async function Page() {
-  const items = await (await fetch(API_URL + "Mercadorias", { cache: "no-store"})).json(); 
   const tipos = await (await fetch(API_URL + "Categorias/Tipos")).json();
 
   return(
