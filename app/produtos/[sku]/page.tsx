@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Mercadoria from '../../../types/item';
-import { FC, StrictMode } from 'react';
+import { StrictMode } from 'react';
 import Global from '../../../styles/global';
 import GlobalThemes from '../../../styles/themes'
 import Content from '../../../components/layouts/content';
