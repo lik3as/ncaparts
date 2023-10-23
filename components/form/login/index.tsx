@@ -1,4 +1,6 @@
-import { useState, type FC } from 'react'
+"use client"
+
+import { useState, FC } from 'react'
 import { FaUser, FaLock } from 'react-icons/fa'
 import { Form } from 'react-bootstrap'
 import Button from '../../helpers/ItemButton';

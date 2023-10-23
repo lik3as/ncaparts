@@ -3,7 +3,6 @@ import { FC } from 'react'
 import { Text, Wrapper } from './styles'
 import IItem from '../../types/item'
 import Form from './form';
-import axios from 'axios';
 import Image from '../image';
 
 interface Props {

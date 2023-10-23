@@ -1,4 +1,6 @@
-import { useState, type FC, FormEvent } from "react";
+"use client"
+
+import { useState, FC, FormEvent } from "react";
 import { FaUser, FaLock } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { Form } from "react-bootstrap";

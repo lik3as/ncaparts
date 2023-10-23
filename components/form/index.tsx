@@ -1,4 +1,6 @@
-import { useState, type FC } from "react";
+"use client"
+
+import { useState, FC } from "react";
 
 import { Text, Wrapper } from "./styles";
 import LoginForm from "./login";
