@@ -26,7 +26,7 @@ const Sidebar: FC<Props> = ({$isOpen, $currentX, cats}) => {
         <Dropdown cats={cats}/>
       </Wrapper>
 
-      <Wrapper>
+      <Wrapper $display='flex' $flexDirection='column' $alignItems='flex-start' $justifyContent='space-between'>
         <Menu />
       </Wrapper>
 
