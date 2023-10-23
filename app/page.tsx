@@ -1,4 +1,4 @@
-import { FC, StrictMode, } from 'react';
+import { StrictMode, } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Sales from '../components/sales';
@@ -8,7 +8,6 @@ import Landing from '../components/landing';
 import Content from '../components/layouts/content';
 import { API_URL } from '../constants';
 import IItem from '../types/item';
-import Head from 'next/head';
 
 const HomePage = async () => {
   const items: IItem[] = (await (await fetch(API_URL + "Mercadorias?limit=10&offset=0")).json()) ?? []; 

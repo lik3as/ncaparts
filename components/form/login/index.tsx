@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react'
 import { FaUser, FaLock } from 'react-icons/fa'
-import { Form, Button } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
+import Button from '../../helpers/ItemButton';
 
 import { Text } from '../styles';
 import FormItem from '../group';
@@ -28,7 +29,7 @@ const LoginForm: FC = () => {
         required
         />
 
-        <Button className='mb-1 w-100 me-5 mx-sm-0' type='submit'>
+        <Button variant="primary" className='mb-1 w-100 me-5 mx-sm-0' type='submit'>
           Entrar
         </Button>
 

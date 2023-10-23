@@ -44,7 +44,7 @@ const Topbar: FC<Props> = ({changeBar, searchOptions, userProps}) => {
           {(userProps) ? 
             <Text color="white" className="me-3">{userProps.username}</Text> : void(0)
           }
-          <Link href="/auth/sign">
+          <Link href="/auth">
             <Image src={userIcon.src} roundedCircle/>
           </Link>
         </Wrapper>

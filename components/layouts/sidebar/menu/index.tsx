@@ -1,33 +1,26 @@
 import { FC } from "react";
 
-import { Button } from "../styles";
+import Button from "../../../helpers/ItemButton";
 import { Image } from "../styles";
-import { Wrapper } from "../../styles";
 import sales from "../../../../public/images/sales.png";
 import market from "../../../../public/images/market.png";
 import truck from "../../../../public/images/truck.png";
 import blog from "../../../../public/images/book.png";
 
 const Menu: FC = () => {
+  const images = [sales.src, market.src, truck.src, blog.src];
   return (
-    <Wrapper $display="flex" $flexDirection="column" $alignItems="flex-start" $justifyContent="space-between">
-      <Button variant="secondary" href="https://ncatech.com.br/">
-        <Image src={sales.src}/>
-        Melhores Ofertas
-      </Button>
-      <Button variant="secondary" href="https://ncatech.com.br/seja-revendedor">
-        <Image src={market.src}/>
-        Seja um Revendedor
-      </Button>
-      <Button variant="secondary" href="#">
-        <Image src={truck.src}/>
-        Acompanhar Pedido
-      </Button>
-      <Button variant="secondary" href="https://ncatech.com.br/chasing">
-        <Image src={blog.src}/>
-        Blog 
-      </Button>
-    </Wrapper>
+    <>
+      {["Melhores Ofertas", "Seja um Revendedor", "Acompanhar Pedido", "Blog"].map((innerText, i) => {
+        return (
+          <Button variant="secondary" href="https://ncatech.com.br/" className="text-nowrap mx-1 my-2" key={i}>
+            <Image src={images[i]} />
+            {innerText}
+          </Button>
+        )
+      })
+      }
+    </>
   )
 }
 
