@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import { Button, Image } from '../styles';
+import { Image } from '../styles';
+import Button from '../../../helpers/ItemButton';
 import account from '../../../../public/images/user.png';
 import settings from '../../../../public/images/settings.png';
 
