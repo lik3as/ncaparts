@@ -1,7 +1,8 @@
-import { useState, type FC, ChangeEvent, FormEventHandler, FormEvent } from "react";
+import { useState, type FC, FormEvent } from "react";
 import { FaUser, FaLock } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import Button from "../../helpers/ItemButton";
 
 import FormItem from "../group";
 import axios from "axios";
@@ -76,7 +77,7 @@ const RegisterForm: FC<Props> = ({handleCheckTerms}) => {
       <Form.Check label={userTerms} className="mb-1 d-flex justify-content-center" onChange={() => setIsTermAccepted(!isTermAccepted)}
       required/>
 
-      <Button className='mb-1 w-100 me-5 mx-sm-0' type="submit">
+      <Button variant="primary" className='mb-1 w-100 me-5 mx-sm-0' type="submit">
         Registrar
       </Button>
     </Form>
