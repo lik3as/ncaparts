@@ -1,7 +1,9 @@
 "use client"
+
 import { FC, useState } from "react";
 
-import { Form, Button } from "./styles";
+import { Form } from "./styles";
+import Button from "../../helpers/ItemButton";
 import Input from "./input";
 import IFabricante from "../../../types/fabricante";
 
@@ -44,7 +46,7 @@ const ItemForm: FC<Props> = ({fabProduto, nomeProduto, skuProduto}) => {
   return (
     <Form>
       <Input clickHandler={clickHandler} buyCount={buyCount}/>
-      <Button type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank"> Comprar </Button>
+      <Button className="me-2 me-sm-2 w-100 ms-5" variant="primary" type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank"> Comprar </Button>
     </Form>
   )
 }
