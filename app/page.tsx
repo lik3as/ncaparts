@@ -8,7 +8,6 @@ import Landing from '../components/landing';
 import Content from '../components/layouts/content';
 import { API_URL } from '../constants';
 import IItem from '../types/item';
-import Head from 'next/head';
 
 const HomePage = async () => {
   const items: IItem[] = (await (await fetch(API_URL + "Mercadorias?limit=10&offset=0")).json()) ?? []; 
