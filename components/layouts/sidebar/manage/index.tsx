@@ -9,11 +9,11 @@ const Manage: FC = () => {
   return (
     <>
       <Button variant='secondary' href='/auth'>
-        <Image src={account.src}/>
+        <Image src={account.src} width={"25px"}/>
         Conta
       </Button>
       <Button variant='secondary' href='#'>
-        <Image src={settings.src}/> 
+        <Image src={settings.src} width={"25px"}/> 
         Configurações
       </Button>
     </>

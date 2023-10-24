@@ -14,7 +14,7 @@ const Menu: FC = () => {
       {["Melhores Ofertas", "Seja um Revendedor", "Acompanhar Pedido", "Blog"].map((innerText, i) => {
         return (
           <Button variant="secondary" href="https://ncatech.com.br/" className="text-nowrap mx-1 my-2" key={i}>
-            <Image src={images[i]} />
+            <Image src={images[i]} width={"25px"}/>
             {innerText}
           </Button>
         )
