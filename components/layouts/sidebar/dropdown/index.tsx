@@ -14,7 +14,7 @@ const ItemDropdown: FC<Props> = ({cats}) => {
   return (
     <Dropdown>
       <DropdownToggle variant='secondary'>
-        <Image src={catIcon.src}/>
+        <Image src={catIcon.src} width={"10px"} height={"10px"}/>
         Categorias
       </DropdownToggle>
 
