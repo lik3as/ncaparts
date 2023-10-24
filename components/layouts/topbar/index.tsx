@@ -32,7 +32,7 @@ const Topbar: FC<Props> = ({changeBar, searchOptions, userProps}) => {
 
         <Wrapper $display="flex" $flexDirection="row" $margin="0 15px 0 10px">
           <Link href="/">
-            <Logo src={logo} alt="Couldn't load the logo :( Please, check you connection." /> 
+            <Logo src={logo} alt="Couldn't load the logo :( Please, check you connection." width={165} height={45}/> 
           </Link>
         </Wrapper>
 
