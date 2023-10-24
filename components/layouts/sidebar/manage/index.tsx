@@ -8,7 +8,7 @@ import settings from '../../../../public/images/settings.png';
 const Manage: FC = () => {
   return (
     <>
-      <Button variant='secondary' href='/auth/sign'>
+      <Button variant='secondary' href='/auth'>
         <Image src={account.src}/>
         Conta
       </Button>
