@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { FiPlus } from 'react-icons/fi'
 import { FiMinus } from 'react-icons/fi'
 import { Button } from "./styles";

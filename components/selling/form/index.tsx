@@ -46,7 +46,7 @@ const ItemForm: FC<Props> = ({fabProduto, nomeProduto, skuProduto}) => {
   return (
     <Form>
       <Input clickHandler={clickHandler} buyCount={buyCount}/>
-      <Button className="me-2 me-sm-2 w-100 ms-5" variant="primary" type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank"> Comprar </Button>
+      <Button className="me-2 me-sm-2 w-100 ms-5" variant="primary" type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank">Comprar</Button>
     </Form>
   )
 }
