@@ -1,3 +1,5 @@
+"use client"
+
 import { FC } from "react";
 import ItemImage from "./styles";
 import axios from "axios";
@@ -15,7 +17,7 @@ const Image: FC<Props> = ({ product }) => {
   .catch((e) => void(0))
   .then((response) => {
     if (response) imgSrc = imgSrc; /**Do nothing .*/
-    else{
+    else {
       imgSrc = logo;
     }
   });
