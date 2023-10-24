@@ -32,7 +32,6 @@ const NavWrapper = styled.nav`
 `;
 
 const Image = styled(ItemImage)`
-  width: 25px;
   object-fit: contain;
   margin-right: 10px;
 
