@@ -1,4 +1,5 @@
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics"
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: 'NCA Parts🔩',
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics GA_MEASUREMENT_ID="GTM-NP97WZ33"/>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics/>
+      </body>
     </html>
   )
 }
