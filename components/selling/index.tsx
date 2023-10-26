@@ -20,6 +20,7 @@ const Selling: FC<Props> = ({item}) => {
       <Wrapper $margin='0 20px' $flexDirection='column' className='w-50'>
         <Text h1>{item.produto.nome}</Text>
         <Text fontSize='1.5rem' fontWeight='200'>{item.produto.desc}</Text>
+
         <Text fontSize='1.5rem' fontWeight='200'className='mt-3'>{price}</Text>
         <Form fabProduto={item.produto.fabricante} nomeProduto={item.produto.nome} skuProduto={item.produto.sku}/>
       </Wrapper>
