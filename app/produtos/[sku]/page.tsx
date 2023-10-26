@@ -23,7 +23,7 @@ export const generateStaticParams: () => Promise<PageParams[]> = async () => {
   const mercadorias: Mercadoria[] = await (await fetch(API_URL + 'Mercadorias')).json()
   
   const paths = mercadorias.map((mercadoria) => ({
-      sku: mercadoria.produto.sku
+    sku: mercadoria.produto.sku
   }));
 
   return paths;

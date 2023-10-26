@@ -4,5 +4,8 @@ module.exports = {
   },
   experimental: {
     serverActions: true
-  }
+  },
+  images: {
+    domains: ['ik.imagekit.io'],
+  },
 }

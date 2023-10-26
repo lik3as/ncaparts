@@ -10,8 +10,9 @@ import { API_URL } from '../constants';
 import IItem from '../types/item';
 
 const HomePage = async () => {
-  const items: IItem[] = (await (await fetch(API_URL + "Mercadorias?limit=10&offset=0")).json()) ?? []; 
-  const tipos = await (await fetch(API_URL + "Categorias/Tipos")).json();
+  /** Revalida a rota /Mercadorias de uma em uma hora */
+  const items: IItem[] = (await (await fetch(API_URL + "Mercadorias?limit=10&offset=0", {next: {revalidate: 1 * (60 * 60)}})).json()) ?? []; 
+  const tipos = await (await fetch(API_URL + "Categorias/Tipos", {cache: "no-store"})).json();
 
   return (
     <StrictMode>
