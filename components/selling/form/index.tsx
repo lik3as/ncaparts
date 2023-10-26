@@ -6,6 +6,7 @@ import { Form } from "./styles";
 import Button from "../../helpers/ItemButton";
 import Input from "./input";
 import IFabricante from "../../../types/fabricante";
+import { track } from "@vercel/analytics/*";
 
 interface Props {
   fabProduto: IFabricante;
@@ -16,7 +17,7 @@ interface Props {
 const ItemForm: FC<Props> = ({fabProduto, nomeProduto, skuProduto}) => {
   const [buyCount, setBuyCount] = useState(1);
 
-  const clickHandler: (action: 'increase' | 'decrease') => () => void = (action: 'increase' | 'decrease') => {
+  const changeCounter: (action: 'increase' | 'decrease') => () => void = (action: 'increase' | 'decrease') => {
     if (action === 'increase') {
       return  () => setBuyCount(buyCount + 1);
     } else {
@@ -44,8 +45,10 @@ const ItemForm: FC<Props> = ({fabProduto, nomeProduto, skuProduto}) => {
   }
   
   return (
-    <Form>
-      <Input clickHandler={clickHandler} buyCount={buyCount}/>
+    <Form onSubmit={() => {
+      track("Purchase", {productName: nomeProduto, productSku: skuProduto})
+    }}>
+      <Input clickHandler={changeCounter} buyCount={buyCount}/>
       <Button className="me-2 me-sm-2 w-100 ms-5" variant="primary" type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank">Comprar</Button>
     </Form>
   )
