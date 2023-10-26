@@ -22,7 +22,7 @@ const Text = styled(ItemText)`
   font-weight: ${(props) => props.fontWeight ?? 'normal'};
   font-size: ${(props) => props.fontSize ?? '2rem'};
   font-style: ${(props) => props.fontStyle ?? 'normal'};
-  text-align: ${(props) => props.$textAlign ?? 'center'};
+  text-align: ${(props) => props.$textAlign ?? 'start'};
   color: ${(props) => props.color ?? 'white'};
 
 `;
