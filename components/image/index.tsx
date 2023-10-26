@@ -22,7 +22,7 @@ const Image: FC<Props> = ({ product }) => {
     }
   });
   
-  return <ItemImage src={imgSrc} alt={product.desc || product.nome + ' | ' + product.sku}/>
+  return <ItemImage src={imgSrc} alt={product.desc || product.nome + ' | ' + product.sku} width={80} height={80}/>
 }
 
 export default Image;
