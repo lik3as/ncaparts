@@ -20,7 +20,7 @@ interface PageProps {
 }
 
 export const generateStaticParams: () => Promise<PageParams[]> = async () => {
-  const mercadorias: Mercadoria[] = await (await fetch(process.env.API_URL + 'Mercadorias')).json()
+  const mercadorias: Mercadoria[] = await (await fetch(API_URL + 'Mercadorias')).json()
   
   const paths = mercadorias.map((mercadoria) => ({
       sku: mercadoria.produto.sku
@@ -34,7 +34,7 @@ const getMercs: (sku: string) => Promise<[IItem, IItem[], ICategoria[]]> = async
   try {
     const cats = await (await fetch(API_URL + 'Categorias/Tipos')).json();
     const mercadoria = await (await fetch(API_URL + 'Mercadorias?sku=' + sku)).json();
-    const suggestions = await (await fetch(API_URL + 'Mercadorias/related?sku=' + sku + `&limit=10&offset=0`)).json();
+    const suggestions = await (await fetch(API_URL + `Mercadorias/related?sku=${sku}&limit=10&offset=0`)).json();
     return [mercadoria, suggestions, cats]
   } catch (e) {
     throw new Error("Erro nas requisições");
