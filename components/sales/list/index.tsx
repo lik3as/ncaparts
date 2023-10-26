@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { track } from "@vercel/analytics/*";
+import { track } from "@vercel/analytics";
 
 import { UL } from "./styles";
 import { ListItem } from './item/styles'

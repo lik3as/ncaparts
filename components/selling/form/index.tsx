@@ -6,7 +6,7 @@ import { Form } from "./styles";
 import Button from "../../helpers/ItemButton";
 import Input from "./input";
 import IFabricante from "../../../types/fabricante";
-import { track } from "@vercel/analytics/*";
+import { track } from "@vercel/analytics";
 
 interface Props {
   fabProduto: IFabricante;
