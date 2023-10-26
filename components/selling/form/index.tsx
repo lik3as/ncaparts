@@ -45,8 +45,9 @@ const ItemForm: FC<Props> = ({fabProduto, nomeProduto, skuProduto}) => {
   }
   
   return (
-    <Form onSubmit={() => {
-      track("Purchase", {productName: nomeProduto, productSku: skuProduto})
+    <Form onSubmit={(e) => {
+      track("Purchase", {productName: nomeProduto, productSku: skuProduto});
+      e.preventDefault();
     }}>
       <Input clickHandler={changeCounter} buyCount={buyCount}/>
       <Button className="me-2 me-sm-2 w-50 ms-5" variant="primary" type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank">Comprar</Button>
