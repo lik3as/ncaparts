@@ -30,12 +30,15 @@ const Page = async ({ params, searchParams }: PageProps) => {
   const [items, cats] = await getItemsAndCats(cat, page);
 
   const title = "NCA Parts🔩 - " + cat;
+  const desc = `Em busca de peças de ${cat}? Na NCA Parts você encontra! Somos revendedora oficial da CHASING e DJI. Navegue entre os mais diversos produtos.`
   return (
     <StrictMode>
 
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>{title}</title>
+        <meta name="description"
+        content={desc}/>
       </Head>
 
       <Global />
