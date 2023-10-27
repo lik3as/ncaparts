@@ -9,7 +9,7 @@ import Selling from '../../../components/selling';
 import Head from 'next/head';
 import IItem from '../../../types/item';
 import ICategoria from '../../../types/categoria';
-import { API_URL } from '../../../constants';
+import { API_URL, SALES_LIST_LIMIT } from '../../../constants';
 
 interface PageParams {
   sku: string;
@@ -30,11 +30,10 @@ export const generateStaticParams: () => Promise<PageParams[]> = async () => {
 }
 
 const getMercs: (sku: string) => Promise<[IItem, IItem[], ICategoria[]]> = async (sku: string) => {
-
   try {
     const cats = await (await fetch(API_URL + 'Categorias/Tipos')).json();
     const mercadoria = await (await fetch(API_URL + 'Mercadorias?sku=' + sku)).json();
-    const suggestions = await (await fetch(API_URL + `Mercadorias/related?sku=${sku}&limit=10&offset=0`)).json();
+    const suggestions = await (await fetch(API_URL + `Mercadorias/related?sku=${sku}&limit=${SALES_LIST_LIMIT}&offset=0`)).json();
     return [mercadoria, suggestions, cats]
   } catch (e) {
     throw new Error("Erro nas requisições");

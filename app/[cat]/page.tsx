@@ -12,7 +12,7 @@ import IItem from '../../types/item';
 import ICategoria from '../../types/categoria';
 import Head from 'next/head';
 import axios from 'axios';
-import { API_URL } from '../../constants';
+import { API_URL, SALES_LIST_LIMIT } from '../../constants';
 
 interface PageParams {
   cat: string;
@@ -69,7 +69,7 @@ type fetchTuple = [IItem[], ICategoria[]];
 
 const getItemsAndCats: (cat: string, page: number) => Promise<fetchTuple> = async (cat: string, page: number) => {
   cat = decodeURIComponent(cat);
-  const limit = 10,
+  const limit = SALES_LIST_LIMIT,
   offset = page * limit;
 
   try{
