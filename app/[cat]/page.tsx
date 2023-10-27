@@ -53,7 +53,7 @@ const Page = async ({ params, searchParams }: PageProps) => {
   )
 };
 export const generateStaticParams: () => Promise<PageParams[]> = async () => {
-  const cats: ICategoria[] | null = (await axios(process.env.API_URL + "Categorias/Tipos")).data; 
+  const cats: ICategoria[] | null = (await axios(API_URL + "Categorias/Tipos")).data; 
 
   if (!cats) {
     return [];
