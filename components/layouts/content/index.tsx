@@ -10,6 +10,7 @@ import ICategoria from "../../../types/categoria";
 import Content from "./styles";
 import Main, {Props as MainProps} from "../main";
 import Sidebar from "../sidebar";
+import axios from "axios";
 import { API_URL } from "../../../constants";
 
 interface Props {
