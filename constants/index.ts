@@ -6,6 +6,7 @@ dotenv.config({
   path: envPath
 })
 
+export const SALES_LIST_LIMIT = 10;
 export const API_URL = (process.env.ENV == 'production') ? process.env.API_URL! : "http://localhost:8080/" ;
 export const logoHorizontalWhite = "/images/logos/logo-h-white.png";
 export const logoVerticalWhite = "/images/logos/logo-white.png";
