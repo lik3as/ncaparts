@@ -2,9 +2,10 @@ import ItemImage from "next/image";
 import styled from "styled-components";
 
 const Image = styled(ItemImage)`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  object-fit: contain;
+  @media screen and (width <= 700px){
+    width: 50%;
+  }
 `;
 
 export default Image;
