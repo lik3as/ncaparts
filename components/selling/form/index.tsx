@@ -50,7 +50,7 @@ const ItemForm: FC<Props> = ({fabProduto, nomeProduto, skuProduto}) => {
       e.preventDefault();
     }}>
       <Input clickHandler={changeCounter} buyCount={buyCount}/>
-      <Button className="me-2 me-sm-2 w-50 ms-5" variant="primary" type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank">Comprar</Button>
+      <Button className="me-2 me-sm-2 w-50 ms-xs-5 ms-2" variant="primary" type="submit" href={`https://wa.me/${num}?text=${text}`} target="_blank">Comprar</Button>
     </Form>
   )
 }
