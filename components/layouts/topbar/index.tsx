@@ -8,7 +8,7 @@ import useWindowResize from "../../../hooks/useWindowResize";
 import Searchbar from "./searchbar";
 
 import logo from "../../../public/images/logos/medium/logo-h-white-medium.png"
-import userIcon from "../../../public/images/rounded-user-icon-orange.png"
+import userIcon from "../../../public/images/small/rounded-user-icon-orange-small.png"
 import menuBar from "../../../public/images/menu-burger-white.png"
 import Link from "next/link";
 import IItem from "../../../types/item";
@@ -45,7 +45,7 @@ const Topbar: FC<Props> = ({changeBar, searchOptions, userProps}) => {
             <Text color="white" className="me-3">{userProps.username}</Text> : void(0)
           }
           <Link href="/auth">
-            <Image src={userIcon.src} roundedCircle/>
+            <Image src={userIcon.src} roundedCircle width={40}/>
           </Link>
         </Wrapper>
     </HeaderWrapper>
