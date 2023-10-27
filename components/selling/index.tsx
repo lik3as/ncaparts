@@ -14,7 +14,9 @@ const Selling: FC<Props> = ({item}) => {
 
   return (
     <Wrapper className="selling-container" $minWidth='100vw' $flexDirection='row'>
-        <Image product={item.produto} width={320} height={320} className='object-fit-contain'/>
+      <Wrapper $maxWidth='20rem'>
+        <Image product={item.produto}/>
+      </Wrapper>
       <Wrapper $margin='0 20px' $flexDirection='column' className='w-50'>
         <Text h1>{item.produto.nome}</Text>
         <Text fontSize='1.5rem' fontWeight='200'>{item.produto.desc}</Text>
