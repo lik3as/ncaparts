@@ -8,6 +8,7 @@ import { Wrapper, Text } from './styles';
 import List from './list';
 import IItem from '../../types/item'
 import { usePathname, useRouter } from 'next/navigation';
+import { SALES_LIST_LIMIT } from '../../constants';
 
 interface Props {
   items: IItem[],
@@ -26,7 +27,7 @@ const Sales: FC<Props> = ({items, innerTitle, page}) => {
   }
 
   const handleNextClick = () => {
-    if (pathname === '/' || pathname.includes("produtos") || (items.length  % page)  < 10) return;
+    if (pathname === '/' || pathname.includes("produtos") || (items.length  < SALES_LIST_LIMIT)) return;
     router.push(`${pathname}?page=${currentPage + 1}`);
     setCurrentPage(currentPage + 1);
   }
@@ -58,7 +59,7 @@ const Sales: FC<Props> = ({items, innerTitle, page}) => {
       {
         (!!items.length)
         ? <List items={items}/> 
-        : <Text fontSize='2.5rem' className='my-5' color='#CCC'>Não achamos nenhum item nesta categoria :(</Text>
+        : <Text fontSize='2.5rem' className='my-5' color='#CCC'>Não achamos nenhum item por aqui</Text>
       }
     </Wrapper>
   )
