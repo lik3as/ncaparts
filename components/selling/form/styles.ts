@@ -18,7 +18,6 @@ const Form = styled.form`
 `;
 
 const Button = styled(ItemButton)`
-  margin-left: 20px;
   width: 10rem;
 `;
 
