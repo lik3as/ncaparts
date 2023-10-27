@@ -7,7 +7,7 @@ import { Text, Wrapper } from "../styles";
 import useWindowResize from "../../../hooks/useWindowResize";
 import Searchbar from "./searchbar";
 
-import logo from "../../../public/images/logos/logo-h-white.png"
+import logo from "../../../public/images/logos/medium/logo-h-white-medium.png"
 import userIcon from "../../../public/images/rounded-user-icon-orange.png"
 import menuBar from "../../../public/images/menu-burger-white.png"
 import Link from "next/link";
