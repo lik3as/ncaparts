@@ -15,7 +15,7 @@ const Foreground: FC<Props> = ({url, alt}) => {
 
   return (
     <Wrapper className='foreground-container' $backgroundColor='#464646'>
-      <Image src={resizedUrl} alt={alt} width={150} height={150} crossOrigin='anonymous' fetchPriority='high'/>
+      <Image src={resizedUrl} alt={alt} width={150} height={150} crossOrigin='anonymous'/>
     </Wrapper>
   )
 }
