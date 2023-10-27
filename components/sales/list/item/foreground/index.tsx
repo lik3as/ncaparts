@@ -11,10 +11,11 @@ interface Props {
 
 const Foreground: FC<Props> = ({url, alt}) => { 
   const imageUrl = useImageUrl(url, logoVerticalBlack);
+  const resizedUrl = `${imageUrl}?tr=w-150,h-150`;
 
   return (
     <Wrapper className='foreground-container' $backgroundColor='#464646'>
-      <Image src={imageUrl} alt={alt} width={150} height={150}/>
+      <Image src={resizedUrl} alt={alt} width={150} height={150} crossOrigin='anonymous'/>
     </Wrapper>
   )
 }
