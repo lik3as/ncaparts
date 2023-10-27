@@ -30,10 +30,14 @@ export default function ({ mainProps, withSidebar, tipos, children }: Props) {
   const cookies = new Cookies();
 
   const fetchItems = async () => {
-    const res = await axios.get(API_URL + "Mercadorias", {withCredentials: true});
-    const data: IItem[] | undefined = res.data;
+    try {
+      const res = await fetch(API_URL + "Mercadorias", {credentials: "include"});
+      const data: IItem[] | undefined = await res.json();
 
-    return data ?? [];
+      return data ?? [];
+    } catch(e) {
+      return [];
+    }
   }
 
   useEffect(() => {
