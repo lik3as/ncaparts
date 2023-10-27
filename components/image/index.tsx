@@ -1,28 +1,25 @@
 "use client"
 
 import { FC } from "react";
-import ItemImage from "./styles";
-import axios from "axios";
 import IProduct from "../../types/product";
+import useImageUrl from "../../hooks/useImageUrl";
+import Image from "./styles";
 
 interface Props {
   product: IProduct;
+  className?: string;
+  width: number;
+  height: number;
 }
 
-const Image: FC<Props> = ({ product }) => {
-  let imgSrc = product.imagens[0];
-  const logo = '/images/logos/logo-white.png';
+const ItemImage: FC<Props> = ({ product, width, height, className }) => {
+  const logoUrl = '/images/logos/logo-white.png';
+  const productImageUrl = product.imagens[0];
+  const resizedProductImageUrl = `${productImageUrl}?tr=w-${width},h-${height}`;
 
-  axios.get(imgSrc)
-  .catch((e) => void(0))
-  .then((response) => {
-    if (response) imgSrc = imgSrc; /**Do nothing .*/
-    else {
-      imgSrc = logo;
-    }
-  });
+  const imgUrl = useImageUrl(resizedProductImageUrl, logoUrl);
   
-  return <ItemImage src={imgSrc} alt={product.desc || product.nome + ' | ' + product.sku} width={80} height={80}/>
+  return <Image src={imgUrl} alt={product.desc || product.nome + ' | ' + product.sku} width={width} height={height} className={className} />
 }
 
-export default Image;
+export default ItemImage;
