@@ -35,7 +35,6 @@ const LandingWrapper = styled.div`
 `
 
 const Image = styled(ItemImage)`
-  width: 30%;
   max-width: 30rem;
   min-width: 15rem;
   object-fit: contain;
